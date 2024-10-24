@@ -1,0 +1,26 @@
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;
+    margin: 0;
+    text-align: center;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    background-position: center;
+    background-color: black;
+}
+
+.container{
+    display: flex;
+    position: relative;
+    padding: 0px;
+    margin: 0px;
+    height: 500px;
+    width: 600px;
+    border: 2px solid black;
+    text-align: center;
+    background-color: white;
+    overflow: hidden;
+}
