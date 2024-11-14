@@ -32,6 +32,7 @@
 [ext_resource type="Texture2D" uid="uid://cwwrm13o888p1" path="res://vue/Stickman/respiration/Idle7.png" id="29_ngdp4"]
 [ext_resource type="Texture2D" uid="uid://edop2trn32b8" path="res://vue/Stickman/respiration/Idle8.png" id="30_f3c7g"]
 [ext_resource type="Texture2D" uid="uid://b7031w8176l3n" path="res://vue/Stickman/respiration/Idle9.png" id="31_ab0k7"]
+[ext_resource type="Texture2D" uid="uid://b2nsstmc5wcx3" path="res://vue/Stickman/sauter/Jump4.png" id="33_nic32"]
 
 [sub_resource type="CSharpScript" id="CSharpScript_cofl4"]
 script/source = "using Godot;
@@ -356,8 +357,6 @@ texture_region_size = Vector2i(18, 18)
 physics_layer_0/collision_layer = 2
 sources/2 = SubResource("TileSetAtlasSource_pgnvj")
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ceoqt"]
-
 [sub_resource type="SpriteFrames" id="SpriteFrames_rw4ki"]
 animations = [{
 "frames": [{
@@ -456,7 +455,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("CompressedTexture2D_ceoqt")
+"texture": ExtResource("33_nic32")
 }],
 "loop": true,
 "name": &"sauter",
