@@ -1,5 +1,6 @@
-[gd_scene load_steps=45 format=3 uid="uid://d2oew446al4p2"]
+[gd_scene load_steps=39 format=3 uid="uid://d2oew446al4p2"]
 
+[ext_resource type="PackedScene" uid="uid://u7qmoixaf6kc" path="res://controleur/pause_menu.tscn" id="1_qx2vf"]
 [ext_resource type="Texture2D" uid="uid://cqdlvxscjq2vu" path="res://vue/Background/Background.png" id="1_rryjl"]
 [ext_resource type="Texture2D" uid="uid://cqbnyg5wr1a62" path="res://vue/Background/tilemap_packed.png" id="2_0ghob"]
 [ext_resource type="Script" path="res://controleur/stickman_object.gd" id="3_2qhhc"]
@@ -31,14 +32,7 @@
 [ext_resource type="Texture2D" uid="uid://cwwrm13o888p1" path="res://vue/Stickman/respiration/Idle7.png" id="29_ngdp4"]
 [ext_resource type="Texture2D" uid="uid://edop2trn32b8" path="res://vue/Stickman/respiration/Idle8.png" id="30_f3c7g"]
 [ext_resource type="Texture2D" uid="uid://b7031w8176l3n" path="res://vue/Stickman/respiration/Idle9.png" id="31_ab0k7"]
-[ext_resource type="Texture2D" uid="uid://d112lhepi46sm" path="res://vue/Stickman/sauter/Jump1.png" id="32_rp7i6"]
-[ext_resource type="Texture2D" uid="uid://b3qmlh54trh0d" path="res://vue/Stickman/sauter/Jump2.png" id="33_k7gyw"]
-[ext_resource type="Texture2D" uid="uid://cgiq66mq420jq" path="res://vue/Stickman/sauter/Jump3.png" id="34_ym743"]
-[ext_resource type="Texture2D" uid="uid://b2nsstmc5wcx3" path="res://vue/Stickman/sauter/Jump4.png" id="35_3eeis"]
-[ext_resource type="Texture2D" uid="uid://cfb0mqmcv5vcc" path="res://vue/Stickman/sauter/Jump5.png" id="36_sk3t8"]
-[ext_resource type="Texture2D" uid="uid://b587w80x4b44m" path="res://vue/Stickman/sauter/Jump6.png" id="37_qjx0c"]
-[ext_resource type="Texture2D" uid="uid://dugn3ka8otlqj" path="res://vue/Stickman/sauter/Jump7.png" id="38_brn6a"]
-[ext_resource type="Texture2D" uid="uid://cx65kf3yeis2d" path="res://vue/Stickman/sauter/Jump8.png" id="39_vicd3"]
+[ext_resource type="Texture2D" uid="uid://b2nsstmc5wcx3" path="res://vue/Stickman/sauter/Jump4.png" id="33_nic32"]
 
 [sub_resource type="CSharpScript" id="CSharpScript_cofl4"]
 script/source = "using Godot;
@@ -461,28 +455,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("32_rp7i6")
-}, {
-"duration": 1.0,
-"texture": ExtResource("33_k7gyw")
-}, {
-"duration": 1.0,
-"texture": ExtResource("34_ym743")
-}, {
-"duration": 1.0,
-"texture": ExtResource("35_3eeis")
-}, {
-"duration": 1.0,
-"texture": ExtResource("36_sk3t8")
-}, {
-"duration": 1.0,
-"texture": ExtResource("37_qjx0c")
-}, {
-"duration": 1.0,
-"texture": ExtResource("38_brn6a")
-}, {
-"duration": 1.0,
-"texture": ExtResource("39_vicd3")
+"texture": ExtResource("33_nic32")
 }],
 "loop": true,
 "name": &"sauter",
@@ -494,6 +467,9 @@ size = Vector2(11, 29)
 
 [node name="Level_1" type="Node2D"]
 script = SubResource("CSharpScript_cofl4")
+
+[node name="PauseMenu" parent="." instance=ExtResource("1_qx2vf")]
+visible = false
 
 [node name="Background" type="Sprite2D" parent="."]
 position = Vector2(561.5, 310.5)

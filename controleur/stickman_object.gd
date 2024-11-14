@@ -21,18 +21,20 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 	
 	$Sprite.speed_scale = 4
-	if Input.is_action_pressed("right"):
+	if Input.is_action_pressed("right") and is_on_floor():
 		$Sprite.flip_h = false
 		if Input.is_action_pressed("jump"):
 			$Sprite.play("sauter")
 		else:
 			$Sprite.play("courir")
-	elif Input.is_action_pressed("left"):
+	elif Input.is_action_pressed("left") and is_on_floor():
 		$Sprite.flip_h = true
 		if Input.is_action_pressed("jump"):
 			$Sprite.play("sauter")
 		else:
 			$Sprite.play("courir")
+	elif Input.is_action_pressed("jump") and not is_on_floor():
+		$Sprite.play("sauter")
 	else:
 		$Sprite.play("respiration")
 		
