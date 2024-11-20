@@ -12,5 +12,5 @@ func _process(delta: float) -> void:
 
 
 func _on_porte_body_entered(body: Node2D) -> void:
-	if body.name == "StickmanObject" and Input.is_action_just_pressed("interact"):
+	if body.name == "Stickman" and Input.is_action_just_pressed("interact"):
 		get_tree().change_scene("level_2.tscn")
