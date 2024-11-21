@@ -1,16 +1,19 @@
 extends Sprite2D
 
+# Variable pour vérifier si le personnage est dans la hitbox
+var is_in_hitbox: bool = false
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
-
+	# Vérifie si la touche "interact" est appuyée et si le personnage est dans la hitbox
+	if is_in_hitbox and Input.is_action_just_pressed("interact"):
+		get_tree().change_scene_to_file("res://controleur/level_2.tscn")
 
 func _on_porte_body_entered(body: Node2D) -> void:
-	if body.name == "Stickman" and Input.is_action_just_pressed("interact"):
-		get_tree().change_scene("level_2.tscn")
+	# Si le personnage entre dans la hitbox, active la variable
+	if body.name == "Stickman":
+		is_in_hitbox = true
+
+func _on_porte_body_exited(body: Node2D) -> void:
+	# Si le personnage sort de la hitbox, désactive la variable
+	if body.name == "Stickman":
+		is_in_hitbox = false
