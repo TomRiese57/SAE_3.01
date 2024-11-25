@@ -6,7 +6,11 @@ var is_in_hitbox: bool = false
 func _process(delta: float) -> void:
 	# Vérifie si la touche "interact" est appuyée et si le personnage est dans la hitbox
 	if is_in_hitbox and Input.is_action_just_pressed("interact"):
-		get_tree().change_scene_to_file("res://controleur/level_2.tscn")
+		var path = get_tree().current_scene.scene_file_path
+		if path == "res://controleur/level.tscn":
+			get_tree().change_scene_to_file("res://controleur/level_2.tscn")
+		elif path == "res://controleur/level_2.tscn":
+			get_tree().change_scene_to_file("res://controleur/level_3.tscn")
 
 func _on_porte_body_entered(body: Node2D) -> void:
 	# Si le personnage entre dans la hitbox, active la variable
