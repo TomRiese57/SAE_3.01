@@ -22,7 +22,6 @@ func _on_recommencer_pressed() -> void:
 	pause_unpaused()
 	get_tree().change_scene_to_file("res://controleur/level.tscn")
 	
-
 func _on_quitter_pressed() -> void:
 	pause_unpaused()
 	get_tree().change_scene_to_file("res://controleur/menu_principal.tscn")
