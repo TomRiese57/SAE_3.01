@@ -317,7 +317,6 @@ script = ExtResource("1_f4b0y")
 
 [node name="PauseMenu" parent="." instance=ExtResource("1_qx2vf")]
 visible = false
-follow_viewport_enabled = true
 
 [node name="Background" type="Sprite2D" parent="."]
 position = Vector2(451, 247)
