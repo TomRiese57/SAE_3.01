@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://cp4klx4ydh2je"]
+[gd_scene load_steps=9 format=3 uid="uid://cp4klx4ydh2je"]
 
 [ext_resource type="Texture2D" uid="uid://cqbnyg5wr1a62" path="res://vue/Background/tilemap_packed.png" id="1_a3txc"]
+[ext_resource type="Script" path="res://controleur/rotation.gd" id="1_qte55"]
 [ext_resource type="PackedScene" uid="uid://cxjnr640crmx4" path="res://controleur/stickman.tscn" id="2_4c3oa"]
 [ext_resource type="Texture2D" uid="uid://cqdlvxscjq2vu" path="res://vue/Background/Background.png" id="2_ij36s"]
 [ext_resource type="PackedScene" uid="uid://dm2xynbodjiei" path="res://controleur/changement_lvl.tscn" id="4_l18ty"]
@@ -273,6 +274,7 @@ physics_layer_0/collision_layer = 2
 sources/2 = SubResource("TileSetAtlasSource_sbsjd")
 
 [node name="Level_2" type="Node2D"]
+script = ExtResource("1_qte55")
 
 [node name="PauseMenu" parent="." instance=ExtResource("4_p5xi7")]
 visible = false
@@ -292,4 +294,4 @@ layer_0/tile_data = PackedInt32Array(720904, 655362, 6, 655368, 655362, 5, 72090
 position = Vector2(596, 127)
 
 [node name="Stickman" parent="." instance=ExtResource("2_4c3oa")]
-position = Vector2(-157, -143)
+position = Vector2(145, 176)
