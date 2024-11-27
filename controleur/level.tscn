@@ -1,24 +1,11 @@
 [gd_scene load_steps=9 format=3 uid="uid://d2oew446al4p2"]
 
+[ext_resource type="Script" path="res://controleur/rotation.gd" id="1_f4b0y"]
 [ext_resource type="PackedScene" uid="uid://u7qmoixaf6kc" path="res://controleur/pause_menu.tscn" id="1_qx2vf"]
 [ext_resource type="Texture2D" uid="uid://cqdlvxscjq2vu" path="res://vue/Background/Background.png" id="1_rryjl"]
 [ext_resource type="Texture2D" uid="uid://cqbnyg5wr1a62" path="res://vue/Background/tilemap_packed.png" id="2_0ghob"]
 [ext_resource type="PackedScene" uid="uid://cxjnr640crmx4" path="res://controleur/stickman.tscn" id="4_3yc4n"]
 [ext_resource type="PackedScene" uid="uid://dm2xynbodjiei" path="res://controleur/changement_lvl.tscn" id="5_1hrxt"]
-
-[sub_resource type="GDScript" id="GDScript_p2bae"]
-script/source = "extends Node2D
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-"
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pgnvj"]
 texture = ExtResource("2_0ghob")
@@ -326,7 +313,7 @@ physics_layer_0/collision_layer = 2
 sources/2 = SubResource("TileSetAtlasSource_pgnvj")
 
 [node name="Level_1" type="Node2D"]
-script = SubResource("GDScript_p2bae")
+script = ExtResource("1_f4b0y")
 
 [node name="PauseMenu" parent="." instance=ExtResource("1_qx2vf")]
 visible = false
@@ -346,3 +333,4 @@ layer_0/tile_data = PackedInt32Array(1376273, 327682, 0, 1376274, 131074, 6, 137
 position = Vector2(535, 257)
 
 [node name="Stickman" parent="." instance=ExtResource("4_3yc4n")]
+position = Vector2(238, 307)
