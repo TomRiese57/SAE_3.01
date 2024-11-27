@@ -4,38 +4,37 @@
 
 [node name="PauseMenu" type="CanvasLayer"]
 process_mode = 3
-follow_viewport_scale = 2.0
 script = ExtResource("1_r558j")
 
+[node name="PanelContainer" type="PanelContainer" parent="."]
+anchors_preset = -1
+anchor_left = -2.72478
+anchor_top = -0.735094
+anchor_right = -1.29423
+anchor_bottom = 1.08281
+offset_left = 2768.95
+offset_top = 281.341
+offset_right = 3009.95
+offset_bottom = 281.341
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_stretch_ratio = 0.0
+metadata/_edit_use_anchors_ = true
+
 [node name="Label" type="Label" parent="."]
+show_behind_parent = true
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -131.0
 offset_top = 24.0
-offset_right = 169.0
+offset_right = 179.0
 offset_bottom = 611.0
 grow_horizontal = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 50
-text = "Pause"
+text = " Pause"
 horizontal_alignment = 1
 justification_flags = 3
-
-[node name="PanelContainer" type="PanelContainer" parent="Label"]
-layout_mode = 2
-anchor_left = -2.725
-anchor_top = -0.735094
-anchor_right = 2.695
-anchor_bottom = 1.08262
-offset_left = 29.5
-offset_top = 212.5
-offset_right = 270.5
-offset_bottom = 212.5
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_stretch_ratio = 0.0
-metadata/_edit_use_anchors_ = true
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Label"]
 layout_mode = 1
