@@ -1,15 +1,17 @@
-[gd_scene load_steps=13 format=3 uid="uid://cp4klx4ydh2je"]
+[gd_scene load_steps=15 format=3 uid="uid://cp4klx4ydh2je"]
 
 [ext_resource type="Texture2D" uid="uid://cqbnyg5wr1a62" path="res://vue/Background/tilemap_packed.png" id="1_a3txc"]
 [ext_resource type="Script" path="res://controleur/rotation.gd" id="1_qte55"]
 [ext_resource type="PackedScene" uid="uid://cxjnr640crmx4" path="res://controleur/stickman.tscn" id="2_4c3oa"]
 [ext_resource type="Texture2D" uid="uid://cqdlvxscjq2vu" path="res://vue/Background/Background.png" id="2_ij36s"]
+[ext_resource type="AudioStream" uid="uid://cfpyhsnvop8hj" path="res://modele/song/whoosh-motion.mp3" id="2_nstsj"]
 [ext_resource type="PackedScene" uid="uid://dm2xynbodjiei" path="res://controleur/changement_lvl.tscn" id="4_l18ty"]
 [ext_resource type="PackedScene" uid="uid://u7qmoixaf6kc" path="res://controleur/pause_menu.tscn" id="4_p5xi7"]
 [ext_resource type="PackedScene" uid="uid://cmewwwe0nr1ul" path="res://controleur/spike_group_4.tscn" id="6_0j13e"]
 [ext_resource type="PackedScene" uid="uid://bdkxxn81or87v" path="res://controleur/spike.tscn" id="6_6gahg"]
 [ext_resource type="PackedScene" uid="uid://cq2v5yx4cri7a" path="res://controleur/spike_group_2.tscn" id="8_knkat"]
 [ext_resource type="PackedScene" uid="uid://dolql1erps7br" path="res://controleur/spike_group_1.tscn" id="9_pe3gm"]
+[ext_resource type="AudioStream" uid="uid://cwmdfq4vja5m6" path="res://modele/song/bit-beats-6.mp3" id="11_txa64"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sbsjd"]
 texture = ExtResource("1_a3txc")
@@ -280,6 +282,14 @@ sources/2 = SubResource("TileSetAtlasSource_sbsjd")
 
 [node name="Level_2" type="Node2D"]
 script = ExtResource("1_qte55")
+
+[node name="Rotation" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_nstsj")
+
+[node name="Bit-beats-6" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_txa64")
+volume_db = -10.0
+autoplay = true
 
 [node name="PauseMenu" parent="." instance=ExtResource("4_p5xi7")]
 visible = false
