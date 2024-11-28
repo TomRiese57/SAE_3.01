@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://cxjnr640crmx4"]
+[gd_scene load_steps=34 format=3 uid="uid://cxjnr640crmx4"]
 
 [ext_resource type="Script" path="res://controleur/stickman.gd" id="1_8tuug"]
 [ext_resource type="Texture2D" uid="uid://d3tapmuyffi6w" path="res://vue/Stickman/courir/Run1.png" id="1_qnspi"]
@@ -30,6 +30,7 @@
 [ext_resource type="Texture2D" uid="uid://edop2trn32b8" path="res://vue/Stickman/respiration/Idle8.png" id="27_g1jy5"]
 [ext_resource type="Texture2D" uid="uid://b7031w8176l3n" path="res://vue/Stickman/respiration/Idle9.png" id="28_mqilg"]
 [ext_resource type="Texture2D" uid="uid://b2nsstmc5wcx3" path="res://vue/Stickman/sauter/Jump4.png" id="29_gaoxu"]
+[ext_resource type="AudioStream" uid="uid://cshcyfoa2cmy5" path="res://modele/song/jump.mp3" id="31_dbynt"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_t3i32"]
 animations = [{
@@ -158,3 +159,7 @@ zoom = Vector2(3, 3)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0.812555, -0.854176)
 shape = SubResource("RectangleShape2D_36jtm")
+
+[node name="Jump" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("31_dbynt")
+pitch_scale = 2.0

@@ -10,8 +10,10 @@ func _input(event):
 	# Vérifie si une action pour tourner la carte est déclenchée
 	if Input.is_action_just_pressed("RotateLeft"):
 		rotate_map(-ROTATION_ANGLE)
+		$Rotation.play()
 	elif Input.is_action_just_pressed("RotateRight"):
 		rotate_map(ROTATION_ANGLE)
+		$Rotation.play()
 
 func rotate_map(angle_degrees):
 	# Applique la rotation de la carte
