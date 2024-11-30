@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://dk0ggx61bg30i"]
 
-[ext_resource type="Script" path="res://controleur/menu_principal.gd" id="1_tq7sb"]
-[ext_resource type="AudioStream" uid="uid://e07ni6p301n7" path="res://modele/song/8-bit-retro-game-music.mp3" id="2_ivlmp"]
+[ext_resource type="Script" path="res://controleur/menu_principal.gd" id="1_ov01x"]
+[ext_resource type="AudioStream" uid="uid://e07ni6p301n7" path="res://modele/song/8-bit-retro-game-music.mp3" id="2_pxprc"]
 
 [node name="Menu Principal" type="Control"]
 process_mode = 3
@@ -11,10 +11,10 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_tq7sb")
+script = ExtResource("1_ov01x")
 
 [node name="8-bit-retro-game-music" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("2_ivlmp")
+stream = ExtResource("2_pxprc")
 volume_db = -40.847
 autoplay = true
 mix_target = 2

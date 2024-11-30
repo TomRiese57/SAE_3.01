@@ -21,11 +21,11 @@ func _on_reprendre_pressed() -> void:
 func _on_recommencer_pressed() -> void:
 	pause_unpaused()
 	var path = get_tree().current_scene.scene_file_path
-	if path == "res://controleur/level.tscn":
-		get_tree().change_scene_to_file("res://controleur/level.tscn")
-	elif path == "res://controleur/level_2.tscn":
-		get_tree().change_scene_to_file("res://controleur/level_2.tscn")
+	if path == "res://vue/tscn/level.tscn":
+		get_tree().change_scene_to_file("res://vue/tscn/level.tscn")
+	elif path == "res://vue/tscn/level_2.tscn":
+		get_tree().change_scene_to_file("res://vue/tscn/level_2.tscn")
 	
 func _on_quitter_pressed() -> void:
 	pause_unpaused()
-	get_tree().change_scene_to_file("res://controleur/menu_principal.tscn")
+	get_tree().change_scene_to_file("res://vue/tscn/menu_principal.tscn")
