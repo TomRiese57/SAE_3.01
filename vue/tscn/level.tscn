@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://dolql1erps7br" path="res://vue/tscn/spike_group_1.tscn" id="9_eilng"]
 [ext_resource type="PackedScene" uid="uid://cxjnr640crmx4" path="res://vue/tscn/stickman.tscn" id="10_ge24j"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pgnvj"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3dfla"]
 texture = ExtResource("6_vkx20")
 texture_region_size = Vector2i(18, 18)
 0:0/0 = 0
@@ -314,7 +314,7 @@ texture_region_size = Vector2i(18, 18)
 
 [sub_resource type="TileSet" id="TileSet_wmixy"]
 physics_layer_0/collision_layer = 2
-sources/2 = SubResource("TileSetAtlasSource_pgnvj")
+sources/2 = SubResource("TileSetAtlasSource_3dfla")
 
 [node name="Level_1" type="Node2D"]
 script = ExtResource("1_eupi8")
