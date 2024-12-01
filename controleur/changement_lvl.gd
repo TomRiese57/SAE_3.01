@@ -11,7 +11,7 @@ func _process(delta: float) -> void:
 			get_tree().change_scene_to_file("res://vue/tscn/level_2.tscn")
 		elif path == "res://vue/tscn/level_2.tscn":
 			get_tree().change_scene_to_file("res://vue/tscn/level_3.tscn")
-		elif path == "res://vue/tscn/level_4.tscn":
+		elif path == "res://vue/tscn/level_3.tscn":
 			get_tree().change_scene_to_file("res://vue/tscn/level_4.tscn")
 
 func _on_porte_body_entered(body: Node2D) -> void:

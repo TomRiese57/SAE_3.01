@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-const SPEED = 30
+const SPEED = 50
 var direction = 1
 var sens = 0
 # Variable pour vérifier si le personnage est dans la hitbox
