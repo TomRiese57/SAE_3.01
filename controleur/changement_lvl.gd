@@ -8,8 +8,10 @@ func _process(delta: float) -> void:
 	if is_in_hitbox and Input.is_action_just_pressed("interact"):
 		var path = get_tree().current_scene.scene_file_path
 		if path == "res://controleur/level.tscn":
+			Global.lvl_actuel = 2;
 			get_tree().change_scene_to_file("res://controleur/level_2.tscn")
 		elif path == "res://controleur/level_2.tscn":
+			Global.lvl_actuel = 3;
 			get_tree().change_scene_to_file("res://controleur/level_3.tscn")
 
 func _on_porte_body_entered(body: Node2D) -> void:
