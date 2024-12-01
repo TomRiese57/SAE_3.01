@@ -14,14 +14,18 @@ func _input(event):
 	elif Input.is_action_just_pressed("RotateRight"):
 		rotate_map(ROTATION_ANGLE)
 		$Rotation.play()
+	
 
 func rotate_map(angle_degrees):
 	# Applique la rotation de la carte
 	rotation_degrees += angle_degrees
-
+	
 	# Ajuste le stickman pour compenser l'orientation
 	adjust_stickman(angle_degrees)
-	
+
+		
+	if rotation_degrees == 360 or rotation_degrees == -360:
+		rotation_degrees = 0
 	await (0.5)
 
 func adjust_stickman(angle_degrees):

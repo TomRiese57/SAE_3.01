@@ -11,6 +11,8 @@ func _process(delta: float) -> void:
 			get_tree().change_scene_to_file("res://vue/tscn/level.tscn")
 		elif path == "res://vue/tscn/level_2.tscn":
 			get_tree().change_scene_to_file("res://vue/tscn/level_2.tscn")
+		elif path == "res://vue/tscn/level_3.tscn":
+			get_tree().change_scene_to_file("res://vue/tscn/level_3.tscn")
 
 func _on_piques_body_entered(body: Node2D) -> void:
 	# Si le personnage entre dans la hitbox, active la variable

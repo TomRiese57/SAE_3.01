@@ -15,7 +15,7 @@ script = ExtResource("1_ov01x")
 
 [node name="8-bit-retro-game-music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_pxprc")
-volume_db = -40.847
+volume_db = -30.0
 autoplay = true
 mix_target = 2
 
