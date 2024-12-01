@@ -321,11 +321,11 @@ script = ExtResource("1_eupi8")
 
 [node name="Rotation" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("2_wuror")
-volume_db = -20.429
+volume_db = -20.0
 
 [node name="8-bit-music-on" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_x1hjf")
-volume_db = -40.847
+volume_db = -30.0
 autoplay = true
 
 [node name="PauseMenu" parent="." instance=ExtResource("4_drt61")]
