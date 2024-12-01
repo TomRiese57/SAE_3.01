@@ -38,7 +38,7 @@ offset_bottom = 52.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Commencer" type="Button" parent="VBoxContainer"]
+[node name="Jouer" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
@@ -66,6 +66,6 @@ text = "Quitter
 "
 flat = true
 
-[connection signal="pressed" from="VBoxContainer/Commencer" to="." method="_on_commencer_pressed"]
+[connection signal="pressed" from="VBoxContainer/Jouer" to="." method="_on_commencer_pressed"]
 [connection signal="pressed" from="VBoxContainer/Classement" to="." method="_on_classement_pressed"]
 [connection signal="pressed" from="VBoxContainer/Quitter" to="." method="_on_quitter_pressed"]
