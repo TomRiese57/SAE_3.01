@@ -355,3 +355,5 @@ position = Vector2(390, 258)
 
 [node name="Stickman" parent="." instance=ExtResource("10_ge24j")]
 position = Vector2(238, 307)
+floor_block_on_wall = false
+safe_margin = 1.0

@@ -2,6 +2,8 @@ extends CharacterBody2D
 
 const SPEED = 200.0
 const JUMP_VELOCITY = -320.0
+var was_colliding = false
+var is_blocked = false
 
 func _physics_process(delta: float) -> void:
 	
@@ -30,3 +32,4 @@ func _physics_process(delta: float) -> void:
 	else:  # Immobile
 		$Sprite.play("respiration")
 	move_and_slide()
+	

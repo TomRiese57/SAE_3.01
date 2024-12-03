@@ -164,3 +164,7 @@ shape = SubResource("RectangleShape2D_36jtm")
 stream = ExtResource("31_dbynt")
 volume_db = -20.0
 pitch_scale = 2.0
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+target_position = Vector2(0, 13)
+collision_mask = 2

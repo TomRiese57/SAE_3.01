@@ -7,7 +7,6 @@ var sens = 0
 var is_in_hitbox: bool = false
 
 func _physics_process(delta: float) -> void:
-	print(round(global_rotation_degrees))
 	if round(global_rotation_degrees) == 0:
 		velocity.y = 0
 		sensX()
