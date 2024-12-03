@@ -32,3 +32,4 @@ func _on_porte_body_exited(body: Node2D) -> void:
 	# Si le personnage sort de la hitbox, désactive la variable
 	if body.name == "Stickman":
 		is_in_hitbox = false
+#test
