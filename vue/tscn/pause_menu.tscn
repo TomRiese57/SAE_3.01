@@ -8,35 +8,32 @@ script = ExtResource("1_r558j")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 anchors_preset = -1
-anchor_left = -2.72478
-anchor_top = -0.735094
-anchor_right = -1.29423
-anchor_bottom = 1.08281
-offset_left = 2768.95
-offset_top = 281.341
-offset_right = 3009.95
-offset_bottom = 281.341
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_stretch_ratio = 0.0
+anchor_left = -0.506944
+anchor_top = -0.574074
+anchor_right = 0.517361
+anchor_bottom = 0.641975
+offset_left = -282.0
+offset_top = -229.0
+offset_right = 1536.0
+offset_bottom = 761.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
 metadata/_edit_use_anchors_ = true
 
-[node name="Label" type="Label" parent="."]
-show_behind_parent = true
+[node name="Pause" type="Label" parent="."]
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -131.0
 offset_top = 24.0
-offset_right = 179.0
+offset_right = 169.0
 offset_bottom = 611.0
 grow_horizontal = 2
 theme_override_font_sizes/font_size = 50
-text = " Pause"
+text = "Pause"
 horizontal_alignment = 1
-justification_flags = 3
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Label"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Pause"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -52,22 +49,22 @@ grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="Reprendre" type="Button" parent="Label/VBoxContainer"]
+[node name="Reprendre" type="Button" parent="Pause/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 0
 theme_override_font_sizes/font_size = 30
 text = "Reprendre"
 
-[node name="Recommencer" type="Button" parent="Label/VBoxContainer"]
+[node name="Recommencer" type="Button" parent="Pause/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "Recommencer"
 
-[node name="Quitter" type="Button" parent="Label/VBoxContainer"]
+[node name="Quitter" type="Button" parent="Pause/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = " Menu Principal "
 
-[connection signal="pressed" from="Label/VBoxContainer/Reprendre" to="." method="_on_reprendre_pressed"]
-[connection signal="pressed" from="Label/VBoxContainer/Recommencer" to="." method="_on_recommencer_pressed"]
-[connection signal="pressed" from="Label/VBoxContainer/Quitter" to="." method="_on_quitter_pressed"]
+[connection signal="pressed" from="Pause/VBoxContainer/Reprendre" to="." method="_on_reprendre_pressed"]
+[connection signal="pressed" from="Pause/VBoxContainer/Recommencer" to="." method="_on_recommencer_pressed"]
+[connection signal="pressed" from="Pause/VBoxContainer/Quitter" to="." method="_on_quitter_pressed"]
