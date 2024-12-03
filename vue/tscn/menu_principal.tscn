@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://dk0ggx61bg30i"]
 
-[ext_resource type="Script" path="res://controleur/menu_principal.gd" id="1_tq7sb"]
-[ext_resource type="AudioStream" uid="uid://e07ni6p301n7" path="res://modele/song/8-bit-retro-game-music.mp3" id="2_ivlmp"]
+[ext_resource type="Script" path="res://controleur/menu_principal.gd" id="1_ov01x"]
+[ext_resource type="AudioStream" uid="uid://e07ni6p301n7" path="res://modele/song/8-bit-retro-game-music.mp3" id="2_pxprc"]
 
 [node name="Menu Principal" type="Control"]
 process_mode = 3
@@ -11,11 +11,11 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_tq7sb")
+script = ExtResource("1_ov01x")
 
 [node name="8-bit-retro-game-music" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("2_ivlmp")
-volume_db = -40.847
+stream = ExtResource("2_pxprc")
+volume_db = -30.0
 autoplay = true
 mix_target = 2
 
@@ -45,13 +45,27 @@ offset_bottom = 52.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Commencer" type="Button" parent="VBoxContainer"]
+
+[node name="Jouer" type="Button" parent="VBoxContainer"]
+
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 30
-text = "Commencer"
+
+text = "jouer"
+flat = true
+
+[node name="Classement" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "Classement
+"
+
 flat = true
 
 [node name="Quitter" type="Button" parent="VBoxContainer"]
@@ -64,5 +78,8 @@ text = "Quitter
 "
 flat = true
 
-[connection signal="pressed" from="VBoxContainer/Commencer" to="." method="_on_commencer_pressed"]
+
+[connection signal="pressed" from="VBoxContainer/Jouer" to="." method="_on_commencer_pressed"]
+[connection signal="pressed" from="VBoxContainer/Classement" to="." method="_on_classement_pressed"]
+
 [connection signal="pressed" from="VBoxContainer/Quitter" to="." method="_on_quitter_pressed"]

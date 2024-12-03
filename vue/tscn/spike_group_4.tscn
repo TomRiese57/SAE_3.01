@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://cmewwwe0nr1ul"]
 
-[ext_resource type="PackedScene" uid="uid://bdkxxn81or87v" path="res://controleur/spike.tscn" id="1_12bc8"]
+[ext_resource type="PackedScene" uid="uid://bdkxxn81or87v" path="res://vue/tscn/spike.tscn" id="1_12bc8"]
 
 [node name="SpikeGroup4" type="Node2D"]
 

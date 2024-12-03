@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="Jeu1"
-run/main_scene="res://controleur/level.tscn"
+run/main_scene="res://vue/tscn/level.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+Global="*res://controleur/Global.gd"
 
 [dotnet]
 
