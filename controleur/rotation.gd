@@ -31,8 +31,8 @@ func rotate_map(angle_degrees):
 			await get_tree().create_timer(0.0000001).timeout
 	else:
 		while(rot != abs(angle_degrees)):
-			rotation_degrees -= 5
 			stickman.rotation_degrees += 5
+			rotation_degrees -= 5
 			rot += 5
 			await get_tree().create_timer(0.0000001).timeout
 	stickman.set_physics_process(true)
