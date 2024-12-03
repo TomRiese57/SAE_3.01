@@ -5,13 +5,13 @@ const ROTATION_ANGLE = 90  # Angle de rotation en degrés
 
 func _input(event):
 	if not stickman.is_on_floor():
-		return  # Ne fait rien si le stickman n'est pas au sol
-
+		return  false # Ne fait rien si le stickman n'est pas au sol
+		
 	# Vérifie si une action pour tourner la carte est déclenchée
-	if Input.is_action_just_pressed("RotateLeft"):
+	if Input.is_action_just_pressed("RotateLeft") and stickman.is_on_floor():
 		rotate_map(-ROTATION_ANGLE)
 		$Rotation.play()
-	elif Input.is_action_just_pressed("RotateRight"):
+	elif Input.is_action_just_pressed("RotateRight") and stickman.is_on_floor():
 		rotate_map(ROTATION_ANGLE)
 		$Rotation.play()
 	
