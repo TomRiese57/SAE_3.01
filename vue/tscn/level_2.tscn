@@ -290,7 +290,7 @@ volume_db = -20.0
 
 [node name="Bit-beats-6" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_rr5v1")
-volume_db = -30.0
+volume_db = -20.0
 autoplay = true
 
 [node name="PauseMenu" parent="." instance=ExtResource("4_q0apv")]
