@@ -25,3 +25,6 @@ func _on_niveau_1_pressed() -> void:
 
 func _on_niveau_3_pressed() -> void:
 	get_tree().change_scene_to_file("res://vue/tscn/level_3.tscn")
+	
+func _on_niveau_4_pressed() -> void:
+	get_tree().change_scene_to_file("res://vue/tscn/level_4.tscn")

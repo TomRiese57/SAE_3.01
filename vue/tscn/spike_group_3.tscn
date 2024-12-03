@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://dpyoa64gm8an"]
+
+[ext_resource type="PackedScene" uid="uid://bdkxxn81or87v" path="res://vue/tscn/spike.tscn" id="1_crl6b"]
+
+[node name="SpikeGroup3" type="Node2D"]
+
+[node name="spike" parent="." instance=ExtResource("1_crl6b")]
+position = Vector2(2, 0)
+
+[node name="spike2" parent="." instance=ExtResource("1_crl6b")]
+position = Vector2(18, 0)
+
+[node name="spike3" parent="." instance=ExtResource("1_crl6b")]
+position = Vector2(34, 0)
+
+[node name="spike4" parent="." instance=ExtResource("1_crl6b")]
+position = Vector2(50, 0)

@@ -1,10 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://dm2xynbodjiei"]
+[gd_scene load_steps=6 format=3 uid="uid://bdkxxn81or87v"]
 
-[ext_resource type="Texture2D" uid="uid://cqbnyg5wr1a62" path="res://vue/Background/tilemap_packed.png" id="1_00h8a"]
-[ext_resource type="Script" path="res://controleur/changement_lvl.gd" id="1_ispwl"]
+[ext_resource type="Script" path="res://controleur/spike.gd" id="1_ty1qa"]
+[ext_resource type="Texture2D" uid="uid://cqbnyg5wr1a62" path="res://vue/Background/tilemap_packed.png" id="2_tt4tw"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_w8d17"]
-texture = ExtResource("1_00h8a")
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_536mf"]
+texture = ExtResource("2_tt4tw")
 texture_region_size = Vector2i(18, 18)
 0:0/0 = 0
 1:0/0 = 0
@@ -228,24 +228,25 @@ texture_region_size = Vector2i(18, 18)
 21:9/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_p8r80"]
-sources/0 = SubResource("TileSetAtlasSource_w8d17")
+sources/0 = SubResource("TileSetAtlasSource_536mf")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_qelbr"]
-size = Vector2(31, 20)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_470tj"]
+size = Vector2(7.41699, 3.672)
 
-[node name="changement_lvl" type="Sprite2D"]
-script = ExtResource("1_ispwl")
+[node name="spike" type="Sprite2D"]
+script = ExtResource("1_ty1qa")
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_p8r80")
 format = 2
-layer_0/tile_data = PackedInt32Array(196612, 655360, 6, 131076, 655360, 5, 196613, 655360, 6, 131077, 655360, 5)
+layer_0/tile_data = PackedInt32Array(196612, 524288, 3)
 
-[node name="porte" type="Area2D" parent="."]
+[node name="spike" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="porte"]
-position = Vector2(79.5, 55)
-shape = SubResource("RectangleShape2D_qelbr")
+[node name="CollisionPolygon2D" type="CollisionShape2D" parent="spike"]
+position = Vector2(72, 61)
+scale = Vector2(1.88756, 2.17865)
+shape = SubResource("RectangleShape2D_470tj")
 
-[connection signal="body_entered" from="porte" to="." method="_on_porte_body_entered"]
-[connection signal="body_exited" from="porte" to="." method="_on_porte_body_exited"]
+[connection signal="body_entered" from="spike" to="." method="_on_piques_body_entered"]
+[connection signal="body_exited" from="spike" to="." method="_on_piques_body_exited"]
