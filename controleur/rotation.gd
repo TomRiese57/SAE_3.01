@@ -4,7 +4,7 @@ const ROTATION_ANGLE = 90  # Angle de rotation en degrés
 @onready var stickman = $Stickman
 
 func _input(event):
-	if not is_stickman_on_ground():
+	if not stickman.is_on_floor():
 		return  # Ne fait rien si le stickman n'est pas au sol
 
 	# Vérifie si une action pour tourner la carte est déclenchée
@@ -20,29 +20,19 @@ func _input(event):
 	
 
 func rotate_map(angle_degrees):
-	# Applique la rotation de la carte
-	rotation_degrees += angle_degrees
-	
-	# Ajuste le stickman pour compenser l'orientation
-	adjust_stickman(angle_degrees)
-	
-
-func adjust_stickman(angle_degrees):
 	stickman.set_physics_process(false)
-	# Corrige l'orientation du stickman pour rester droit
+	# Applique la rotation de la carte
 	var rot = 0
 	if angle_degrees > 0:
 		while(rot != abs(angle_degrees)):
 			stickman.rotation_degrees -= 5
+			rotation_degrees += 5
 			rot += 5
 			await get_tree().create_timer(0.0000001).timeout
 	else:
 		while(rot != abs(angle_degrees)):
+			rotation_degrees -= 5
 			stickman.rotation_degrees += 5
 			rot += 5
 			await get_tree().create_timer(0.0000001).timeout
 	stickman.set_physics_process(true)
-
-func is_stickman_on_ground() -> bool:
-	# Vérifie si le stickman est sur le sol (spécifique à CharacterBody2D)
-	return stickman.is_on_floor()
