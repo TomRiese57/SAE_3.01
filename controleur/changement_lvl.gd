@@ -28,7 +28,7 @@ func _process(delta: float) -> void:
 
 func _on_porte_body_entered(body: Node2D) -> void:
 	# Si le personnage entre dans la hitbox, active la variable
-	if body.name == "Stickman" and body.is_on_floor():
+	if body.name == "Stickman":
 		is_in_hitbox = true
 
 func _on_porte_body_exited(body: Node2D) -> void:

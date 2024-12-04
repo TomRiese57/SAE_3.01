@@ -7,20 +7,27 @@ var sens = 0
 var is_in_hitbox: bool = false
 
 func _physics_process(delta: float) -> void:
-	if global_rotation_degrees == 0:
+	if round(global_rotation_degrees) == 0:
 		velocity.y = 0
 		sensX()
-	elif global_rotation_degrees == 90:
+		$Sprite.play("spin")
+		move_and_slide()
+	elif round(global_rotation_degrees) == 90:
 		velocity.x = 0
 		sensY()
-	elif global_rotation_degrees == -90:
+		$Sprite.play("spin")
+		move_and_slide()
+	elif round(global_rotation_degrees) == -90:
 		velocity.x = 0
 		sensYB()
-	else:
+		$Sprite.play("spin")
+		move_and_slide()
+	elif round(global_rotation_degrees) == -180 or round(global_rotation_degrees) == 180:
 		velocity.y = 0
 		sensXB()
-	$Sprite.play("spin")
-	move_and_slide()
+		$Sprite.play("spin")
+		move_and_slide()
+	
 	
 	if is_on_wall():
 		direction *= -1
