@@ -43,7 +43,7 @@ func _physics_process(delta: float) -> void:
 			position.x += 10
 		elif rot == -180 or rot == 180:
 			position.y += 10
-	if $Celling.is_colliding():
+	if $Ceilling.is_colliding():
 		print("COUCOU")
 		if rot == 0:
 			position.y += 10
