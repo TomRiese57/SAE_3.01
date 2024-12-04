@@ -1,19 +1,15 @@
 extends Node2D
 
-const ROTATION_ANGLE = 45  # Angle de rotation en degrés
+const ROTATION_ANGLE = 90  # Angle de rotation en degrés
 @onready var stickman = $Stickman
-@onready var sprite = $Stickman/Sprite
 
 func _input(event):
-	if not stickman.is_on_floor():
-		return  false # Ne fait rien si le stickman n'est pas au sol
-		
 	# Vérifie si une action pour tourner la carte est déclenchée
-	if Input.is_action_just_pressed("RotateLeft") and stickman.is_on_floor():
+	if Input.is_action_just_pressed("RotateLeft"):
 		$Rotation.play()
 		rotate_map(-ROTATION_ANGLE)
 		
-	elif Input.is_action_just_pressed("RotateRight") and stickman.is_on_floor():
+	elif Input.is_action_just_pressed("RotateRight"):
 		$Rotation.play()
 		rotate_map(ROTATION_ANGLE)
 	
@@ -41,4 +37,5 @@ func rotate_map(angle_degrees):
 	stickman.set_physics_process(true)
 	stickman.set_collision_layer(1)
 	stickman.set_collision_mask(2)
+	stickman.rot = round(global_rotation_degrees)
 	
