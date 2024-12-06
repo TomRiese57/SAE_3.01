@@ -25,10 +25,9 @@ func _process(delta: float) -> void:
 			get_tree().change_scene_to_file("res://vue/tscn/level_4.tscn")
 			
 
-
 func _on_porte_body_entered(body: Node2D) -> void:
 	# Si le personnage entre dans la hitbox, active la variable
-	if body.name == "Stickman":
+	if body.name == "Stickman" and abs(body.rotation_degrees - rotation_degrees) < 0.1:
 		is_in_hitbox = true
 
 func _on_porte_body_exited(body: Node2D) -> void:
