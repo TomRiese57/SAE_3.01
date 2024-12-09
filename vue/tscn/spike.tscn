@@ -237,6 +237,7 @@ size = Vector2(7.41699, 3.672)
 script = ExtResource("1_ty1qa")
 
 [node name="TileMap" type="TileMap" parent="."]
+position = Vector2(-72, -64)
 tile_set = SubResource("TileSet_p8r80")
 format = 2
 layer_0/tile_data = PackedInt32Array(196612, 524288, 3)
@@ -244,7 +245,7 @@ layer_0/tile_data = PackedInt32Array(196612, 524288, 3)
 [node name="spike" type="Area2D" parent="."]
 
 [node name="CollisionPolygon2D" type="CollisionShape2D" parent="spike"]
-position = Vector2(72, 61)
+position = Vector2(0, -3)
 scale = Vector2(1.88756, 2.17865)
 shape = SubResource("RectangleShape2D_470tj")
 

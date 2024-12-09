@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://cp4klx4ydh2je"]
+[gd_scene load_steps=12 format=3 uid="uid://cp4klx4ydh2je"]
 
 [ext_resource type="Script" path="res://controleur/rotation.gd" id="1_b16x2"]
 [ext_resource type="AudioStream" uid="uid://cfpyhsnvop8hj" path="res://modele/song/whoosh-motion.mp3" id="2_rrbag"]
@@ -7,10 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cqdlvxscjq2vu" path="res://vue/Background/Background.png" id="5_dohy0"]
 [ext_resource type="Texture2D" uid="uid://cqbnyg5wr1a62" path="res://vue/Background/tilemap_packed.png" id="6_yxw2x"]
 [ext_resource type="PackedScene" uid="uid://dm2xynbodjiei" path="res://vue/tscn/changement_lvl.tscn" id="7_sm0cy"]
-[ext_resource type="PackedScene" uid="uid://cmewwwe0nr1ul" path="res://vue/tscn/spike_group_4.tscn" id="8_y27hu"]
 [ext_resource type="PackedScene" uid="uid://bdkxxn81or87v" path="res://vue/tscn/spike.tscn" id="9_avevo"]
-[ext_resource type="PackedScene" uid="uid://cq2v5yx4cri7a" path="res://vue/tscn/spike_group_2.tscn" id="10_mmumr"]
-[ext_resource type="PackedScene" uid="uid://dolql1erps7br" path="res://vue/tscn/spike_group_1.tscn" id="11_lb2bg"]
 [ext_resource type="PackedScene" uid="uid://cxjnr640crmx4" path="res://vue/tscn/stickman.tscn" id="12_13mwc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sbsjd"]
@@ -301,6 +298,99 @@ position = Vector2(1622, 375)
 scale = Vector2(16.9422, 13.2978)
 texture = ExtResource("5_dohy0")
 
+[node name="Spikes" type="Node2D" parent="."]
+position = Vector2(352, -88)
+rotation = -1.5708
+
+[node name="spike" parent="Spikes" instance=ExtResource("9_avevo")]
+
+[node name="spike2" parent="Spikes" instance=ExtResource("9_avevo")]
+position = Vector2(-71.9997, -88.0003)
+rotation = 1.57079
+
+[node name="spike3" parent="Spikes" instance=ExtResource("9_avevo")]
+position = Vector2(-71.9997, -72.0003)
+rotation = 1.57079
+
+[node name="spike4" parent="Spikes" instance=ExtResource("9_avevo")]
+position = Vector2(-71.9998, -56.0003)
+rotation = 1.57079
+
+[node name="spike5" parent="Spikes" instance=ExtResource("9_avevo")]
+position = Vector2(8.0009, -248)
+rotation = -1.57079
+
+[node name="spike6" parent="Spikes" instance=ExtResource("9_avevo")]
+position = Vector2(8.00084, -232)
+rotation = -1.57079
+
+[node name="spike7" parent="Spikes" instance=ExtResource("9_avevo")]
+position = Vector2(8.00078, -216)
+rotation = -1.57079
+
+[node name="spike8" parent="Spikes" instance=ExtResource("9_avevo")]
+position = Vector2(8.00072, -200)
+rotation = -1.57079
+
+[node name="spike9" parent="Spikes" instance=ExtResource("9_avevo")]
+position = Vector2(8.00067, -184)
+rotation = -1.57079
+
+[node name="spike10" parent="Spikes" instance=ExtResource("9_avevo")]
+position = Vector2(-279, -40.001)
+rotation = 1.57079
+
+[node name="spike11" parent="Spikes" instance=ExtResource("9_avevo")]
+position = Vector2(-232, 7.99916)
+rotation = -1.57079
+
+[node name="spike12" parent="Spikes" instance=ExtResource("9_avevo")]
+position = Vector2(-232, 23.9992)
+rotation = -1.57079
+
+[node name="spike13" parent="Spikes" instance=ExtResource("9_avevo")]
+position = Vector2(-232, 39.9992)
+rotation = -1.57079
+
+[node name="spike14" parent="Spikes" instance=ExtResource("9_avevo")]
+position = Vector2(-168, 122.999)
+rotation = -1.57079
+
+[node name="spike15" parent="Spikes" instance=ExtResource("9_avevo")]
+position = Vector2(-200.001, 239.999)
+
+[node name="spike16" parent="Spikes" instance=ExtResource("9_avevo")]
+position = Vector2(-64.0004, 95.9998)
+
+[node name="spike17" parent="Spikes" instance=ExtResource("9_avevo")]
+position = Vector2(-48.0003, 95.9998)
+
+[node name="spike18" parent="Spikes" instance=ExtResource("9_avevo")]
+position = Vector2(7.9998, 56)
+rotation = -1.57079
+
+[node name="spike19" parent="Spikes" instance=ExtResource("9_avevo")]
+position = Vector2(-48.0013, 352)
+
+[node name="spike20" parent="Spikes" instance=ExtResource("9_avevo")]
+position = Vector2(-64.0013, 352)
+
+[node name="spike21" parent="Spikes" instance=ExtResource("9_avevo")]
+position = Vector2(-80.0013, 352)
+
+[node name="spike22" parent="Spikes" instance=ExtResource("9_avevo")]
+position = Vector2(-96.0013, 352)
+
+[node name="spike23" parent="Spikes" instance=ExtResource("9_avevo")]
+position = Vector2(-112.001, 352)
+
+[node name="spike24" parent="Spikes" instance=ExtResource("9_avevo")]
+position = Vector2(-208.001, 351.999)
+
+[node name="spike25" parent="Spikes" instance=ExtResource("9_avevo")]
+position = Vector2(-208.001, 287.999)
+rotation = 3.14159
+
 [node name="TileMap" type="TileMap" parent="."]
 texture_filter = 1
 tile_set = SubResource("TileSet_ljmqw")
@@ -310,55 +400,31 @@ layer_0/tile_data = PackedInt32Array(720904, 655362, 6, 655368, 655362, 5, 72090
 [node name="changement_lvl" parent="." instance=ExtResource("7_sm0cy")]
 position = Vector2(596, 127)
 
-[node name="SpikeGroup4_1" parent="." instance=ExtResource("8_y27hu")]
-position = Vector2(242, -31)
-rotation = 3.14159
-
-[node name="spike" parent="." instance=ExtResource("9_avevo")]
-position = Vector2(286, -14)
-rotation = -1.5708
-
-[node name="SpikeGroup2_1" parent="." instance=ExtResource("10_mmumr")]
-position = Vector2(190, -81)
-
-[node name="SpikeGroup2_2" parent="." instance=ExtResource("10_mmumr")]
-position = Vector2(466, 207)
-rotation = 3.14159
-
-[node name="spike2" parent="." instance=ExtResource("9_avevo")]
-position = Vector2(554, 146)
-rotation = 3.14159
-
-[node name="spike3" parent="." instance=ExtResource("9_avevo")]
-position = Vector2(527, 184)
-rotation = -1.5708
-
-[node name="SpikeGroup2_3" parent="." instance=ExtResource("10_mmumr")]
-position = Vector2(593, -34)
-rotation = 1.5708
-
-[node name="SpikeGroup1" parent="." instance=ExtResource("11_lb2bg")]
-position = Vector2(383, 50)
-rotation = -1.5708
-
-[node name="spike4" parent="." instance=ExtResource("9_avevo")]
-position = Vector2(481, -31)
-rotation = 3.14159
-
-[node name="SpikeGroup4_2" parent="." instance=ExtResource("8_y27hu")]
-position = Vector2(638, 92)
-rotation = -1.5708
-
-[node name="spike5" parent="." instance=ExtResource("9_avevo")]
-position = Vector2(706, 62)
-rotation = 1.5708
-
-[node name="spike6" parent="." instance=ExtResource("9_avevo")]
-position = Vector2(639, 182)
-rotation = -1.5708
-
-[node name="spike7" parent="." instance=ExtResource("9_avevo")]
-position = Vector2(240, 127)
-
 [node name="Stickman" parent="." instance=ExtResource("12_13mwc")]
 position = Vector2(145, 176)
+
+[connection signal="dead" from="Spikes/spike" to="." method="_on_spike_dead"]
+[connection signal="dead" from="Spikes/spike2" to="." method="_on_spike_dead"]
+[connection signal="dead" from="Spikes/spike3" to="." method="_on_spike_dead"]
+[connection signal="dead" from="Spikes/spike4" to="." method="_on_spike_dead"]
+[connection signal="dead" from="Spikes/spike5" to="." method="_on_spike_dead"]
+[connection signal="dead" from="Spikes/spike6" to="." method="_on_spike_dead"]
+[connection signal="dead" from="Spikes/spike7" to="." method="_on_spike_dead"]
+[connection signal="dead" from="Spikes/spike8" to="." method="_on_spike_dead"]
+[connection signal="dead" from="Spikes/spike9" to="." method="_on_spike_dead"]
+[connection signal="dead" from="Spikes/spike10" to="." method="_on_spike_dead"]
+[connection signal="dead" from="Spikes/spike11" to="." method="_on_spike_dead"]
+[connection signal="dead" from="Spikes/spike12" to="." method="_on_spike_dead"]
+[connection signal="dead" from="Spikes/spike13" to="." method="_on_spike_dead"]
+[connection signal="dead" from="Spikes/spike14" to="." method="_on_spike_dead"]
+[connection signal="dead" from="Spikes/spike15" to="." method="_on_spike_dead"]
+[connection signal="dead" from="Spikes/spike16" to="." method="_on_spike_dead"]
+[connection signal="dead" from="Spikes/spike17" to="." method="_on_spike_dead"]
+[connection signal="dead" from="Spikes/spike18" to="." method="_on_spike_dead"]
+[connection signal="dead" from="Spikes/spike19" to="." method="_on_spike_dead"]
+[connection signal="dead" from="Spikes/spike20" to="." method="_on_spike_dead"]
+[connection signal="dead" from="Spikes/spike21" to="." method="_on_spike_dead"]
+[connection signal="dead" from="Spikes/spike22" to="." method="_on_spike_dead"]
+[connection signal="dead" from="Spikes/spike23" to="." method="_on_spike_dead"]
+[connection signal="dead" from="Spikes/spike24" to="." method="_on_spike_dead"]
+[connection signal="dead" from="Spikes/spike25" to="." method="_on_spike_dead"]

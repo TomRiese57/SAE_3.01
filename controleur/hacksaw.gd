@@ -3,8 +3,8 @@ extends CharacterBody2D
 const SPEED = 50
 var direction = 1
 var sens = 0
-# Variable pour vérifier si le personnage est dans la hitbox
-var is_in_hitbox: bool = false
+
+signal dead()
 
 func _physics_process(delta: float) -> void:
 	if round(global_rotation_degrees) == 0:
@@ -28,7 +28,6 @@ func _physics_process(delta: float) -> void:
 		$Sprite.play("spin")
 		move_and_slide()
 	
-	
 	if is_on_wall():
 		direction *= -1
 	
@@ -37,17 +36,6 @@ func _physics_process(delta: float) -> void:
 	
 	if is_on_ceiling():
 		direction *= -1
-	
-func _process(delta: float) -> void:
-	# Vérifie si la touche "interact" est appuyée et si le personnage est dans la hitbox
-	if is_in_hitbox:
-		var path = get_tree().current_scene.scene_file_path
-		if path == "res://vue/tscn/level.tscn":
-			get_tree().change_scene_to_file("res://vue/tscn/level.tscn")
-		elif path == "res://vue/tscn/level_2.tscn":
-			get_tree().change_scene_to_file("res://vue/tscn/level_2.tscn")
-		elif path == "res://vue/tscn/level_3.tscn":
-			get_tree().change_scene_to_file("res://vue/tscn/level_3.tscn")
 	
 func sensX() -> void:
 	velocity.x = direction * SPEED
@@ -80,9 +68,14 @@ func sensYB() -> void:
 func _on_hacksaw_body_entered(body: Node2D) -> void:
 	# Si le personnage entre dans la hitbox, active la variable
 	if body.name == "Stickman":
-		is_in_hitbox = true
-
-func _on_hacksaw_body_exited(body: Node2D) -> void:
-	# Si le personnage sort de la hitbox, désactive la variable
-	if body.name == "Stickman":
-		is_in_hitbox = false
+		var path = get_tree().current_scene.scene_file_path
+		if path == "res://vue/tscn/level.tscn":
+			body.position.x = 238
+			body.position.y = 308
+		elif path == "res://vue/tscn/level_2.tscn":
+			body.position.x = 145
+			body.position.y = 178
+		elif path == "res://vue/tscn/level_3.tscn":
+			body.position.x = 182
+			body.position.y = 309
+		dead.emit()

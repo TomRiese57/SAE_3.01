@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://d2oew446al4p2"]
+[gd_scene load_steps=12 format=3 uid="uid://d2oew446al4p2"]
 
 [ext_resource type="Script" path="res://controleur/rotation.gd" id="1_eupi8"]
 [ext_resource type="AudioStream" uid="uid://cfpyhsnvop8hj" path="res://modele/song/whoosh-motion.mp3" id="2_wuror"]
@@ -8,7 +8,6 @@
 [ext_resource type="Texture2D" uid="uid://cqbnyg5wr1a62" path="res://vue/Background/tilemap_packed.png" id="6_vkx20"]
 [ext_resource type="PackedScene" uid="uid://dm2xynbodjiei" path="res://vue/tscn/changement_lvl.tscn" id="7_flf5c"]
 [ext_resource type="PackedScene" uid="uid://bdkxxn81or87v" path="res://vue/tscn/spike.tscn" id="8_xdgm7"]
-[ext_resource type="PackedScene" uid="uid://dolql1erps7br" path="res://vue/tscn/spike_group_1.tscn" id="9_eilng"]
 [ext_resource type="PackedScene" uid="uid://cxjnr640crmx4" path="res://vue/tscn/stickman.tscn" id="10_ge24j"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3dfla"]
@@ -336,6 +335,18 @@ position = Vector2(451, 247)
 scale = Vector2(9.50667, 6.25333)
 texture = ExtResource("5_i5t8f")
 
+[node name="Spikes" type="Node2D" parent="."]
+
+[node name="spike" parent="Spikes" instance=ExtResource("8_xdgm7")]
+position = Vector2(464, 322)
+
+[node name="spike2" parent="Spikes" instance=ExtResource("8_xdgm7")]
+position = Vector2(480, 322)
+
+[node name="spike3" parent="Spikes" instance=ExtResource("8_xdgm7")]
+position = Vector2(662, 256)
+rotation = 4.71238
+
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(-41, 3)
 tile_set = SubResource("TileSet_wmixy")
@@ -346,14 +357,11 @@ layer_0/tile_data = PackedInt32Array(1376273, 327682, 0, 1376274, 131074, 6, 137
 position = Vector2(597, 262)
 rotation = -1.5708
 
-[node name="spike" parent="." instance=ExtResource("8_xdgm7")]
-position = Vector2(598, 331)
-rotation = -1.5708
-
-[node name="SpikeGroup1" parent="." instance=ExtResource("9_eilng")]
-position = Vector2(390, 258)
-
 [node name="Stickman" parent="." instance=ExtResource("10_ge24j")]
 position = Vector2(238, 307)
 floor_block_on_wall = false
 safe_margin = 1.0
+
+[connection signal="dead" from="Spikes/spike" to="." method="_on_spike_dead"]
+[connection signal="dead" from="Spikes/spike2" to="." method="_on_spike_dead"]
+[connection signal="dead" from="Spikes/spike3" to="." method="_on_spike_dead"]

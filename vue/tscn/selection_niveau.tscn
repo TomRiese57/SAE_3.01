@@ -1,8 +1,8 @@
 [gd_scene load_steps=12 format=3 uid="uid://chtfxrpgwabyd"]
 
-[ext_resource type="Script" path="res://vue/tscn/selection_niveau.gd" id="1_eq5q5"]
-[ext_resource type="Script" path="res://vue/tscn/niveau_2.gd" id="1_prlcu"]
-[ext_resource type="Script" path="res://vue/tscn/niveau_3.gd" id="2_vmcq2"]
+[ext_resource type="Script" path="res://controleur/selection_niveau.gd" id="1_eq5q5"]
+[ext_resource type="Script" path="res://controleur/niveau_2.gd" id="1_prlcu"]
+[ext_resource type="Script" path="res://controleur/niveau_3.gd" id="2_vmcq2"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1gmdl"]
 bg_color = Color(0, 0.337255, 0.6, 1)

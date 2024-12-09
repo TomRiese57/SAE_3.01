@@ -34,7 +34,6 @@ func _physics_process(delta: float) -> void:
 		$Sprite.play("respiration")
 		
 	if $Floor.is_colliding():
-		print("coucou")
 		if rot == 0:
 			position.y -= 10
 		elif rot == 90:
@@ -44,7 +43,6 @@ func _physics_process(delta: float) -> void:
 		elif rot == -180 or rot == 180:
 			position.y += 10
 	if $Ceilling.is_colliding():
-		print("COUCOU")
 		if rot == 0:
 			position.y += 10
 		elif rot == 90:
