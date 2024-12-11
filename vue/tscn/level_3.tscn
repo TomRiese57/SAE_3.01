@@ -344,6 +344,10 @@ position = Vector2(351, 226)
 [node name="spike2" parent="Spikes" instance=ExtResource("9_4atiy")]
 position = Vector2(-16, 80)
 
+[node name="spike3" parent="Spikes" instance=ExtResource("9_4atiy")]
+position = Vector2(22, 135)
+rotation = -1.5708
+
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(-41, 3)
 tile_set = SubResource("TileSet_i87h8")
@@ -376,6 +380,7 @@ position = Vector2(182, 309)
 
 [connection signal="dead" from="Spikes/spike" to="." method="_on_spike_dead"]
 [connection signal="dead" from="Spikes/spike2" to="." method="_on_spike_dead"]
+[connection signal="dead" from="Spikes/spike3" to="." method="_on_spike_dead"]
 [connection signal="dead" from="Hacksaw/Hacksaw" to="." method="_on_hacksaw_dead"]
 [connection signal="dead" from="Hacksaw/Hacksaw2" to="." method="_on_hacksaw_dead"]
 [connection signal="dead" from="Hacksaw/Hacksaw3" to="." method="_on_hacksaw_dead"]

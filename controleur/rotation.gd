@@ -3,24 +3,30 @@ extends Node2D
 const ROTATION_ANGLE = 90  # Angle de rotation en degrés
 @onready var stickman = $Stickman
 var dead = false
+var is_rotating = false
 
 func _process(delta: float) -> void:
-	if rotation_degrees == 360 or rotation_degrees == -360 or dead:
-		if dead:
-			stickman.rotation_degrees = 0
-			dead = false
-		rotation_degrees = 0
+	if dead:
+		reset_rotation()
+		return
 	
 func _input(event):
+	if is_rotating or dead:
+		return
 	# Vérifie si une action pour tourner la carte est déclenchée
-	if Input.is_action_just_pressed("RotateLeft"):
-		$Rotation.play()
-		rotate_map(-ROTATION_ANGLE)
+	if Input.is_action_just_pressed("RotateLeft") and stickman.is_on_floor():
+		start_rotation(-ROTATION_ANGLE)
 		
-	elif Input.is_action_just_pressed("RotateRight"):
-		$Rotation.play()
-		rotate_map(ROTATION_ANGLE)
+	elif Input.is_action_just_pressed("RotateRight") and stickman.is_on_floor():
+		start_rotation(ROTATION_ANGLE)
+		
+func start_rotation(angle_degrees):
+	is_rotating = true
+	$Rotation.play()
+	rotate_map(angle_degrees)
 	
+	
+
 func rotate_map(angle_degrees):
 	stickman.set_collision_layer(0)
 	stickman.set_collision_mask(0)
@@ -43,6 +49,17 @@ func rotate_map(angle_degrees):
 	stickman.set_collision_layer(1)
 	stickman.set_collision_mask(2)
 	stickman.rot = round(global_rotation_degrees)
+	is_rotating = false
+	if rotation_degrees == 360 or rotation_degrees == -360:
+		rotation_degrees = 0
+	
+func reset_rotation():
+	set_process_input(false)
+	dead = false
+	stickman.rotation_degrees = 0
+	rotation_degrees = 0
+	is_rotating = false
+	set_process_input(true)
 	
 func _on_spike_dead() -> void:
 	dead = true

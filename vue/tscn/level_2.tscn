@@ -385,10 +385,22 @@ position = Vector2(-96.0013, 352)
 position = Vector2(-112.001, 352)
 
 [node name="spike24" parent="Spikes" instance=ExtResource("9_avevo")]
-position = Vector2(-208.001, 351.999)
+position = Vector2(-196.001, 351.999)
 
 [node name="spike25" parent="Spikes" instance=ExtResource("9_avevo")]
 position = Vector2(-208.001, 287.999)
+rotation = 3.14159
+
+[node name="spike26" parent="Spikes" instance=ExtResource("9_avevo")]
+position = Vector2(-128.001, 177)
+rotation = 3.14159
+
+[node name="spike27" parent="Spikes" instance=ExtResource("9_avevo")]
+position = Vector2(-144.001, 176.999)
+rotation = 3.14159
+
+[node name="spike28" parent="Spikes" instance=ExtResource("9_avevo")]
+position = Vector2(-160.001, 176.999)
 rotation = 3.14159
 
 [node name="TileMap" type="TileMap" parent="."]
