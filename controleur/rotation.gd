@@ -53,11 +53,13 @@ func rotate_map(angle_degrees):
 	
 func reset_rotation():
 	set_process_input(false)
+	Global.dead += 1
 	dead = false
 	stickman.rotation_degrees = 0
 	rotation_degrees = 0
 	is_rotating = false
 	set_process_input(true)
+	print(Global.dead)
 	
 func _on_spike_dead() -> void:
 	dead = true

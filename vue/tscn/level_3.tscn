@@ -368,6 +368,7 @@ collision_layer = 0
 collision_mask = 2
 
 [node name="Hacksaw3" parent="Hacksaw" instance=ExtResource("8_7gjyg")]
+position = Vector2(3, 2)
 collision_layer = 0
 collision_mask = 2
 
