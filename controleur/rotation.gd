@@ -24,8 +24,6 @@ func start_rotation(angle_degrees):
 	is_rotating = true
 	$Rotation.play()
 	rotate_map(angle_degrees)
-	
-	
 
 func rotate_map(angle_degrees):
 	stickman.set_collision_layer(0)
