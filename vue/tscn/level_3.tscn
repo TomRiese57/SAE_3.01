@@ -372,7 +372,7 @@ collision_layer = 0
 collision_mask = 2
 
 [node name="changement_lvl" parent="." instance=ExtResource("5_ohlwq")]
-position = Vector2(837, 277)
+position = Vector2(759, 212)
 rotation = -3.14006
 
 [node name="Stickman" parent="." instance=ExtResource("6_4j86t")]

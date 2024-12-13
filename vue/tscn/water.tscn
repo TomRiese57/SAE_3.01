@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://cqdrrx1jg0amx"]
 
-[ext_resource type="Script" path="res://vue/tscn/water.gd" id="1_y8fwp"]
+[ext_resource type="Script" path="res://controleur/water.gd" id="1_y8fwp"]
 [ext_resource type="Texture2D" uid="uid://cqbnyg5wr1a62" path="res://vue/Background/tilemap_packed.png" id="2_7ql6q"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_55qhn"]
