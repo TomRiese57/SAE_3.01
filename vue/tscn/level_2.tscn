@@ -281,6 +281,9 @@ sources/2 = SubResource("TileSetAtlasSource_sbsjd")
 [node name="Level_2" type="Node2D"]
 script = ExtResource("1_b16x2")
 
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
 [node name="Rotation" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("2_rrbag")
 volume_db = -20.0
@@ -415,6 +418,7 @@ position = Vector2(674, 191)
 [node name="Stickman" parent="." instance=ExtResource("12_13mwc")]
 position = Vector2(145, 176)
 
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="dead" from="Spikes/spike" to="." method="_on_spike_dead"]
 [connection signal="dead" from="Spikes/spike2" to="." method="_on_spike_dead"]
 [connection signal="dead" from="Spikes/spike3" to="." method="_on_spike_dead"]

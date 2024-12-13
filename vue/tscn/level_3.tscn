@@ -319,6 +319,9 @@ sources/2 = SubResource("TileSetAtlasSource_qr1ll")
 [node name="level_3" type="Node2D"]
 script = ExtResource("1_cf8ca")
 
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
 [node name="Rotation" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("1_o52oc")
 volume_db = -20.0
@@ -379,6 +382,7 @@ rotation = -3.14006
 [node name="Stickman" parent="." instance=ExtResource("6_4j86t")]
 position = Vector2(182, 309)
 
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="dead" from="Spikes/spike" to="." method="_on_spike_dead"]
 [connection signal="dead" from="Spikes/spike2" to="." method="_on_spike_dead"]
 [connection signal="dead" from="Spikes/spike3" to="." method="_on_spike_dead"]
