@@ -59,10 +59,12 @@ func reset_rotation():
 	rotation_degrees = 0
 	is_rotating = false
 	set_process_input(true)
-	print(Global.dead)
 	
 func _on_spike_dead() -> void:
 	dead = true
 
 func _on_hacksaw_dead() -> void:
 	dead = true
+
+func _on_timer_timeout() -> void:
+	Global.time += 1
