@@ -11,6 +11,7 @@ func set_speed(new_speed: int) -> void:
 	current_speed = new_speed
 	
 func _physics_process(delta: float) -> void:
+	$NbMort.text = "Mort : " + str(Global.dead)
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
