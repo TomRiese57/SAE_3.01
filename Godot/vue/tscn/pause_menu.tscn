@@ -1,0 +1,70 @@
+[gd_scene load_steps=2 format=3 uid="uid://u7qmoixaf6kc"]
+
+[ext_resource type="Script" path="res://controleur/pause_menu.gd" id="1_r558j"]
+
+[node name="PauseMenu" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_r558j")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+anchors_preset = -1
+anchor_left = -0.506944
+anchor_top = -0.574074
+anchor_right = 0.517361
+anchor_bottom = 0.641975
+offset_left = -282.0
+offset_top = -229.0
+offset_right = 1536.0
+offset_bottom = 761.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+metadata/_edit_use_anchors_ = true
+
+[node name="Pause" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -131.0
+offset_top = 24.0
+offset_right = 169.0
+offset_bottom = 611.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 50
+text = "Pause"
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Pause"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -60.0
+offset_top = -50.5
+offset_right = 60.0
+offset_bottom = 50.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Reprendre" type="Button" parent="Pause/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 30
+text = "Reprendre"
+
+[node name="Recommencer" type="Button" parent="Pause/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Recommencer"
+
+[node name="Quitter" type="Button" parent="Pause/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = " Menu Principal "
+
+[connection signal="pressed" from="Pause/VBoxContainer/Reprendre" to="." method="_on_reprendre_pressed"]
+[connection signal="pressed" from="Pause/VBoxContainer/Recommencer" to="." method="_on_recommencer_pressed"]
+[connection signal="pressed" from="Pause/VBoxContainer/Quitter" to="." method="_on_quitter_pressed"]

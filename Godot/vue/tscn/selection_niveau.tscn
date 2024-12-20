@@ -1,0 +1,110 @@
+[gd_scene load_steps=12 format=3 uid="uid://chtfxrpgwabyd"]
+
+[ext_resource type="Script" path="res://controleur/selection_niveau.gd" id="1_eq5q5"]
+[ext_resource type="Script" path="res://controleur/niveau_2.gd" id="1_prlcu"]
+[ext_resource type="Script" path="res://controleur/niveau_3.gd" id="2_vmcq2"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1gmdl"]
+bg_color = Color(0, 0.337255, 0.6, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yjhyf"]
+bg_color = Color(0.0627451, 0.0431373, 0.6, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_esyqj"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tu83q"]
+bg_color = Color(0, 0.337255, 0.6, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a8ujf"]
+bg_color = Color(0.0627451, 0.0431373, 0.6, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7wif8"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hr6au"]
+bg_color = Color(0, 0.337255, 0.6, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vl22b"]
+bg_color = Color(0.0627451, 0.0431373, 0.6, 1)
+
+[node name="selection_niveau" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_eq5q5")
+
+[node name="Titre" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -63.5
+offset_right = 63.5
+offset_bottom = 23.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 50
+text = "Séléction niveau"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -222.5
+offset_top = -218.5
+offset_right = 222.5
+offset_bottom = 218.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Niveau_1" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_styles/hover = SubResource("StyleBoxFlat_1gmdl")
+theme_override_styles/normal = SubResource("StyleBoxFlat_yjhyf")
+text = "niveau 1"
+
+[node name="Niveau_2" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_styles/disabled = SubResource("StyleBoxFlat_esyqj")
+theme_override_styles/hover = SubResource("StyleBoxFlat_tu83q")
+theme_override_styles/normal = SubResource("StyleBoxFlat_a8ujf")
+disabled = true
+text = "niveau 2"
+script = ExtResource("1_prlcu")
+
+[node name="Niveau_3" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_styles/disabled = SubResource("StyleBoxFlat_7wif8")
+theme_override_styles/hover = SubResource("StyleBoxFlat_hr6au")
+theme_override_styles/normal = SubResource("StyleBoxFlat_vl22b")
+disabled = true
+text = "niveeau 3"
+script = ExtResource("2_vmcq2")
+
+[node name="Niveau_4" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_styles/disabled = SubResource("StyleBoxFlat_7wif8")
+theme_override_styles/hover = SubResource("StyleBoxFlat_hr6au")
+theme_override_styles/normal = SubResource("StyleBoxFlat_vl22b")
+disabled = true
+text = "niveeau 4"
+script = ExtResource("2_vmcq2")
+
+[node name="Retour" type="Button" parent="."]
+process_mode = 3
+layout_mode = 0
+offset_left = 924.0
+offset_top = 477.0
+offset_right = 1059.0
+offset_bottom = 519.0
+text = "Retour"
+
+[connection signal="pressed" from="VBoxContainer/Niveau_1" to="." method="_on_niveau_1_pressed"]
+[connection signal="pressed" from="VBoxContainer/Niveau_2" to="." method="_on_niveau_2_pressed"]
+[connection signal="pressed" from="VBoxContainer/Niveau_3" to="." method="_on_niveau_3_pressed"]
+[connection signal="pressed" from="VBoxContainer/Niveau_4" to="." method="_on_niveau_3_pressed"]
+[connection signal="pressed" from="Retour" to="." method="_on_retour_pressed"]
