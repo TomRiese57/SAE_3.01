@@ -1,5 +1,6 @@
 <?php
-class SessionJeu {
+class SessionJeu
+{
     private $idSession;
     private $idUtilisateur;
     private $tempsJoue;
@@ -7,7 +8,8 @@ class SessionJeu {
     private $dateSession;
 
     // constructeur    
-    function __construct(int $idSession = 0, int $idUtilisateur = 0, float $tempsJoue = 0.0, int $score = 0, string $dateSession = '') {
+    function __construct(int $idSession = 0, int $idUtilisateur = 0, float $tempsJoue = 0.0, int $score = 0, string $dateSession = '')
+    {
         $this->idSession = $idSession;
         $this->idUtilisateur = $idUtilisateur;
         $this->tempsJoue = $tempsJoue;
@@ -16,44 +18,54 @@ class SessionJeu {
     }
 
     // getters
-    public function getIdSession() {
+    public function getIdSession()
+    {
         return $this->idSession;
     }
 
-    public function getIdUtilisateur() {
+    public function getIdUtilisateur()
+    {
         return $this->idUtilisateur;
     }
 
-    public function getTempsJoue() {
+    public function getTempsJoue()
+    {
         return $this->tempsJoue;
     }
 
-    public function getScore() {
+    public function getScore()
+    {
         return $this->score;
     }
 
-    public function getDateSession() {
+    public function getDateSession()
+    {
         return $this->dateSession;
     }
 
     // setters
-    public function setIdSession($idSession) {
+    public function setIdSession($idSession)
+    {
         $this->idSession = $idSession;
     }
 
-    public function setIdUtilisateur($idUtilisateur) {
+    public function setIdUtilisateur($idUtilisateur)
+    {
         $this->idUtilisateur = $idUtilisateur;
     }
 
-    public function setTempsJoue($tempsJoue) {
+    public function setTempsJoue($tempsJoue)
+    {
         $this->tempsJoue = $tempsJoue;
     }
 
-    public function setScore($score) {
+    public function setScore($score)
+    {
         $this->score = $score;
     }
 
-    public function setDateSession($dateSession) {
+    public function setDateSession($dateSession)
+    {
         $this->dateSession = $dateSession;
     }
 }

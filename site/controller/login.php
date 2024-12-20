@@ -8,7 +8,8 @@ $identifiants['login'] = isset($_POST['login']) ? $_POST['login'] : null; // à 
 $identifiants['motDePasse'] = isset($_POST['motDePasse']) ? $_POST['motDePasse'] : null; // et le mot de passe
 $message = '';
 
-function existeUtilisateur(array $identifiants, array $lesClients): bool {
+function existeUtilisateur(array $identifiants, array $lesClients): bool
+{
     foreach ($lesClients as $unClient) {
         if ($identifiants['login'] == $unClient->getId() && $identifiants['motDePasse'] == $unClient->getMotDePasse()) {
             $_SESSION['login'] = $identifiants['login'];
@@ -19,7 +20,8 @@ function existeUtilisateur(array $identifiants, array $lesClients): bool {
 
 }
 
-function estAdmin(array $identifiants) {
+function estAdmin(array $identifiants)
+{
     $login = 'admin';
     $mdp = 'motdepasse';
     if ($identifiants['login'] == $login && $identifiants['motDePasse'] == $mdp) {
@@ -41,4 +43,4 @@ if (isset($_POST['connexion'])) {
 }
 
 require_once "../vue/login.view.php";
-?>  
+?>

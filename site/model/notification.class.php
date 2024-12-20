@@ -1,5 +1,6 @@
 <?php
-class Notification {
+class Notification
+{
     private $idNotification;
     private $idUtilisateur;
     private $type;
@@ -8,7 +9,8 @@ class Notification {
     private $dateCreation;
 
     // constructeur    
-    function __construct(int $idNotification = 0, int $idUtilisateur = 0, string $type = '', string $contenu = '', int $estLu = 0, string $dateCreation = '') {
+    function __construct(int $idNotification = 0, int $idUtilisateur = 0, string $type = '', string $contenu = '', int $estLu = 0, string $dateCreation = '')
+    {
         $this->idNotification = $idNotification;
         $this->idUtilisateur = $idUtilisateur;
         $this->type = $type;
@@ -18,52 +20,64 @@ class Notification {
     }
 
     // getters
-    public function getIdNotification() {
+    public function getIdNotification()
+    {
         return $this->idNotification;
     }
 
-    public function getIdUtilisateur() {
+    public function getIdUtilisateur()
+    {
         return $this->idUtilisateur;
     }
 
-    public function getType() {
+    public function getType()
+    {
         return $this->type;
     }
 
-    public function getContenu() {
+    public function getContenu()
+    {
         return $this->contenu;
     }
 
-    public function getEstLu() {
+    public function getEstLu()
+    {
         return $this->estLu;
     }
 
-    public function getDateCreation() {
+    public function getDateCreation()
+    {
         return $this->dateCreation;
     }
 
     // setters
-    public function setIdNotification($idNotification) {
+    public function setIdNotification($idNotification)
+    {
         $this->idNotification = $idNotification;
     }
 
-    public function setIdUtilisateur($idUtilisateur) {
+    public function setIdUtilisateur($idUtilisateur)
+    {
         $this->idUtilisateur = $idUtilisateur;
     }
 
-    public function setType($type) {
+    public function setType($type)
+    {
         $this->type = $type;
     }
 
-    public function setContenu($contenu) {
+    public function setContenu($contenu)
+    {
         $this->contenu = $contenu;
     }
 
-    public function setEstLu($estLu) {
+    public function setEstLu($estLu)
+    {
         $this->estLu = $estLu;
     }
 
-    public function setDateCreation($dateCreation) {
+    public function setDateCreation($dateCreation)
+    {
         $this->dateCreation = $dateCreation;
     }
 }

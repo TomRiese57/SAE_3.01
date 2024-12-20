@@ -31,8 +31,9 @@ header .icones img {
 }
 
 /* Formulaire */
-form legend, label {
-  color: #000
+form legend,
+label {
+  color: #000;
 }
 
 /* Aperçu du jeu */
@@ -71,7 +72,6 @@ button#play-button {
 button#play-button:hover {
   background-color: #1565c0;
 }
-
 
 /* Indicateur de contrôle */
 .controles img {
@@ -125,7 +125,8 @@ button#play-button:hover {
   cursor: pointer;
 }
 
-.close:hover, .close:focus {
+.close:hover,
+.close:focus {
   color: black;
   text-decoration: none;
 }

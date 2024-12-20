@@ -1,5 +1,6 @@
 <?php
-class Message {
+class Message
+{
     private $idMessage;
     private $idExpediteur;
     private $idReceveur;
@@ -8,8 +9,14 @@ class Message {
     private $estLu;
 
     // constructeur    
-    function __construct(int $idMessage = 0, int $idExpediteur = 0, int $idReceveur = 0, string $texteMessage = '', string $envoyeA = '', 
-                        int $estLu = 0) {
+    function __construct(
+        int $idMessage = 0,
+        int $idExpediteur = 0,
+        int $idReceveur = 0,
+        string $texteMessage = '',
+        string $envoyeA = '',
+        int $estLu = 0
+    ) {
         $this->idMessage = $idMessage;
         $this->idExpediteur = $idExpediteur;
         $this->idReceveur = $idReceveur;
@@ -19,52 +26,64 @@ class Message {
     }
 
     // getters
-    public function getIdMessage() {
+    public function getIdMessage()
+    {
         return $this->idMessage;
     }
 
-    public function getIdExpediteur() {
+    public function getIdExpediteur()
+    {
         return $this->idExpediteur;
     }
 
-    public function getIdReceveur() {
+    public function getIdReceveur()
+    {
         return $this->idReceveur;
     }
 
-    public function getTexteMessage() {
+    public function getTexteMessage()
+    {
         return $this->texteMessage;
     }
 
-    public function getEnvoyeA() {
+    public function getEnvoyeA()
+    {
         return $this->envoyeA;
     }
-    
-    public function getEstLu() {
+
+    public function getEstLu()
+    {
         return $this->estLu;
     }
 
     // setters
-    public function setIdMessage($idMessage) {
+    public function setIdMessage($idMessage)
+    {
         $this->idMessage = $idMessage;
     }
 
-    public function setIdExpediteur($idExpediteur) {
+    public function setIdExpediteur($idExpediteur)
+    {
         $this->idExpediteur = $idExpediteur;
     }
 
-    public function setIdReceveur($idReceveur) {
+    public function setIdReceveur($idReceveur)
+    {
         $this->idReceveur = $idReceveur;
     }
 
-    public function setTexteMessage($texteMessage) {
+    public function setTexteMessage($texteMessage)
+    {
         $this->texteMessage = $texteMessage;
     }
 
-    public function setEnvoyeA($envoyeA) {
+    public function setEnvoyeA($envoyeA)
+    {
         $this->envoyeA = $envoyeA;
     }
 
-    public function setEstLu($estLu) {
+    public function setEstLu($estLu)
+    {
         $this->estLu = $estLu;
     }
 }
