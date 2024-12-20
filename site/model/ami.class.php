@@ -3,7 +3,7 @@ class Ami {
     private $id;
     private $idUtilisateur;
     private $idAmi;
-    private $status;
+    private StatusAmis $status;
     private $dateEnvoi;
 
     // constructeur    
@@ -16,45 +16,51 @@ class Ami {
     }
 
     // getters
-    public function getId() {
+    public function getId(): int {
         return $this->id;
     }
 
-    public function getIdUtilisateur() {
+    public function getIdUtilisateur(): int {
         return $this->idUtilisateur;
     }
 
-    public function getIdAmi() {
+    public function getIdAmi(): int {
         return $this->idAmi;
     }
 
-    public function getStatus() {
+    public function getStatus(): StatusAmis {
         return $this->status;
     }
 
-    public function getDateEnvoi() {
+    public function getDateEnvoi(): string {
         return $this->dateEnvoi;
     }
 
     // setters   
-    public function setId($id) {
+    public function setId(int $id) {
         $this->id = $id;
     }
 
-    public function setIdUtilisateur($idUtilisateur) {
+    public function setIdUtilisateur(int $idUtilisateur) {
         $this->idUtilisateur = $idUtilisateur;
     }
 
-    public function setIdAmi($idAmi) {
+    public function setIdAmi(int $idAmi) {
         $this->idAmi = $idAmi;
     }
 
-    public function setStatus($status) {
+    public function setStatus(StatusAmis $status) {
         $this->status = $status;
     }
 
-    public function setDateEnvoi($dateEnvoi) {
+    public function setDateEnvoi(string $dateEnvoi) {
         $this->dateEnvoi = $dateEnvoi;
     }
+}
+
+enum StatusAmis: string {
+    case EN_ATTENTE = 'en attente';
+    case ACCEPTE = 'accepté';
+    case REFUSE = 'refusé';
 }
 ?>

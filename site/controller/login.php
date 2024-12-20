@@ -1,17 +1,19 @@
 <?php
 session_start();
 
-require_once "../modele/clientDAO.class.php";
-$clientDAO = new ClientDAO();
-$lesClients = $clientDAO->getAll();
+require_once "../model/utilisateurDAO.class.php";
+$utilisateurDAO = new UtilisateurDAO();
+$lesUtilisateurs = $utilisateurDAO->getAll();
 $identifiants['login'] = isset($_POST['login']) ? $_POST['login'] : null; // à compléter pour ‘nettoyer’ le login
 $identifiants['motDePasse'] = isset($_POST['motDePasse']) ? $_POST['motDePasse'] : null; // et le mot de passe
 $message = '';
 
-function existeUtilisateur(array $identifiants, array $lesClients): bool
-{
-    foreach ($lesClients as $unClient) {
-        if ($identifiants['login'] == $unClient->getId() && $identifiants['motDePasse'] == $unClient->getMotDePasse()) {
+var_dump($identifiants['login']);
+var_dump($identifiants['motDePasse']);
+
+function existeUtilisateur(array $identifiants, array $lesUtilisateurs): bool {
+    foreach ($lesUtilisateurs as $unUtilisateur) {
+        if (($identifiants['login'] == $unUtilisateur->getPseudoUti() || $identifiants['login'] == $unUtilisateur->getEmailUti()) && $identifiants['motDePasse'] == $unUtilisateur->getMotDePasseUti()) {
             $_SESSION['login'] = $identifiants['login'];
             return true;
         }
@@ -20,8 +22,7 @@ function existeUtilisateur(array $identifiants, array $lesClients): bool
 
 }
 
-function estAdmin(array $identifiants)
-{
+function estAdmin(array $identifiants) {
     $login = 'admin';
     $mdp = 'motdepasse';
     if ($identifiants['login'] == $login && $identifiants['motDePasse'] == $mdp) {
@@ -32,15 +33,15 @@ function estAdmin(array $identifiants)
 }
 
 if (isset($_POST['connexion'])) {
-    if (existeUtilisateur($identifiants, $lesClients)) {
-        header("location: factures.php?id=" . $identifiants['login']);
+    if (existeUtilisateur($identifiants, $lesUtilisateurs)) {
+        header("location: accueil.php");
     } else if (estAdmin($identifiants)) {
-        header("location: factures.php?admin=" . $identifiants['login']);
+        header("location: accueil.php");
     } else {
-        $message = "<p class = rouge>Identification incorrecte. Essayez de nouveau.</p>";
+        $message = "<p>Identification incorrecte. Essayez de nouveau.</p>";
     }
 
 }
 
-require_once "../vue/login.view.php";
-?>
+require_once "../view/login.view.php";
+?>  

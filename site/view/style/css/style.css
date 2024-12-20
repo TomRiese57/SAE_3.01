@@ -31,9 +31,8 @@ header .icones img {
 }
 
 /* Formulaire */
-form legend,
-label {
-  color: #000;
+form legend, label, p {
+  color: #000
 }
 
 /* Aperçu du jeu */
@@ -117,6 +116,8 @@ button#play-button:hover {
   font-size: 1rem;
 }
 
+/* Fermeture fenêtre modale */
+
 .close {
   color: #aaa;
   float: right;
@@ -125,8 +126,7 @@ button#play-button:hover {
   cursor: pointer;
 }
 
-.close:hover,
-.close:focus {
+.close:hover, .close:focus {
   color: black;
   text-decoration: none;
 }

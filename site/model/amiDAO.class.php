@@ -1,8 +1,8 @@
 <?php
-require_once 'connexion.php'; 
-require_once 'utilisateur.class.php';
+    require_once 'connexion.php'; 
+    require_once 'ami.class.php';
 
-class UtilisateurDAO {
+class AmiDAO {
     private $bd;
     private $select;
 
