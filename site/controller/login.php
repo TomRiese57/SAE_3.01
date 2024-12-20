@@ -8,9 +8,6 @@ $identifiants['login'] = isset($_POST['login']) ? $_POST['login'] : null; // à 
 $identifiants['motDePasse'] = isset($_POST['motDePasse']) ? $_POST['motDePasse'] : null; // et le mot de passe
 $message = '';
 
-var_dump($identifiants['login']);
-var_dump($identifiants['motDePasse']);
-
 function existeUtilisateur(array $identifiants, array $lesUtilisateurs): bool {
     foreach ($lesUtilisateurs as $unUtilisateur) {
         if (($identifiants['login'] == $unUtilisateur->getPseudoUti() || $identifiants['login'] == $unUtilisateur->getEmailUti()) && $identifiants['motDePasse'] == $unUtilisateur->getMotDePasseUti()) {
