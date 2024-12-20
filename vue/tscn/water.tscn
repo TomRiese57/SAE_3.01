@@ -1,11 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://bdkxxn81or87v"]
+[gd_scene load_steps=6 format=3 uid="uid://cqdrrx1jg0amx"]
 
-[ext_resource type="Script" path="res://controleur/spike.gd" id="1_ty1qa"]
-[ext_resource type="Texture2D" uid="uid://cqbnyg5wr1a62" path="res://vue/Background/tilemap_packed.png" id="2_tt4tw"]
+[ext_resource type="Script" path="res://controleur/water.gd" id="1_y8fwp"]
+[ext_resource type="Texture2D" uid="uid://cqbnyg5wr1a62" path="res://vue/Background/tilemap_packed.png" id="2_7ql6q"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_536mf"]
-texture = ExtResource("2_tt4tw")
-texture_region_size = Vector2i(18, 18)
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_55qhn"]
+texture = ExtResource("2_7ql6q")
+texture_region_size = Vector2i(18, 9)
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -227,27 +227,25 @@ texture_region_size = Vector2i(18, 18)
 20:9/0 = 0
 21:9/0 = 0
 
-[sub_resource type="TileSet" id="TileSet_p8r80"]
-sources/0 = SubResource("TileSetAtlasSource_536mf")
+[sub_resource type="TileSet" id="TileSet_mamkd"]
+sources/0 = SubResource("TileSetAtlasSource_55qhn")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_470tj"]
-size = Vector2(7.41699, 3.672)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qelbr"]
+size = Vector2(118, 18)
 
-[node name="spike" type="Sprite2D"]
-script = ExtResource("1_ty1qa")
+[node name="water" type="Sprite2D"]
+script = ExtResource("1_y8fwp")
 
 [node name="TileMap" type="TileMap" parent="."]
-position = Vector2(-72, -64)
-tile_set = SubResource("TileSet_p8r80")
+tile_set = SubResource("TileSet_mamkd")
 format = 2
-layer_0/tile_data = PackedInt32Array(196612, 524288, 3)
+layer_0/tile_data = PackedInt32Array(262148, 851968, 3, 262149, 851968, 3)
 
-[node name="spike" type="Area2D" parent="."]
+[node name="eau" type="Area2D" parent="."]
 
-[node name="CollisionPolygon2D" type="CollisionShape2D" parent="spike"]
-position = Vector2(0, -3)
-scale = Vector2(1.88756, 2.17865)
-shape = SubResource("RectangleShape2D_470tj")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="eau"]
+position = Vector2(80, 72)
+shape = SubResource("RectangleShape2D_qelbr")
 
-[connection signal="body_entered" from="spike" to="." method="_on_piques_body_entered"]
-[connection signal="body_exited" from="spike" to="." method="_on_piques_body_exited"]
+[connection signal="body_entered" from="eau" to="." method="_on_eau_body_entered"]
+[connection signal="body_exited" from="eau" to="." method="_on_eau_body_exited"]
