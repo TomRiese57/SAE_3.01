@@ -1,6 +1,6 @@
 <?php
-require_once "../connexion.php";
-require_once "../metier/message.class.php";
+require_once "connexion.php";
+require_once "message.class.php";
 class MessageDAO
 {
     // définition des propriétés
@@ -23,12 +23,12 @@ class MessageDAO
 
     function deleteByIdMsg(int $idMsg): void
     {
-        $this->bd->execSQLselect("DELETE FROM 'message' WHERE id_msg = :idMsg;", [$idMsg]);
+        $this->bd->execSQL("DELETE FROM 'message' WHERE id_msg = :idMsg;", [$idMsg]);
     }
 
     function update(Message $msg)
     {
-        $this->bd->execSQLselect(
+        $this->bd->execSQL(
             "UPDATE 'message' SET id_exp = :idExp, id_rec = :idRec, texte = :texte, 'date' :'date', estLu = :estLu WHERE id_msg = :idMsg;",
             [":idExp" => $msg->getIdExp(), ":idRec" => $msg->getIdRec(), ":texte" => $msg->getTexte(), ":date" => $msg->getDate(), ":estLu" => $msg->getEstLu(), ":idMsg" => $msg->getIdMsg()]
         );
@@ -52,19 +52,19 @@ class MessageDAO
 
     function getAll(): array
     {
-        return $this->loadQuery($this->bd->execSQL($this->select));
+        return $this->loadQuery($this->bd->execSQLSelect($this->select));
     }
 
     function getByIdMsg(int $idMsg): array
     {
 
-        return $this->loadQuery($this->bd->execSQL($this->select . " WHERE id_msg = :idMsg;", [':idMsg' => $idMsg]));
+        return $this->loadQuery($this->bd->execSQLSelect($this->select . " WHERE id_msg = :idMsg;", [':idMsg' => $idMsg]));
     }
 
     function existe(string $idMsg): bool
     {
         $req = "SELECT * FROM 'message' WHERE id_msg = :idMsg;";
-        $res = ($this->loadQuery($this->bd->execSQL($req, [':idMsg' => $idMsg])));
+        $res = ($this->loadQuery($this->bd->execSQLSelect($req, [':idMsg' => $idMsg])));
         return ($res != []);
     }
 }

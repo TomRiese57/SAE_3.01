@@ -1,6 +1,6 @@
 <?php
-require_once "../connexion.php";
-require_once "../metier/notification.class.php";
+require_once "connexion.php";
+require_once "notification.class.php";
 class NofificationDAO
 {
     // définition des propriétés
@@ -23,12 +23,12 @@ class NofificationDAO
 
     function deleteByIdUti(int $idUti): void
     {
-        $this->bd->execSQLselect("DELETE FROM 'notification' WHERE id_uti = :idUti;", [$idUti]);
+        $this->bd->execSQL("DELETE FROM 'notification' WHERE id_uti = :idUti;", [$idUti]);
     }
 
     function update(Notification $msg)
     {
-        $this->bd->execSQLselect(
+        $this->bd->execSQL(
             "UPDATE 'notification' SET id_uti = :idUti, 'type' = :'type', contenu = :contenu, est_lu :estLu, 'date' = :'date' WHERE idNotif = :idNotif;",
             [":idUti" => $msg->getIdUti(), ":type" => $msg->getType(), ":contenu" => $msg->getContenu(), ":estLu" => $msg->getEstLu(), ":date" => $msg->getDate(), ":idNotif" => $msg->getIdNotif()]
         );
@@ -52,19 +52,19 @@ class NofificationDAO
 
     function getAll(): array
     {
-        return $this->loadQuery($this->bd->execSQL($this->select));
+        return $this->loadQuery($this->bd->execSQLSelect($this->select));
     }
 
     function getByIdUti(int $idNotif): array
     {
 
-        return $this->loadQuery($this->bd->execSQL($this->select . " WHERE id_notif = :idNotif;", [':idNotif' => $idNotif]));
+        return $this->loadQuery($this->bd->execSQLSelect($this->select . " WHERE id_notif = :idNotif;", [':idNotif' => $idNotif]));
     }
 
     function existe(string $idNotif): bool
     {
         $req = "SELECT * FROM 'notification' WHERE id_notif = :idNotif;";
-        $res = ($this->loadQuery($this->bd->execSQL($req, [':idNotif' => $idNotif])));
+        $res = ($this->loadQuery($this->bd->execSQLSelect($req, [':idNotif' => $idNotif])));
         return ($res != []);
     }
 }

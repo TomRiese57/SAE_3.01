@@ -1,6 +1,6 @@
 <?php
-require_once "../connexion.php";
-require_once "../metier/ami.class.php";
+require_once "connexion.php";
+require_once ".ami.class.php";
 class AmiDAO
 {
     // définition des propriétés
@@ -23,12 +23,12 @@ class AmiDAO
 
     function deleteByIdUtiByIdAmi(int $idUti, int $idAmi): void
     {
-        $this->bd->execSQLselect("DELETE FROM ami WHERE id_uti = :idUti AND id_ami = :IdAmi;", [$idUti, $idAmi]);
+        $this->bd->execSQL("DELETE FROM ami WHERE id_uti = :idUti AND id_ami = :IdAmi;", [$idUti, $idAmi]);
     }
 
     function update(Ami $ami)
     {
-        $this->bd->execSQLselect(
+        $this->bd->execSQL(
             "UPDATE ami SET 'status' = :'status', 'date' = :'date' WHERE idUti = :idUti AND id_ami = :IdAmi;",
             [":status" => $ami->getStatus(), ":date" => $ami->getDate(), ":IdUti" => $ami->getIdUti(), ":IdAmi" => $ami->getIdAmi()]
         );
@@ -50,19 +50,19 @@ class AmiDAO
 
     function getAll(): array
     {
-        return $this->loadQuery($this->bd->execSQL($this->select));
+        return $this->loadQuery($this->bd->execSQLSelect($this->select));
     }
 
     function getByIdUtiByIdAmi(int $IdUti, int $idAmi): array
     {
 
-        return $this->loadQuery($this->bd->execSQL($this->select . " WHERE id_uti = :idUti AND id_ami = idAmi", [':idUti' => $IdUti, ':idAmi' => $idAmi]));
+        return $this->loadQuery($this->bd->execSQLSelect($this->select . " WHERE id_uti = :idUti AND id_ami = idAmi", [':idUti' => $IdUti, ':idAmi' => $idAmi]));
     }
 
     function existe(string $IdUti, string $idAmi): bool
     {
         $req = "SELECT * FROM ami WHERE id_uti = :idUti AND id_ami = :idAmi";
-        $res = ($this->loadQuery($this->bd->execSQL($req, [':idUti' => $IdUti, ":idAmi" => $idAmi])));
+        $res = ($this->loadQuery($this->bd->execSQLSelect($req, [':idUti' => $IdUti, ":idAmi" => $idAmi])));
         return ($res != []);
     }
 }

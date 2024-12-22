@@ -1,6 +1,9 @@
 <?php
-require_once "../connexion.php";
-require_once "../metier/utilisateur.class.php";
+echo "c";
+require_once "connexion.php";
+echo "z";
+require_once "utilisateur.class.php";
+echo "r";
 class UtilisateurDAO
 {
     // définition des propriétés
@@ -23,12 +26,12 @@ class UtilisateurDAO
 
     function deleteByIdUti(int $idUti): void
     {
-        $this->bd->execSQLselect("DELETE FROM utilisateur WHERE id_uti = :idUti;", [$idUti]);
+        $this->bd->execSQL("DELETE FROM utilisateur WHERE id_uti = :idUti;", [$idUti]);
     }
 
     function update(Utilisateur $uti)
     {
-        $this->bd->execSQLselect(
+        $this->bd->execSQL(
             "UPDATE ami SET pseudo = :pseudo, mail = :mail, mdp = :mdp, score_temps :scoreTemps, score_morts = :scoreMorts, 'date' = :'date' WHERE idUti = :idUti;",
             [":pseudo" => $uti->getPseudo(), ":mail" => $uti->getMail(), ":mdp" => $uti->getMdp(), ":scoreTemps" => $uti->getScoreTemps(), ":scoreMorts" => $uti->getScoreMorts(), ":date" => $uti->getDate()]
         );
@@ -53,19 +56,19 @@ class UtilisateurDAO
 
     function getAll(): array
     {
-        return $this->loadQuery($this->bd->execSQL($this->select));
+        return $this->loadQuery($this->bd->execSQLSelect($this->select));
     }
 
     function getByIdUti(int $idUti): array
     {
 
-        return $this->loadQuery($this->bd->execSQL($this->select . " WHERE id_uti = :idUti;", [':idUti' => $idUti]));
+        return $this->loadQuery($this->bd->execSQLSelect($this->select . " WHERE id_uti = :idUti;", [':idUti' => $idUti]));
     }
 
     function existe(string $idUti): bool
     {
         $req = "SELECT * FROM utilisateur WHERE id_uti = :idUti;";
-        $res = ($this->loadQuery($this->bd->execSQL($req, [':idUti' => $idUti])));
+        $res = ($this->loadQuery($this->bd->execSQLSelect($req, [':idUti' => $idUti])));
         return ($res != []);
     }
 }

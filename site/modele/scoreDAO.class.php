@@ -1,6 +1,6 @@
 <?php
-require_once "../connexion.php";
-require_once "../metier/score.php";
+require_once "connexion.php";
+require_once "score.php";
 class ScoreDAO
 {
     // définition des propriétés
@@ -23,12 +23,12 @@ class ScoreDAO
 
     function deleteByIdUti(int $idScore): void
     {
-        $this->bd->execSQLselect("DELETE FROM score WHERE id_score = :idScore;", [$idScore]);
+        $this->bd->execSQL("DELETE FROM score WHERE id_score = :idScore;", [$idScore]);
     }
 
     function update(Score $score)
     {
-        $this->bd->execSQLselect(
+        $this->bd->execSQL(
             "UPDATE score SET id_uti = :idUti, temps = :temps, morts = :morts, 'date' = :'date' WHERE id_score = :idScore;",
             [":idUti" => $score->getIdUti(), ":temps" => $score->getTemps(), ":morts" => $score->getMorts(), ":date" => $score->getDate(), ":idScore" => $score->getIdScore()]
         );
@@ -51,19 +51,19 @@ class ScoreDAO
 
     function getAll(): array
     {
-        return $this->loadQuery($this->bd->execSQL($this->select));
+        return $this->loadQuery($this->bd->execSQLSelect($this->select));
     }
 
     function getByIdUti(int $idScore): array
     {
 
-        return $this->loadQuery($this->bd->execSQL($this->select . " WHERE id_score = :idScore;", [':idScore' => $idScore]));
+        return $this->loadQuery($this->bd->execSQLSelect($this->select . " WHERE id_score = :idScore;", [':idScore' => $idScore]));
     }
 
     function existe(string $idScore): bool
     {
         $req = "SELECT * FROM score WHERE id_score = :idScore;";
-        $res = ($this->loadQuery($this->bd->execSQL($req, [':idScore' => $idScore])));
+        $res = ($this->loadQuery($this->bd->execSQLSelect($req, [':idScore' => $idScore])));
         return ($res != []);
     }
 }
