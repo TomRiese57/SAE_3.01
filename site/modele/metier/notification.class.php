@@ -51,7 +51,7 @@ class Notification
     }
 
     // setters
-    public function setIdNotification(int $idNotif)
+    public function setIdNotif(int $idNotif)
     {
         $this->idNotif = $idNotif;
     }

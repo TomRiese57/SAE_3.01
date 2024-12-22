@@ -62,7 +62,7 @@ class Message
         $this->idMsg = $idMsg;
     }
 
-    public function setIdExpe(int $idExp)
+    public function setIdExp(int $idExp)
     {
         $this->idExp = $idExp;
     }
@@ -77,7 +77,7 @@ class Message
         $this->texte = $texte;
     }
 
-    public function setEnvoyeA(string $date)
+    public function setDate(string $date)
     {
         $this->date = $date;
     }
