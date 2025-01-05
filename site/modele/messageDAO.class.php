@@ -15,7 +15,7 @@ class MessageDAO
 
     function insert(Message $msg): void
     {
-        $this->bd->execSQL("INSERT INTO 'message' (id_msg, id_exp, id_rec, texte, 'date', est_lu)
+        $this->bd->execSQLR("INSERT INTO 'message' (id_msg, id_exp, id_rec, texte, 'date', est_lu)
         VALUES (:idMsg, :idExp, :idRec, :texte ,:'date', :estLu);",
             [':idMsg' => $msg->getIdMsg(), ':idRec' => $msg->getIdExp(), ':texte' => $msg->getTexte(), ":date" => $msg->getDate(), ":estLu" => $msg->getEstLu()]
         );
@@ -23,12 +23,12 @@ class MessageDAO
 
     function deleteByIdMsg(int $idMsg): void
     {
-        $this->bd->execSQL("DELETE FROM 'message' WHERE id_msg = :idMsg;", [$idMsg]);
+        $this->bd->execSQLR("DELETE FROM 'message' WHERE id_msg = :idMsg;", [$idMsg]);
     }
 
     function update(Message $msg)
     {
-        $this->bd->execSQL(
+        $this->bd->execSQLR(
             "UPDATE 'message' SET id_exp = :idExp, id_rec = :idRec, texte = :texte, 'date' :'date', estLu = :estLu WHERE id_msg = :idMsg;",
             [":idExp" => $msg->getIdExp(), ":idRec" => $msg->getIdRec(), ":texte" => $msg->getTexte(), ":date" => $msg->getDate(), ":estLu" => $msg->getEstLu(), ":idMsg" => $msg->getIdMsg()]
         );

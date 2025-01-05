@@ -15,7 +15,7 @@ class AmiDAO
 
     function insert(Ami $ami): void
     {
-        $this->bd->execSQL("INSERT INTO ami (id_uti, id_ami, 'status', 'date')
+        $this->bd->execSQLR("INSERT INTO ami (id_uti, id_ami, 'status', 'date')
         VALUES (:idUti, :idAmi, :'status', :'date')",
             [':idUti' => $ami->getIdUti(), ':idAmi' => $ami->getIdAmi(), ':status' => $ami->getStatus(), ":date" => $ami->getDate()]
         );
@@ -23,12 +23,12 @@ class AmiDAO
 
     function deleteByIdUtiByIdAmi(int $idUti, int $idAmi): void
     {
-        $this->bd->execSQL("DELETE FROM ami WHERE id_uti = :idUti AND id_ami = :IdAmi;", [$idUti, $idAmi]);
+        $this->bd->execSQLR("DELETE FROM ami WHERE id_uti = :idUti AND id_ami = :IdAmi;", [$idUti, $idAmi]);
     }
 
     function update(Ami $ami)
     {
-        $this->bd->execSQL(
+        $this->bd->execSQLR(
             "UPDATE ami SET 'status' = :'status', 'date' = :'date' WHERE idUti = :idUti AND id_ami = :IdAmi;",
             [":status" => $ami->getStatus(), ":date" => $ami->getDate(), ":IdUti" => $ami->getIdUti(), ":IdAmi" => $ami->getIdAmi()]
         );

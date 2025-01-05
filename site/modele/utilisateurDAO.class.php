@@ -15,7 +15,7 @@ class UtilisateurDAO
 
     function insert(Utilisateur $uti): void
     {
-        $this->bd->execSQL("INSERT INTO ami (id_uti, pseudo, mail, mdp, score_temps, sore_morts, 'date')
+        $this->bd->execSQLR("INSERT INTO ami (id_uti, pseudo, mail, mdp, score_temps, sore_morts, 'date')
         VALUES (:idUti, :pseudo, :mail, :mdp ,:scoreTemps, :soreMorts, :'date');",
             [':idUti' => $uti->getIdUti(), ':pseudo' => $uti->getPseudo(), ':mail' => $uti->getMail(), ":scoreTemps" => $uti->getScoreTemps(), ":scoreMorts" => $uti->getScoreMorts(), ":date" => $uti->getDate()]
         );
@@ -23,12 +23,12 @@ class UtilisateurDAO
 
     function deleteByIdUti(int $idUti): void
     {
-        $this->bd->execSQL("DELETE FROM utilisateur WHERE id_uti = :idUti;", [$idUti]);
+        $this->bd->execSQLR("DELETE FROM utilisateur WHERE id_uti = :idUti;", [$idUti]);
     }
 
     function update(Utilisateur $uti)
     {
-        $this->bd->execSQL(
+        $this->bd->execSQLR(
             "UPDATE ami SET pseudo = :pseudo, mail = :mail, mdp = :mdp, score_temps :scoreTemps, score_morts = :scoreMorts, 'date' = :'date' WHERE idUti = :idUti;",
             [":pseudo" => $uti->getPseudo(), ":mail" => $uti->getMail(), ":mdp" => $uti->getMdp(), ":scoreTemps" => $uti->getScoreTemps(), ":scoreMorts" => $uti->getScoreMorts(), ":date" => $uti->getDate()]
         );

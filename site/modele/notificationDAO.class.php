@@ -15,7 +15,7 @@ class NofificationDAO
 
     function insert(Notification $notif): void
     {
-        $this->bd->execSQL("INSERT INTO 'notification' (id_notif, id_uti, 'type', contenu, est_lu, 'date')
+        $this->bd->execSQLR("INSERT INTO 'notification' (id_notif, id_uti, 'type', contenu, est_lu, 'date')
         VALUES (:idNotif, :idUti, :'type', :contenu ,:estLu, :'date');",
             [':idNotif' => $notif->getIdNotif(), ':idUti' => $notif->getIdUti(), ':type' => $notif->getType(), ":contenu" => $notif->getContenu(), ":estLu" => $notif->getEstLu(), ":date" => $notif->getDate()]
         );
@@ -23,12 +23,12 @@ class NofificationDAO
 
     function deleteByIdUti(int $idUti): void
     {
-        $this->bd->execSQL("DELETE FROM 'notification' WHERE id_uti = :idUti;", [$idUti]);
+        $this->bd->execSQLR("DELETE FROM 'notification' WHERE id_uti = :idUti;", [$idUti]);
     }
 
     function update(Notification $msg)
     {
-        $this->bd->execSQL(
+        $this->bd->execSQLR(
             "UPDATE 'notification' SET id_uti = :idUti, 'type' = :'type', contenu = :contenu, est_lu :estLu, 'date' = :'date' WHERE idNotif = :idNotif;",
             [":idUti" => $msg->getIdUti(), ":type" => $msg->getType(), ":contenu" => $msg->getContenu(), ":estLu" => $msg->getEstLu(), ":date" => $msg->getDate(), ":idNotif" => $msg->getIdNotif()]
         );

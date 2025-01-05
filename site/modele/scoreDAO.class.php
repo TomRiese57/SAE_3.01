@@ -15,7 +15,7 @@ class ScoreDAO
 
     function insert(Score $score): void
     {
-        $this->bd->execSQL("INSERT INTO score (id_score, id_uti, temps, morts, 'date')
+        $this->bd->execSQLR("INSERT INTO score (id_score, id_uti, temps, morts, 'date')
         VALUES (:idScore, :idUti, :temps, :morts , :'date');",
             [':idScore' => $score->getIdScore(), ':idUti' => $score->getIdUti(), ':temps' => $score->getTemps(), ":morts" => $score->getMorts(), ":date" => $score->getDate()]
         );
@@ -23,12 +23,12 @@ class ScoreDAO
 
     function deleteByIdUti(int $idScore): void
     {
-        $this->bd->execSQL("DELETE FROM score WHERE id_score = :idScore;", [$idScore]);
+        $this->bd->execSQLR("DELETE FROM score WHERE id_score = :idScore;", [$idScore]);
     }
 
     function update(Score $score)
     {
-        $this->bd->execSQL(
+        $this->bd->execSQLR(
             "UPDATE score SET id_uti = :idUti, temps = :temps, morts = :morts, 'date' = :'date' WHERE id_score = :idScore;",
             [":idUti" => $score->getIdUti(), ":temps" => $score->getTemps(), ":morts" => $score->getMorts(), ":date" => $score->getDate(), ":idScore" => $score->getIdScore()]
         );
