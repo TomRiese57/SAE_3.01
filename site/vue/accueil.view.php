@@ -15,9 +15,9 @@
         </div>
         <h1>Stick Spin</h1>
         <div class="icones">
-            <img id="amis" src="../view/style/images/amis.png" alt="Amis">
-            <img id="notif" src="../view/style/images/notif.png" alt="Notifications">
-            <img id="profil" src="../view/style/images/profil.png" alt="Profil">
+            <button type='submit' name='amis' value='amis'><img id="amis" src="../vue/style/images/amis.png" alt="Amis"></button>
+            <button type='submit' name='notif' value='notif'><img id="notif" src="../vue/style/images/notif.png" alt="Notifications"></button>
+            <button type='submit' name='profil' value='profil'><img id="profil" src="../vue/style/images/profil.png" alt="Profil"></button>
         </div>
     </header>
 
