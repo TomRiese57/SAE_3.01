@@ -13,11 +13,11 @@
         <div class="logo">
             <img src="../vue/style/images/manette.png" alt="Logo">
         </div>
-        <h1>Stick Spin</h1>
+        <h1>StickSpin</h1>
         <div class="icones">
-            <img id="amis" src="../vue/style/images/amis.png" alt="Amis">
-            <img id="notif" src="../vue/style/images/notif.png" alt="Notifications">
-            <img id="profil" src="../vue/style/images/profil.png" alt="Profil">
+            <button type='submit' name='amis' value='amis'><img id="amis" src="../vue/style/images/amis.png" alt="Amis"></button>
+            <button type='submit' name='notif' value='notif'><img id="notif" src="../vue/style/images/notif.png" alt="Notifications"></button>
+            <button type='submit' name='profil' value='profil'><img id="profil" src="../vue/style/images/profil.png" alt="Profil"></button>
         </div>
     </header>
 
@@ -39,7 +39,7 @@
                 </fieldset>
                 <input type="submit" name="connexion" value="Connexion" />
                 &emsp;
-                <?= $message ?>
+                <p><?= $message ?></p>
             </div>
             <div class="controles">
                 <img id="controles" src="../vue/style/images/fleches_directionnelles_blanches.png" alt="Contrôles">

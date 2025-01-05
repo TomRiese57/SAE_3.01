@@ -1,9 +1,6 @@
 <?php
-echo "c";
 require_once "connexion.php";
-echo "z";
 require_once "utilisateur.class.php";
-echo "r";
 class UtilisateurDAO
 {
     // définition des propriétés

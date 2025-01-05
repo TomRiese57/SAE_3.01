@@ -11,7 +11,6 @@ class Connexion
 		string $USER = "root",
 		string $PASSWORD = ""
 	) {
-		echo "a";
 		//utilisation d’un tableau associatif pour l’ensemble des données de connexion
 		$db_config['SGBD'] = $SGBD;
 		$db_config['HOST'] = $HOST;
