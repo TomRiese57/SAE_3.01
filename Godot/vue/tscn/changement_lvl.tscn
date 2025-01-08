@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://dm2xynbodjiei"]
 
-[ext_resource type="Texture2D" uid="uid://cqbnyg5wr1a62" path="res://vue/Background/tilemap_packed.png" id="1_00h8a"]
+[ext_resource type="Texture2D" uid="uid://crcxb8rk2pebu" path="res://vue/Background/tilemap_packed.png" id="1_00h8a"]
 [ext_resource type="Script" path="res://controleur/changement_lvl.gd" id="1_ispwl"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_w8d17"]

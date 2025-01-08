@@ -1,12 +1,12 @@
 [gd_scene load_steps=10 format=3 uid="uid://b5d4clkkaga40"]
 
-[ext_resource type="Texture2D" uid="uid://d2pddvycc23xe" path="res://vue/hacksaw/hacksaw1.png" id="1_3ckew"]
+[ext_resource type="Texture2D" uid="uid://bqcpl2wmxoap3" path="res://vue/hacksaw/hacksaw1.png" id="1_3ckew"]
 [ext_resource type="Script" path="res://controleur/hacksaw.gd" id="1_7d66x"]
-[ext_resource type="AudioStream" uid="uid://t1d4xk14tcu1" path="res://modele/song/circular-saw.mp3" id="2_psduw"]
-[ext_resource type="Texture2D" uid="uid://dtvgf6mg17j4u" path="res://vue/hacksaw/hacksaw2.png" id="2_xea2n"]
-[ext_resource type="Texture2D" uid="uid://l31n54iu3yrm" path="res://vue/hacksaw/hacksaw3.png" id="3_wmftb"]
-[ext_resource type="Texture2D" uid="uid://viwuxkx7c41y" path="res://vue/hacksaw/hacksaw4.png" id="4_nfh6p"]
-[ext_resource type="Texture2D" uid="uid://swxe47nko4ve" path="res://vue/hacksaw/hacksaw5.png" id="5_26skk"]
+[ext_resource type="AudioStream" uid="uid://crvbdwcxhqbej" path="res://modele/song/circular-saw.mp3" id="2_psduw"]
+[ext_resource type="Texture2D" uid="uid://sbgaxeuqmy66" path="res://vue/hacksaw/hacksaw2.png" id="2_xea2n"]
+[ext_resource type="Texture2D" uid="uid://be160r3v7lwq4" path="res://vue/hacksaw/hacksaw3.png" id="3_wmftb"]
+[ext_resource type="Texture2D" uid="uid://dxhbep6q87iub" path="res://vue/hacksaw/hacksaw4.png" id="4_nfh6p"]
+[ext_resource type="Texture2D" uid="uid://d4k87k60bl0v8" path="res://vue/hacksaw/hacksaw5.png" id="5_26skk"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_8baos"]
 animations = [{
