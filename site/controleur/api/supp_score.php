@@ -8,9 +8,7 @@ if( !empty($_GET['id_score']) ){
 	$scoreDAO = new ScoreDAO();
 	$scoreDAO->deleteByIdScore($_GET['id_score']);
 	$success = true;
-	$msg = 'Le vol est supprimé';
-	
-	$msg = "Une erreur s'est produite";
+	$msg = 'Le score est supprimé';
 } else {
 	$msg = "Il manque des informations";
 }
