@@ -1,6 +1,6 @@
 <?php
 require_once "connexion.php";
-require_once "score.php";
+require_once "score.class.php";
 class ScoreDAO
 {
     // définition des propriétés
@@ -21,7 +21,7 @@ class ScoreDAO
         );
     }
 
-    function deleteByIdUti(int $idScore): void
+    function deleteByIdScore(int $idScore): void
     {
         $this->bd->execSQLR("DELETE FROM score WHERE id_score = :idScore;", [$idScore]);
     }
@@ -54,7 +54,12 @@ class ScoreDAO
         return $this->loadQuery($this->bd->execSQLSelect($this->select));
     }
 
-    function getByIdUti(int $idScore): array
+    function getAllApi(): array
+    {
+        return $this->bd->execSQLSelect($this->select);
+    }
+
+    function getByIdScore(int $idScore): array
     {
 
         return $this->loadQuery($this->bd->execSQLSelect($this->select . " WHERE id_score = :idScore;", [':idScore' => $idScore]));

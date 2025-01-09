@@ -21,9 +21,9 @@ class NofificationDAO
         );
     }
 
-    function deleteByIdUti(int $idUti): void
+    function deleteByIdNotif(int $idNotif): void
     {
-        $this->bd->execSQLR("DELETE FROM 'notification' WHERE id_uti = :idUti;", [$idUti]);
+        $this->bd->execSQLR("DELETE FROM 'notification' WHERE id_notif = :idNotif;", [$idNotif]);
     }
 
     function update(Notification $msg)
@@ -55,7 +55,7 @@ class NofificationDAO
         return $this->loadQuery($this->bd->execSQLSelect($this->select));
     }
 
-    function getByIdUti(int $idNotif): array
+    function getByIdNotif(int $idNotif): array
     {
 
         return $this->loadQuery($this->bd->execSQLSelect($this->select . " WHERE id_notif = :idNotif;", [':idNotif' => $idNotif]));
