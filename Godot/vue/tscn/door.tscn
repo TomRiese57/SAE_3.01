@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://dm2xynbodjiei"]
 
 [ext_resource type="Texture2D" uid="uid://crcxb8rk2pebu" path="res://vue/Background/tilemap_packed.png" id="1_00h8a"]
-[ext_resource type="Script" path="res://controleur/changement_lvl.gd" id="1_ispwl"]
+[ext_resource type="Script" path="res://controleur/door.gd" id="1_ispwl"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_w8d17"]
 texture = ExtResource("1_00h8a")
@@ -233,7 +233,7 @@ sources/0 = SubResource("TileSetAtlasSource_w8d17")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qelbr"]
 size = Vector2(31, 20)
 
-[node name="changement_lvl" type="Sprite2D"]
+[node name="Door" type="Sprite2D"]
 script = ExtResource("1_ispwl")
 
 [node name="TileMap" type="TileMap" parent="."]
