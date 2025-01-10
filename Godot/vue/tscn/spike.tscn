@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://controleur/spike.gd" id="1_ty1qa"]
 [ext_resource type="Texture2D" uid="uid://crcxb8rk2pebu" path="res://vue/Background/tilemap_packed.png" id="2_tt4tw"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_536mf"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2fggr"]
 texture = ExtResource("2_tt4tw")
 texture_region_size = Vector2i(18, 18)
 0:0/0 = 0
@@ -228,7 +228,7 @@ texture_region_size = Vector2i(18, 18)
 21:9/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_p8r80"]
-sources/0 = SubResource("TileSetAtlasSource_536mf")
+sources/0 = SubResource("TileSetAtlasSource_2fggr")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_470tj"]
 size = Vector2(7.41699, 3.672)

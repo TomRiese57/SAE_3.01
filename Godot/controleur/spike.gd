@@ -15,4 +15,7 @@ func _on_piques_body_entered(body: Node2D) -> void:
 		elif path == "res://vue/tscn/level_3.tscn":
 			body.position.x = 182
 			body.position.y = 309
+		elif path == "res://vue/tscn/level_4.tscn":
+			body.position.x = 232
+			body.position.y = 306
 		dead.emit()
