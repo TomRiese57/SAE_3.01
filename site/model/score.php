@@ -1,6 +1,5 @@
 <?php
-class Score
-{
+class Score {
     private $idScore;
     private $idUti;
     private $temps;
@@ -8,8 +7,7 @@ class Score
     private $date;
 
     // constructeur    
-    function __construct(int $idScore = 0, int $idUti = 0, int $temps = 0, int $morts = 0, string $date = '')
-    {
+    function __construct(int $idScore = 0, int $idUti = 0, float $temps = 0.0, int $morts = 0, string $date = '') {
         $this->idScore = $idScore;
         $this->idUti = $idUti;
         $this->temps = $temps;
@@ -18,54 +16,44 @@ class Score
     }
 
     // getters
-    public function getIdScore(): int
-    {
+    public function getIdScore(): int {
         return $this->idScore;
     }
 
-    public function getIdUti(): int
-    {
+    public function getIdUti(): int {
         return $this->idUti;
     }
 
-    public function getTemps(): int
-    {
+    public function getTemps(): float {
         return $this->temps;
     }
 
-    public function getMorts(): int
-    {
+    public function getMorts(): int {
         return $this->morts;
     }
 
-    public function getDate(): string
-    {
+    public function getDate(): string {
         return $this->date;
     }
 
     // setters
-    public function setIdScore(int $idScore)
-    {
+    public function setIdScore(int $idScore) {
         $this->idScore = $idScore;
     }
 
-    public function setIdUti(int $idUti)
-    {
+    public function setIdUti(int $idUti) {
         $this->idUti = $idUti;
     }
 
-    public function setTemps(int $temps)
-    {
+    public function setTemps(float $temps) {
         $this->temps = $temps;
     }
 
-    public function setMorts(int $morts)
-    {
+    public function setMorts(int $morts) {
         $this->morts = $morts;
     }
 
-    public function setDate(string $date)
-    {
+    public function setDate(string $date) {
         $this->date = $date;
     }
 }
