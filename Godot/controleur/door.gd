@@ -21,11 +21,15 @@ func _process(delta: float) -> void:
 			if Global.lvl_actuel < 4:
 				Global.lvl_actuel = 4
 			get_tree().change_scene_to_file("res://vue/tscn/level_4.tscn")
+		
+		elif path == "res://vue/tscn/level_4.tscn":
+			if Global.lvl_actuel < 4:
+				Global.lvl_actuel = 4
+			get_tree().change_scene_to_file("res://vue/tscn/win.tscn")
 			
 func _on_porte_body_entered(body: Node2D) -> void:
 	# Si le personnage entre dans la hitbox, active la variable
 	if body.name == "Stickman":
-		print("coucou")
 		is_in_hitbox = true
 
 func _on_porte_body_exited(body: Node2D) -> void:
