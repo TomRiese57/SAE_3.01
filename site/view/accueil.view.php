@@ -45,9 +45,9 @@
         </main>
     </body>
 
-    <script src="../view/script/amis.js"></script>
-    <script src="../view/script/notif.js"></script>
-    <script src="../view/script/profil.js"></script>
-    <script src="../view/script/bouton_jouer.js"></script>
-    <script src="../view/script/controles.js"></script>
+    <script src="../controller/script/amis.js"></script>
+    <script src="../controller/script/notif.js"></script>
+    <script src="../controller/script/profil.js"></script>
+    <script src="../controller/script/bouton_jouer.js"></script>
+    <script src="../controller/script/controles.js"></script>
 </html>
