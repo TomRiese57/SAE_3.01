@@ -352,15 +352,15 @@ grow_horizontal = 0
 grow_vertical = 2
 text = "Retour"
 
-[node name="Label" type="Label" parent="."]
+[node name="Titre" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -40.0
+offset_left = -152.0
 offset_top = 64.0
-offset_right = 90.0
-offset_bottom = 98.0
+offset_right = 128.0
+offset_bottom = 133.0
 grow_horizontal = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 50
@@ -370,14 +370,13 @@ text = "Classement"
 layout_mode = 1
 anchors_preset = -1
 anchor_bottom = 0.062
-offset_left = 470.0
+offset_left = 416.0
 offset_top = 190.0
-offset_right = 771.0
+offset_right = 717.0
 offset_bottom = 462.824
 
 [node name="Label" type="Label" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "1. "
 
 [connection signal="pressed" from="Retour" to="." method="_on_retour_pressed"]
