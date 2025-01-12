@@ -14,10 +14,10 @@ func _input(event):
 	if is_rotating or dead:
 		return
 	# Vérifie si une action pour tourner la carte est déclenchée
-	if Input.is_action_just_pressed("RotateLeft") and stickman.is_on_floor():
+	if Input.is_action_just_pressed("RotateLeft"):
 		start_rotation(-ROTATION_ANGLE)
 		
-	elif Input.is_action_just_pressed("RotateRight") and stickman.is_on_floor():
+	elif Input.is_action_just_pressed("RotateRight"):
 		start_rotation(ROTATION_ANGLE)
 		
 func start_rotation(angle_degrees):
@@ -68,3 +68,7 @@ func _on_hacksaw_dead() -> void:
 
 func _on_timer_timeout() -> void:
 	Global.time += 1
+
+
+func _on_spike_4_dead() -> void:
+	pass # Replace with function body.

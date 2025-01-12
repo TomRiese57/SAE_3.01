@@ -1,12 +1,12 @@
 [gd_scene load_steps=13 format=3 uid="uid://daxik47fdcjgf"]
 
 [ext_resource type="Script" path="res://controleur/rotation.gd" id="1_cf8ca"]
-[ext_resource type="AudioStream" uid="uid://cfpyhsnvop8hj" path="res://modele/song/whoosh-motion.mp3" id="1_o52oc"]
+[ext_resource type="AudioStream" uid="uid://bgawwhskonfqn" path="res://modele/song/whoosh-motion.mp3" id="1_o52oc"]
 [ext_resource type="PackedScene" uid="uid://u7qmoixaf6kc" path="res://vue/tscn/pause_menu.tscn" id="2_wwbbh"]
-[ext_resource type="Texture2D" uid="uid://cqdlvxscjq2vu" path="res://vue/Background/Background.png" id="3_iorie"]
-[ext_resource type="AudioStream" uid="uid://elakggex181j" path="res://modele/song/8-bit-a-video-game-short.mp3" id="3_r3o8y"]
-[ext_resource type="Texture2D" uid="uid://cqbnyg5wr1a62" path="res://vue/Background/tilemap_packed.png" id="4_iu60g"]
-[ext_resource type="PackedScene" uid="uid://dm2xynbodjiei" path="res://vue/tscn/changement_lvl.tscn" id="5_ohlwq"]
+[ext_resource type="Texture2D" uid="uid://cdp41u26ilxrb" path="res://vue/Background/Background.png" id="3_iorie"]
+[ext_resource type="AudioStream" uid="uid://dvnb1bmdkv1l" path="res://modele/song/8-bit-a-video-game-short.mp3" id="3_r3o8y"]
+[ext_resource type="Texture2D" uid="uid://crcxb8rk2pebu" path="res://vue/Background/tilemap_packed.png" id="4_iu60g"]
+[ext_resource type="PackedScene" uid="uid://dm2xynbodjiei" path="res://vue/tscn/door.tscn" id="5_ohlwq"]
 [ext_resource type="PackedScene" uid="uid://cxjnr640crmx4" path="res://vue/tscn/stickman.tscn" id="6_4j86t"]
 [ext_resource type="PackedScene" uid="uid://b5d4clkkaga40" path="res://vue/tscn/hacksaw.tscn" id="8_7gjyg"]
 [ext_resource type="PackedScene" uid="uid://bdkxxn81or87v" path="res://vue/tscn/spike.tscn" id="9_4atiy"]
@@ -375,7 +375,7 @@ position = Vector2(3, 2)
 collision_layer = 0
 collision_mask = 2
 
-[node name="changement_lvl" parent="." instance=ExtResource("5_ohlwq")]
+[node name="Door" parent="." instance=ExtResource("5_ohlwq")]
 position = Vector2(759, 212)
 rotation = -3.14006
 
