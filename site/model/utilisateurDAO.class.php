@@ -89,7 +89,7 @@ class UtilisateurDAO {
 
     function getNbrAmi (int $idUti) : int {
         $lesAmis = $this->bd->execSQLSelect("SELECT * FROM ami WHERE
-        id_uti = :idUti", [':idUti'=>$idUti]);
+        id_uti = :idUti AND status ='accepté'", [':idUti'=>$idUti]);
         $nbrAmi = count($lesAmis);
         return $nbrAmi;
     }
