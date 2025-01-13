@@ -50,12 +50,12 @@ class NotificationDAO {
     }
 
     function getAll () : array {
-        return ($this->loadQuery($this->bd->execSQLselect($this->select)));
+        return ($this->loadQuery($this->bd->execSQLSelect($this->select)));
     }
 
     function getById (int $idNotif) : Notification {
         $uneNotification = new Notification();
-        $lesNotifications = $this->loadQuery($this->bd->execSQLselect($this->select ." WHERE
+        $lesNotifications = $this->loadQuery($this->bd->execSQLSelect($this->select ." WHERE
         id_notif = :idNotif", [':idNotif'=>$idNotif]) );
         if (count($lesNotifications) > 0) { 
             $uneNotification = $lesNotifications[0]; 
@@ -68,7 +68,7 @@ class NotificationDAO {
         $req = "SELECT * 
                 FROM notification
                 WHERE id_notif = :idNotif";
-        $res = ($this->loadQuery($this->bd->execSQLselect($req, [':idNotif'=>$idNotif])));
+        $res = ($this->loadQuery($this->bd->execSQLSelect($req, [':idNotif'=>$idNotif])));
         return ($res != []); // si tableau des notifications est vide alors la notifcation n’existe pas
     }
 }    

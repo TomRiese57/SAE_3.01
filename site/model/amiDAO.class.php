@@ -46,12 +46,12 @@ class AmiDAO {
     }
 
     function getAll () : array {
-        return ($this->loadQuery($this->bd->execSQLselect($this->select)));
+        return ($this->loadQuery($this->bd->execSQLSelect($this->select)));
     }
 
     function getByIdUtiByIdAmi (int $idUti, int $idAmi) : Ami {
         $unAmi = new Ami();
-        $lesAmis = $this->loadQuery($this->bd->execSQLselect($this->select ." WHERE
+        $lesAmis = $this->loadQuery($this->bd->execSQLSelect($this->select ." WHERE
         id_uti = :idUti AND id_ami = :idAmi", [':idUti'=>$idUti, ':idAmi'=>$idAmi]) );
         if (count($lesAmis) > 0) { 
             $unAmi = $lesAmis[0]; 
@@ -65,7 +65,7 @@ class AmiDAO {
                 FROM ami 
                 WHERE id_uti = :idUti
                 AND id_ami = :idAmi";
-        $res = ($this->loadQuery($this->bd->execSQLselect($req, [':idUti'=>$idUti, ':idAmi'=>$idAmi])));
+        $res = ($this->loadQuery($this->bd->execSQLSelect($req, [':idUti'=>$idUti, ':idAmi'=>$idAmi])));
         return ($res != []); // si tableau d'amis est vide alors l'ami n’existe pas
     }
 }    

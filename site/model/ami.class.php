@@ -6,7 +6,7 @@ class Ami {
     private $date;
 
     // constructeur    
-    function __construct(int $idUti = 0, int $idAmi = 0, string $status = '', string $date = '') {
+    function __construct(int $idUti = 0, int $idAmi = 0, StatusAmis $status = '', string $date = '') {
         $this->idUti = $idUti;
         $this->idAmi = $idAmi;
         $this->status = $status;

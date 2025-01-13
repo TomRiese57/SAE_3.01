@@ -42,16 +42,5 @@ class Connexion {
 		}
 		return $res;
 	}
-
-	function execSQL2(string $req, array $valeurs=[]) : bool {
-		try	{	
-			$sql=$this->db->prepare($req); 
-			$sql->execute($valeurs);
-			return true;
-		} catch(Exception $exception) {
-			die($exception->getMessage());
-			return false;
-		}
-	}
 }	
 ?>

@@ -8,7 +8,7 @@ class Notification {
     private $date;
 
     // constructeur    
-    function __construct(int $idNotif = 0, int $idUti = 0, string $type = '', string $contenu = '', int $estLu = 0, string $date = '') {
+    function __construct(int $idNotif = 0, int $idUti = 0, TypeNotification $type = '', string $contenu = '', int $estLu = 0, string $date = '') {
         $this->idNotif = $idNotif;
         $this->idUti = $idUti;
         $this->type = $type;

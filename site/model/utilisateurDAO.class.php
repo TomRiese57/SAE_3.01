@@ -54,12 +54,12 @@ class UtilisateurDAO {
     }
 
     function getAll () : array {
-        return ($this->loadQuery($this->bd->execSQLselect($this->select)));
+        return ($this->loadQuery($this->bd->execSQLSelect($this->select)));
     }
 
     function getById (int $idUti) : Utilisateur {
         $unUtilisateur = new Utilisateur();
-        $lesUtilisateurs = $this->loadQuery($this->bd->execSQLselect($this->select ." WHERE
+        $lesUtilisateurs = $this->loadQuery($this->bd->execSQLSelect($this->select ." WHERE
         id_uti = :idUti", [':idUti'=>$idUti]) );
         if (count($lesUtilisateurs) > 0) { 
             $unUtilisateur = $lesUtilisateurs[0]; 
@@ -72,7 +72,7 @@ class UtilisateurDAO {
         $req = "SELECT * 
                 FROM utilisateur 
                 WHERE id_uti = :idUti";
-        $res = ($this->loadQuery($this->bd->execSQLselect($req, [':idUti'=>$idUti])));
+        $res = ($this->loadQuery($this->bd->execSQLSelect($req, [':idUti'=>$idUti])));
         return ($res != []); // si tableau d'utilisateurs est vide alors l'utilisateur n’existe pas
     }
 }    

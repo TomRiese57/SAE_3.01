@@ -50,12 +50,12 @@ class MessageDAO {
     }
 
     function getAll () : array {
-        return ($this->loadQuery($this->bd->execSQLselect($this->select)));
+        return ($this->loadQuery($this->bd->execSQLSelect($this->select)));
     }
 
     function getById (int $idMsg) : Message {
         $unMessage = new Message();
-        $lesMessages = $this->loadQuery($this->bd->execSQLselect($this->select ." WHERE
+        $lesMessages = $this->loadQuery($this->bd->execSQLSelect($this->select ." WHERE
         id_msg = :idMsg", [':idMsg'=>$idMsg]) );
         if (count($lesMessages) > 0) { 
             $unMessage = $lesMessages[0]; 
@@ -68,7 +68,7 @@ class MessageDAO {
         $req = "SELECT * 
                 FROM message
                 WHERE id_msg = :idMsg";
-        $res = ($this->loadQuery($this->bd->execSQLselect($req, [':idMsg'=>$idMsg])));
+        $res = ($this->loadQuery($this->bd->execSQLSelect($req, [':idMsg'=>$idMsg])));
         return ($res != []); // si tableau des messages est vide alors le message n’existe pas
     }
 }    

@@ -51,6 +51,10 @@ class ScoreDAO {
         return ($this->loadQuery($this->bd->execSQLselect($this->select)));
     }
 
+    function getAllAPI () : array {
+        return $this->bd->execSQLselect($this->select);
+    }
+
     function getById (int $idScore) : Score {
         $unScore = new Score();
         $lesScores = $this->loadQuery($this->bd->execSQLselect($this->select ." WHERE
