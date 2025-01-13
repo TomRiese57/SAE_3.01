@@ -48,16 +48,16 @@ class ScoreDAO {
     }
 
     function getAll () : array {
-        return ($this->loadQuery($this->bd->execSQLselect($this->select)));
+        return ($this->loadQuery($this->bd->execSQLSelect($this->select)));
     }
 
     function getAllAPI () : array {
         return $this->bd->execSQLselect($this->select);
     }
 
-    function getById (int $idScore) : Score {
+    function getByIdScore (int $idScore) : Score {
         $unScore = new Score();
-        $lesScores = $this->loadQuery($this->bd->execSQLselect($this->select ." WHERE
+        $lesScores = $this->loadQuery($this->bd->execSQLSelect($this->select ." WHERE
         id_score = :idScore", [':idScore'=>$idScore]) );
         if (count($lesScores) > 0) { 
             $unScore = $lesScores[0]; 
@@ -70,7 +70,7 @@ class ScoreDAO {
         $req = "SELECT * 
                 FROM score
                 WHERE id_score = :idScore";
-        $res = ($this->loadQuery($this->bd->execSQLselect($req, [':idScore'=>$idScore])));
+        $res = ($this->loadQuery($this->bd->execSQLSelect($req, [':idScore'=>$idScore])));
         return ($res != []); // si tableau des scores est vide alors le score n’existe pas
     }
 }    
