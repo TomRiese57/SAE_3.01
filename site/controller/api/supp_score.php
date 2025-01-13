@@ -6,7 +6,7 @@ if( !empty($_GET['id_score']) ){
 	//Si le client a saisis un id
 
 	$scoreDAO = new ScoreDAO();
-	$scoreDAO->deleteByIdScore($_GET['id_score']);
+	$scoreDAO->delete($_GET['id_score']);
 	$success = true;
 	$msg = 'Le score est supprimé';
 } else {
