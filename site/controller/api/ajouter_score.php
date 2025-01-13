@@ -1,6 +1,6 @@
 <?php
 require_once 'template.php';
-require_once '../../modele/scoreDAO.class.php';
+require_once '../../model/scoreDAO.class.php';
 
 if( !empty($_GET['id_score']) && !empty($_GET['id_uti']) && !empty($_GET['temps']) && !empty($_GET['morts']) && !empty($_GET['date']) ){
 	//Si toutes les données sont saisie par le client

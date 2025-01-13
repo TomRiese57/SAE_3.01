@@ -2,7 +2,7 @@
 header('Content-Type: application/json');
 $success = false;
 $data = array();
-require_once "../../modele/connexion.php";
+require_once "../../model/connexion.php";
 
 function reponse_json($success, $data, $msgErreur=NULL) {
 	$array['success'] = $success;
