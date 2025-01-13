@@ -49,5 +49,5 @@ deleteProfileButton.addEventListener('click', () => {
 const logoutProfileButton = document.getElementById('logout-profile');
 
 logoutProfileButton.addEventListener('click', () => {
-    window.location.href = 'logoutProfile.php';
+    window.location.href = 'logout.php';
 })
