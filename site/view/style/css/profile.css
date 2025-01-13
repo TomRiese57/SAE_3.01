@@ -107,3 +107,11 @@
     font-size: 20px;
     cursor: pointer;
 }
+
+.stats {
+    display: flex;
+}
+
+.stats div img {
+    width: 50px;
+}

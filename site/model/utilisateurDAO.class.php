@@ -68,12 +68,30 @@ class UtilisateurDAO {
         // il y a un seul élément dans le tableau d'utilisateurs ➔ indice 0 return $unUtilisateur;
     }	
 
+    function getByEmail (string $email) : Utilisateur {
+        $unUtilisateur = new Utilisateur();
+        $lesUtilisateurs = $this->loadQuery($this->bd->execSQLSelect($this->select ." WHERE
+        email = :email", [':email'=>$email]) );
+        if (count($lesUtilisateurs) > 0) { 
+            $unUtilisateur = $lesUtilisateurs[0]; 
+        }
+        return $unUtilisateur;
+        // il y a un seul élément dans le tableau d'utilisateurs ➔ indice 0 return $unUtilisateur;
+    }	
+
     function existe (int $idUti) : bool {
         $req = "SELECT * 
                 FROM utilisateur 
                 WHERE id_uti = :idUti";
         $res = ($this->loadQuery($this->bd->execSQLSelect($req, [':idUti'=>$idUti])));
         return ($res != []); // si tableau d'utilisateurs est vide alors l'utilisateur n’existe pas
+    }
+
+    function getNbrAmi (int $idUti) : int {
+        $lesAmis = $this->bd->execSQLSelect("SELECT * FROM ami WHERE
+        id_uti = :idUti", [':idUti'=>$idUti]);
+        $nbrAmi = count($lesAmis);
+        return $nbrAmi;
     }
 }    
 ?>

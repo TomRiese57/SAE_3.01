@@ -8,7 +8,7 @@
     </head>
     <body>
         <header>
-            <div class="logo">
+            <div class="logo" id="logo">
                 <img src="../view/style/images/manette.png" alt="Logo">
             </div>
             <h1>StickSpin</h1>
@@ -38,22 +38,8 @@
                 &emsp;
                 <?= $message ?>
             </div>
-            <div class="controles">
-                <img id="controles" src="../view/style/images/fleches_directionnelles_blanches.png" alt="Contrôles">
-                <div id="controles-modal" class="controles-modal">
-                    <div class="controles-content">
-                        <span class="close">&times;</span>
-                        <h1>Veuillez vous connecter afin d'accéder aux fonctionnalités du site</h1>
-                    </div>
-                </div>
-            </div>
+
             </form>
         </main>
     </body>
-
-    <script src="../controller/script/amis.js"></script>
-    <script src="../controller/script/notif.js"></script>
-    <script src="../controller/script/profil.js"></script>
-    <script src="../controller/script/bouton_jouer.js"></script>
-    <script src="../controller/script/controles.js"></script>
 </html>

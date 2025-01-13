@@ -21,7 +21,7 @@ window.addEventListener('click', (e) => {
 const viewProfileButton = document.getElementById('view-profile');
 
 viewProfileButton.addEventListener('click', () => {
-    window.location.href = 'viewProfile.php';
+    window.location.href = 'profil.php';
 })
 
 // Partager le profil

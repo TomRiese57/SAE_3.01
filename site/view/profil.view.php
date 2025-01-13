@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>StickSpin</title>
+        <title>Profil de <?= $profil['pseudo'] ?></title>
         <link rel="stylesheet" href="../view/style/css/style.css">
         <link rel="stylesheet" href="../view/style/css/profile.css">
     </head>
@@ -43,25 +43,34 @@
             </div>
             <!-- Aperçu du jeu -->
             <div class="game-preview">
-                <img src="../view/style/images/jeu.png" alt="Aperçu du jeu">
-                <h2>StickSpin</h2>
-                <button id="play-button">JOUER MAINTENANT</button>
-            </div>
-            <!-- Fenêtre modale Contrôles -->
-            <div class="controles">
-                <img id="controles" src="../view/style/images/fleches_directionnelles_noires.png" alt="Contrôles">
-                <div id="controles-modal" class="controles-modal">
-                    <div class="controles-content">
-                        <span class="close">&times;</span>
-                        <h2>Contrôles</h2>
-                        <ul>
-                            <li>Q ou flèche de gauche pour aller à gauche</li>
-                            <li>D ou flèche de droite pour aller à droite</li> 
-                            <li>Z ou flèche du haut ou barre espace pour sauter</li> 
-                            <li>S ou flèche du bas pour ouvrir une porte</li> 
-                            <li>A pour faire la map de 90° vers la gauche</li> 
-                            <li>E pour faire la map de 90° vers la droite</li>
-                        </ul>
+                <div class="profile-info">
+                    <h2><?= $profil['pseudo'] ?></h2>
+                </div>
+                <div class="stats" style="display: flex;">
+                    <div>
+                        <img src="../view/style/images/amis.png">
+                        <p>Amis</p>
+                        <p><?= $profil['amis'] ?></p>
+                    </div>
+                    <div>
+                        <img src="../view/style/images/calendrier.png">
+                        <p>Membres depuis</p>
+                        <p><?= $profil['date'] ?></p>
+                    </div>
+                    <div>
+                        <img src="../view/style/images/classement.png">
+                        <p>Classement</p>
+                        <p><?= $profil['classement'] ?></p>
+                    </div>
+                    <div>
+                        <img src="../view/style/images/temps.png">
+                        <p>Meilleurs temps</p>
+                        <p><?= $profil['temps'] ?></p>
+                    </div>
+                    <div>
+                        <img src="../view/style/images/mort.png">
+                        <p>Morts</p>
+                        <p><?= $profil['morts'] ?></p>
                     </div>
                 </div>
             </div>
@@ -72,6 +81,4 @@
     <script src="../controller/script/amis.js"></script>
     <script src="../controller/script/notif.js"></script>
     <script src="../controller/script/profil.js"></script>
-    <script src="../controller/script/bouton_jouer.js"></script>
-    <script src="../controller/script/controles.js"></script>
 </html>
