@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Stick Spin</title>
+        <title>StickSpin</title>
         <link rel="stylesheet" href="../view/style/css/style.css">
     </head>
     <body>
@@ -11,7 +11,7 @@
             <div class="logo">
                 <img src="../view/style/images/manette.png" alt="Logo">
             </div>
-            <h1>Stick Spin</h1>
+            <h1>StickSpin</h1>
             <div class="icones">
                 <img id="amis" src="../view/style/images/amis.png" alt="Amis">
                 <img id="notif" src="../view/style/images/notif.png" alt="Notifications">
@@ -28,7 +28,7 @@
                 <fieldset>
                         <legend>Authentification</legend>
                         <label>Identifiant : </label>
-                        <input type="text" name="login" placeholder="Votre pseudo ou votre email" value=<?= $identifiants['login'] ?>>
+                        <input type="text" name="login" placeholder="Votre email" value=<?= $identifiants['login'] ?>>
                         <br/><br/>
                         <label>Mot de passe : </label>
                         <input type="password" name="motDePasse" placeholder="Votre mot de passe"
@@ -51,9 +51,9 @@
         </main>
     </body>
 
-    <script src="../view/script/amis.js"></script>
-    <script src="../view/script/notif.js"></script>
-    <script src="../view/script/profil.js"></script>
-    <script src="../view/script/bouton_jouer.js"></script>
-    <script src="../view/script/controles.js"></script>
+    <script src="../controller/script/amis.js"></script>
+    <script src="../controller/script/notif.js"></script>
+    <script src="../controller/script/profil.js"></script>
+    <script src="../controller/script/bouton_jouer.js"></script>
+    <script src="../controller/script/controles.js"></script>
 </html>

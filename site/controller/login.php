@@ -10,7 +10,7 @@ $message = '';
 
 function existeUtilisateur(array $identifiants, array $lesUtilisateurs): bool {
     foreach ($lesUtilisateurs as $unUtilisateur) {
-        if (($identifiants['login'] == $unUtilisateur->getPseudo() || $identifiants['login'] == $unUtilisateur->getEmail()) && $identifiants['motDePasse'] == $unUtilisateur->getMotDePasse()) {
+        if ($identifiants['login'] == $unUtilisateur->getEmail() && $identifiants['motDePasse'] == $unUtilisateur->getMotDePasse()) {
             $_SESSION['login'] = $identifiants['login'];
             return true;
         }
