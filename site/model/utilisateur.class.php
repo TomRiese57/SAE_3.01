@@ -9,14 +9,13 @@ class Utilisateur {
     private $date;
 
     // constructeur    
-    function __construct(int $idUti = 0, string $pseudo = '', string $email = '', string $motDePasse = '', float $scoreTemps = 0.0, 
-                         int $scoreMorts = 0) {
-        $this->idUti = $idUti;
+    function __construct(string $pseudo = '', string $email = '', string $motDePasse = '') {
+        $this->idUti = 0; // id_uti (sera auto-généré par la BDD car défini comme AUTO_INCREMENT)
         $this->pseudo = $pseudo;
         $this->email = $email;
         $this->motDePasse = $motDePasse;
-        $this->scoreTemps = $scoreTemps;
-        $this->scoreMorts = $scoreMorts;
+        $this->scoreTemps = 0;
+        $this->scoreMorts = 0;
         $this->date = date("Y-m-d");
     }
 
@@ -37,7 +36,7 @@ class Utilisateur {
         return $this->motDePasse;
     }
 
-    function getScoreTemps(): float {
+    function getScoreTemps(): int {
         return $this->scoreTemps;
     }
 
@@ -66,7 +65,7 @@ class Utilisateur {
         $this->motDePasse = $motDePasse;
     }
 
-    function setScoreTemps(float $scoreTemps): void {
+    function setScoreTemps(int $scoreTemps): void {
         $this->scoreTemps = $scoreTemps;
     }
 

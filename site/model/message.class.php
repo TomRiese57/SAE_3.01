@@ -8,12 +8,12 @@ class Message {
     private $date;
 
     // constructeur    
-    function __construct(int $idMsg = 0, int $idExp = 0, int $idRec = 0, string $texte = '', int $estLu = 0,) {
-        $this->idMsg = $idMsg;
+    function __construct(int $idExp = 0, int $idRec = 0, string $texte = '') {
+        $this->idMsg = 0; // id_msg (sera auto-généré par la BDD car défini comme AUTO_INCREMENT)
         $this->idExp = $idExp;
         $this->idRec = $idRec;
         $this->texte = $texte;
-        $this->estLu = $estLu;
+        $this->estLu = 0;
         $this->date = date("Y-m-d");
     }
 

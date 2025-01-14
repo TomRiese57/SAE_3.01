@@ -8,8 +8,8 @@ class Notification {
     private $date;
 
     // constructeur    
-    function __construct(int $idNotif = 0, int $idUti = 0, TypeNotification $type = '', string $contenu = '', int $estLu = 0) {
-        $this->idNotif = $idNotif;
+    function __construct(int $idUti = 0, TypeNotification $type = '', string $contenu = '', int $estLu = 0) {
+        $this->idNotif = 0; // id_notif (sera auto-généré par la BDD si défini comme AUTO_INCREMENT)
         $this->idUti = $idUti;
         $this->type = $type;
         $this->contenu = $contenu;

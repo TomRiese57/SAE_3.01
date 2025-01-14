@@ -7,8 +7,8 @@ class Score {
     private $date;
 
     // constructeur    
-    function __construct(int $idScore = 0, int $idUti = 0, float $temps = 0.0, int $morts = 0) {
-        $this->idScore = $idScore;
+    function __construct(int $idUti = 0, int $temps = 0, int $morts = 0) {
+        $this->idScore = 0; // id_score (sera auto-généré par la BDD si défini comme AUTO_INCREMENT)
         $this->idUti = $idUti;
         $this->temps = $temps;
         $this->morts = $morts;
@@ -24,7 +24,7 @@ class Score {
         return $this->idUti;
     }
 
-    public function getTemps(): float {
+    public function getTemps(): int {
         return $this->temps;
     }
 
@@ -45,7 +45,7 @@ class Score {
         $this->idUti = $idUti;
     }
 
-    public function setTemps(float $temps) {
+    public function setTemps(int $temps) {
         $this->temps = $temps;
     }
 
