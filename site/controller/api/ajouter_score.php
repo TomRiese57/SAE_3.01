@@ -2,16 +2,16 @@
 require_once 'template.php';
 require_once '../../model/scoreDAO.class.php';
 
-if( !empty($_GET['id_score']) && !empty($_GET['id_uti']) && !empty($_GET['temps']) && !empty($_GET['morts']) && !empty($_GET['date']) ){
+if( !empty($_POST['id_score']) && !empty($_POST['id_uti']) && !empty($_POST['temps']) && !empty($_POST['morts']) && !empty($_POST['date']) ){
 	//Si toutes les données sont saisie par le client
 
 	$score = new Score();
 	$scoreDAO = new ScoreDAO();
-	$score->setIdScore($_GET['id_score']);
-	$score->setIdUti($_GET['id_uti']);
-	$score->setTemps($_GET['temps']);
-	$score->setMorts($_GET['morts']);
-	$score->setDate($_GET['date']);
+	$score->setIdScore($_POST['id_score']);
+	$score->setIdUti($_POST['id_uti']);
+	$score->setTemps($_POST['temps']);
+	$score->setMorts($_POST['morts']);
+	$score->setDate($_POST['date']);
 
 	$scoreDAO->insert($score);
 	$success = true;
