@@ -6,10 +6,10 @@ class Ami {
     private $date;
 
     // constructeur    
-    function __construct(int $idUti = 0, int $idAmi = 0, StatusAmis $status = '') {
+    function __construct(int $idUti = 0, int $idAmi = 0) {
         $this->idUti = $idUti;
         $this->idAmi = $idAmi;
-        $this->status = $status;
+        $this->status = 0;
         $this->date = date("Y-m-d");
     }
 

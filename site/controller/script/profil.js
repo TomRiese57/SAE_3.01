@@ -39,11 +39,34 @@ shareProfileButton.addEventListener('click', () => {
 })
 
 // Supprimé le compte
-const deleteProfileButton = document.getElementById('delete-profile');
+const openModalDeleteButton = document.getElementById('open-profile-delete');
+const closeModalDeleteButton = document.getElementById('close-profile-delete');
+const modalDeleteOverlay = document.getElementById('profile-delete-overlay');
 
-deleteProfileButton.addEventListener('click', () => {
-    window.location.href = 'deleteProfile.php';
+openModalDeleteButton.addEventListener('click', () => {
+    modalDeleteOverlay.classList.add('active');
+});
+
+closeModalDeleteButton.addEventListener('click', () => {
+    modalDeleteOverlay.classList.remove('active');
+});
+
+window.addEventListener('click', (e) => {
+    if (e.target === modalDeleteOverlay) {
+        modalDeleteOverlay.classList.remove('active');
+    }
+});
+
+const confirmDeleteProfileButton = document.getElementById('confirm-profile-delete');
+const cancelDeleteProfileButton = document.getElementById('cancel-profile-delete');
+
+confirmDeleteProfileButton.addEventListener('click', () => {
+    window.location.href = 'delete.php';
 })
+
+cancelDeleteProfileButton.addEventListener('click', () => {
+    modalDeleteOverlay.classList.remove('active');
+});
 
 // Déconnecté le compte
 const logoutProfileButton = document.getElementById('logout-profile');

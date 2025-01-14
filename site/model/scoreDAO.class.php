@@ -24,6 +24,11 @@ class ScoreDAO {
                             WHERE id_score = :idScore", [':idScore'=>$idScore]);
     } 
 
+    function deleteByIdUti (int $idUti) : void {
+        $this->bd->execSQL("DELETE FROM score 
+                            WHERE id_uti = :idUti", [':idUti'=>$idUti]);
+    } 
+
     function update (Score $score) : void {
         $this->bd->execSQL("UPDATE score 
                             SET id_uti = :idUti, temps = :temps, morts = :morts, date = :date

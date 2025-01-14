@@ -24,6 +24,18 @@ class AmiDAO {
                             [':idUti'=>$idUti, ':idAmi'=>$idAmi]);
     } 
 
+    function deleteByIdUti (int $idUti) : void {
+        $this->bd->execSQL("DELETE FROM ami 
+                            WHERE id_uti = :idUti", 
+                            [':idUti'=>$idUti]);
+    } 
+
+    function deleteByIdAmi (int $idAmi) : void {
+        $this->bd->execSQL("DELETE FROM ami 
+                            WHERE id_ami = :idAmi", 
+                            [':idAmi'=>$idAmi]);
+    } 
+
     function update (Ami $ami) : void {
         $this->bd->execSQL("UPDATE ami 
                             SET status = :status, date = :date
