@@ -76,5 +76,9 @@ if (isset($_POST['inscription'])) {
     }
 }
 
+if (isset($_POST['connexion'])) {
+    header("location: login.php");
+}
+
 require_once "../view/inscription.view.php";
 ?>  
