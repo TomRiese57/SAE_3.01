@@ -24,6 +24,11 @@ class NotificationDAO {
                             WHERE id_notif = :idNotif", [':idNotif'=>$idNotif]);
     } 
 
+    function deleteByIdUti (int $idUti) : void {
+        $this->bd->execSQL("DELETE FROM notification 
+                            WHERE id_uti = :idUti", [':idUti'=>$idUti]);
+    } 
+
     function update (Notification $notification) : void {
         $this->bd->execSQL("UPDATE notification 
                             SET id_uti = :idUti, type = :type, contenu = :contenu, 
