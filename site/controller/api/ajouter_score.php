@@ -5,7 +5,7 @@ $_SESSION['id'] = 1;
 $data = file_get_contents("php://input");
 $post = json_decode($data, true); // Décoder les données JSON en tableau associatif
 
-if(!empty($post['temps']) && !empty($post['morts'])){
+if((!empty($post['temps']) && !empty($post['morts'])) || ($post['temps'] == 0) || ($post['morts'] == 0)){
 	//Si toutes les données sont saisie par le client
 
 	$score = new Score();

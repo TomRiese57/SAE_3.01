@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://d04gi28385w1x"]
+[gd_scene load_steps=8 format=3 uid="uid://d04gi28385w1x"]
 
 [ext_resource type="Script" path="res://controleur/win.gd" id="1_p0jhf"]
+[ext_resource type="PackedScene" uid="uid://c1v7l3l7g4ki7" path="res://vue/tscn/api.tscn" id="2_ccp7f"]
 [ext_resource type="Texture2D" uid="uid://cdp41u26ilxrb" path="res://vue/Background/Background.png" id="2_csukq"]
 [ext_resource type="Texture2D" uid="uid://crcxb8rk2pebu" path="res://vue/Background/tilemap_packed.png" id="3_v6i4d"]
 [ext_resource type="AudioStream" uid="uid://b24qi43gqg45x" path="res://modele/song/8-bit-video-game-win.mp3" id="4_eghnd"]
@@ -318,6 +319,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_p0jhf")
+
+[node name="API" parent="." instance=ExtResource("2_ccp7f")]
 
 [node name="8-bit-video-game-win" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_eghnd")

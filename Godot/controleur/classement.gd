@@ -30,7 +30,7 @@ func _process(delta: float) -> void:
 					scoreMorts[x] = scoreMorts[k]
 					scoreMorts[k] = change
 		for x in range(4):
-			$ScoreMorts.text += "Joueur " + str(scoreMorts[x]['id_uti']) + " avec un temps de " + str(scoreMorts[x]['morts']) + "\n"
+			$ScoreMorts.text += "Joueur " + str(scoreMorts[x]['id_uti']) + " avec un nb mort de " + str(scoreMorts[x]['morts']) + "\n"
 
 func _on_retour_pressed() -> void:
 	get_tree().change_scene_to_file("res://vue/tscn/menu_principal.tscn")
