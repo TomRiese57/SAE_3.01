@@ -13,7 +13,6 @@ if(!empty($post['temps']) && !empty($post['morts'])){
 	$score->setIdUti($_SESSION['id']);
 	$score->setTemps($post['temps']);
 	$score->setMorts($post['morts']);
-	echo "c";
 
 	$scoreDAO->insert($score);
 	$success = true;
