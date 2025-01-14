@@ -7,16 +7,15 @@ var is_rotating = false
 
 func _process(delta: float) -> void:
 	if dead:
+		Global.dead += 1
 		reset_rotation()
-		return
 	
 func _input(event):
 	if is_rotating or dead:
 		return
 	# Vérifie si une action pour tourner la carte est déclenchée
-	if Input.is_action_just_pressed("RotateLeft"):
+	elif Input.is_action_just_pressed("RotateLeft"):
 		start_rotation(-ROTATION_ANGLE)
-		
 	elif Input.is_action_just_pressed("RotateRight"):
 		start_rotation(ROTATION_ANGLE)
 		
@@ -47,16 +46,18 @@ func rotate_map(angle_degrees):
 	stickman.set_collision_layer(1)
 	stickman.set_collision_mask(2)
 	stickman.rot = round(global_rotation_degrees)
-	is_rotating = false
 	if rotation_degrees == 360 or rotation_degrees == -360:
 		rotation_degrees = 0
+	if int(stickman.rotation_degrees) % 90 != 0:
+		stickman.rotation_degrees = 0
+		rotation_degrees = 0
+	is_rotating = false
 	
 func reset_rotation():
 	set_process_input(false)
-	Global.dead += 1
-	dead = false
 	stickman.rotation_degrees = 0
 	rotation_degrees = 0
+	dead = false
 	is_rotating = false
 	set_process_input(true)
 	
@@ -68,7 +69,3 @@ func _on_hacksaw_dead() -> void:
 
 func _on_timer_timeout() -> void:
 	Global.time += 1
-
-
-func _on_spike_4_dead() -> void:
-	pass # Replace with function body.
