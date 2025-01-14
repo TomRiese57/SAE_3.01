@@ -41,33 +41,33 @@
                     </ul>
                 </div>
             </div>
-            <!-- Aperçu du jeu -->
+            <!-- Statistiques -->
             <div class="game-preview">
                 <div class="profile-info">
                     <h2><?= $profil['pseudo'] ?></h2>
                 </div>
                 <div class="stats" style="display: flex;">
-                    <div>
+                    <div class="stat">
                         <img src="../view/style/images/amis.png">
                         <p>Amis</p>
                         <p><?= $profil['amis'] ?></p>
                     </div>
-                    <div>
+                    <div class="stat">
                         <img src="../view/style/images/calendrier.png">
                         <p>Membres depuis</p>
                         <p><?= $profil['date'] ?></p>
                     </div>
-                    <div>
+                    <div class="stat">
                         <img src="../view/style/images/classement.png">
                         <p>Classement</p>
                         <p><?= $profil['classement'] ?></p>
                     </div>
-                    <div>
+                    <div class="stat">
                         <img src="../view/style/images/temps.png">
                         <p>Meilleurs temps</p>
                         <p><?= $profil['temps'] ?></p>
                     </div>
-                    <div>
+                    <div class="stat">
                         <img src="../view/style/images/mort.png">
                         <p>Morts</p>
                         <p><?= $profil['morts'] ?></p>
