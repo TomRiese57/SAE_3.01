@@ -7,12 +7,12 @@ class Score {
     private $date;
 
     // constructeur    
-    function __construct(int $idScore = 0, int $idUti = 0, float $temps = 0.0, int $morts = 0, string $date = '') {
+    function __construct(int $idScore = 0, int $idUti = 0, float $temps = 0.0, int $morts = 0) {
         $this->idScore = $idScore;
         $this->idUti = $idUti;
         $this->temps = $temps;
         $this->morts = $morts;
-        $this->date = $date;
+        $this->date = date("Y-m-d");
     }
 
     // getters

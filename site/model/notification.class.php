@@ -8,13 +8,13 @@ class Notification {
     private $date;
 
     // constructeur    
-    function __construct(int $idNotif = 0, int $idUti = 0, TypeNotification $type = '', string $contenu = '', int $estLu = 0, string $date = '') {
+    function __construct(int $idNotif = 0, int $idUti = 0, TypeNotification $type = '', string $contenu = '', int $estLu = 0) {
         $this->idNotif = $idNotif;
         $this->idUti = $idUti;
         $this->type = $type;
         $this->contenu = $contenu;
         $this->estLu = $estLu;
-        $this->date = $date;
+        $this->date = date("Y-m-d");
     }
 
     // getters

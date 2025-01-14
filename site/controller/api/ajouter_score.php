@@ -1,20 +1,19 @@
 <?php
 require_once 'template.php';
 require_once '../../model/scoreDAO.class.php';
-
+$_SESSION['id'] = 1;
 $data = file_get_contents("php://input");
 $post = json_decode($data, true); // Décoder les données JSON en tableau associatif
 
-if( !empty($post['id_score']) && !empty($post['id_uti']) && !empty($post['temps']) && !empty($post['morts']) && !empty($post['date']) ){
+if(!empty($post['temps']) && !empty($post['morts'])){
 	//Si toutes les données sont saisie par le client
 
 	$score = new Score();
 	$scoreDAO = new ScoreDAO();
-	$score->setIdScore($post['id_score']);
-	$score->setIdUti($post['id_uti']);
+	$score->setIdUti($_SESSION['id']);
 	$score->setTemps($post['temps']);
 	$score->setMorts($post['morts']);
-	$score->setDate($post['date']);
+	echo "c";
 
 	$scoreDAO->insert($score);
 	$success = true;

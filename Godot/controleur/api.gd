@@ -1,7 +1,7 @@
 extends Node2D
 var url_request = "http://localhost/SAE/Jeux/SAE_3.01/site/controller/api/score.php"
 var url_send = "http://localhost/SAE/Jeux/SAE_3.01/site/controller/api/ajouter_score.php"
-var test_json = {'id_score' : 5, 'id_uti' : 1, 'temps' : 40, 'morts' : 30, 'date' : '2025-01-14'}
+var test_json = {'temps' : 40, 'morts' : 30}
 
 func _ready():
 	$HTTPRequest.request_completed.connect(_on_request_completed)

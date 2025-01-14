@@ -8,13 +8,13 @@ class Message {
     private $date;
 
     // constructeur    
-    function __construct(int $idMsg = 0, int $idExp = 0, int $idRec = 0, string $texte = '', int $estLu = 0, string $date = '') {
+    function __construct(int $idMsg = 0, int $idExp = 0, int $idRec = 0, string $texte = '', int $estLu = 0,) {
         $this->idMsg = $idMsg;
         $this->idExp = $idExp;
         $this->idRec = $idRec;
         $this->texte = $texte;
         $this->estLu = $estLu;
-        $this->date = $date;
+        $this->date = date("Y-m-d");
     }
 
     // getters

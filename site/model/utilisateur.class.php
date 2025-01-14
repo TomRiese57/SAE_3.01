@@ -10,14 +10,14 @@ class Utilisateur {
 
     // constructeur    
     function __construct(int $idUti = 0, string $pseudo = '', string $email = '', string $motDePasse = '', float $scoreTemps = 0.0, 
-                         int $scoreMorts = 0, string $date = '') {
+                         int $scoreMorts = 0) {
         $this->idUti = $idUti;
         $this->pseudo = $pseudo;
         $this->email = $email;
         $this->motDePasse = $motDePasse;
         $this->scoreTemps = $scoreTemps;
         $this->scoreMorts = $scoreMorts;
-        $this->date = $date;
+        $this->date = date("Y-m-d");
     }
 
     // getters
