@@ -57,13 +57,9 @@ if (isset($_POST['inscription'])) {
 
         // Création d'un nouvel utilisateur avec des valeurs par défaut pour les scores
         $nouvelUtilisateur = new Utilisateur(
-            0, // id_uti (sera auto-généré par la BDD si défini comme AUTO_INCREMENT)
             $identifiants['pseudo'],
             $identifiants['login'],
             $motDePasseHache,
-            0, // score_temps par défaut
-            0, // score_morts par défaut
-            date("Y-m-d H:i:s") // date d'inscription
         );
 
         // Insérer le nouvel utilisateur dans la base de données

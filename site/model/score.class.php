@@ -8,7 +8,7 @@ class Score {
 
     // constructeur    
     function __construct(int $idUti = 0, int $temps = 0, int $morts = 0) {
-        $this->idScore = 0; // id_score (sera auto-généré par la BDD si défini comme AUTO_INCREMENT)
+        $this->idScore = 0; // id_score (sera auto-généré par la BDD car défini comme AUTO_INCREMENT)
         $this->idUti = $idUti;
         $this->temps = $temps;
         $this->morts = $morts;
