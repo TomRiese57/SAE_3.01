@@ -24,9 +24,14 @@ class MessageDAO {
                             WHERE id_msg = :idMsg", [':idMsg'=>$idMsg]);
     } 
 
-    function deleteByIdUti (int $idUti) : void {
+    function deleteByIdExp (int $idExp) : void {
         $this->bd->execSQL("DELETE FROM message 
-                            WHERE id_uti = :idUti", [':idUti'=>$idUti]);
+                            WHERE id_exp = :idExp", [':idExp'=>$idExp]);
+    } 
+
+    function deleteByIdRec (int $idRec) : void {
+        $this->bd->execSQL("DELETE FROM message 
+                            WHERE id_rec = :idRec", [':idRec'=>$idRec]);
     } 
 
     function update (Message $message) : void {

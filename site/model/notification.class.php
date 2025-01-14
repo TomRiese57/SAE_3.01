@@ -8,12 +8,12 @@ class Notification {
     private $date;
 
     // constructeur    
-    function __construct(int $idUti = 0, TypeNotification $type = '', string $contenu = '', int $estLu = 0) {
+    function __construct(int $idUti = 0, string $contenu = '') {
         $this->idNotif = 0; // id_notif (sera auto-généré par la BDD car défini comme AUTO_INCREMENT)
         $this->idUti = $idUti;
-        $this->type = $type;
+        $this->type = 0;
         $this->contenu = $contenu;
-        $this->estLu = $estLu;
+        $this->estLu = 0;
         $this->date = date("Y-m-d");
     }
 

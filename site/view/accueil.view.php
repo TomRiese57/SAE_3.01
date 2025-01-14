@@ -36,9 +36,23 @@
                         <button class="share-profile" id="share-profile">Partager le profil</button>
                     </div>
                     <ul class="ul-profile">
-                        <li class="li-profile" id="delete-profile">Supprimé le compte</li>
+                        <li class="li-profile" id="open-profile-delete">Supprimé le compte</li>
                         <li class="li-profile" id="logout-profile">Déconnexion</li>
                     </ul>
+                </div>
+            </div>
+            <!-- Fenêtre modale Suppression Profil -->
+            <div class="profile-delete-overlay" id="profile-delete-overlay">
+                <div class="profile-delete-container">
+                    <button class="close-button-profile-delete" id="close-profile-delete">&times;</button>
+                    <div class="profile-delete-header">
+                        <h1>Confirmer la suppression</h1>
+                        <p>Êtes-vous sûr de vouloir supprimer définitivement votre compte ?</p>
+                    </div>
+                    <div class="buttons-profile-delete">
+                        <button class="share-profile" id="confirm-profile-delete">Confirmer</button>
+                        <button class="share-profile" id="cancel-profile-delete">Annuler</button>
+                    </div>
                 </div>
             </div>
             <!-- Aperçu du jeu -->
