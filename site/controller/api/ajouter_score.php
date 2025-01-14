@@ -2,16 +2,19 @@
 require_once 'template.php';
 require_once '../../model/scoreDAO.class.php';
 
-if( !empty($_POST['id_score']) && !empty($_POST['id_uti']) && !empty($_POST['temps']) && !empty($_POST['morts']) && !empty($_POST['date']) ){
+$data = file_get_contents("php://input");
+$post = json_decode($data, true); // Décoder les données JSON en tableau associatif
+
+if( !empty($post['id_score']) && !empty($post['id_uti']) && !empty($post['temps']) && !empty($post['morts']) && !empty($post['date']) ){
 	//Si toutes les données sont saisie par le client
 
 	$score = new Score();
 	$scoreDAO = new ScoreDAO();
-	$score->setIdScore($_POST['id_score']);
-	$score->setIdUti($_POST['id_uti']);
-	$score->setTemps($_POST['temps']);
-	$score->setMorts($_POST['morts']);
-	$score->setDate($_POST['date']);
+	$score->setIdScore($post['id_score']);
+	$score->setIdUti($post['id_uti']);
+	$score->setTemps($post['temps']);
+	$score->setMorts($post['morts']);
+	$score->setDate($post['date']);
 
 	$scoreDAO->insert($score);
 	$success = true;
@@ -20,4 +23,4 @@ if( !empty($_POST['id_score']) && !empty($_POST['id_uti']) && !empty($_POST['tem
 	$msg = "Il manque des informations";
 }
 
-reponse_json($success, $data, $msg);
+reponse_json($success, $post, $msg);
