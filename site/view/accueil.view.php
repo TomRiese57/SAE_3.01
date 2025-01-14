@@ -49,7 +49,7 @@
             </div>
             <!-- Fenêtre modale Contrôles -->
             <div class="controles">
-                <img id="controles" src="../view/style/images/fleches_directionnelles_noires.png" alt="Contrôles">
+                <img id="controles" src="../view/style/images/direction.png" alt="Contrôles">
                 <div id="controles-modal" class="controles-modal">
                     <div class="controles-content">
                         <span class="close">&times;</span>

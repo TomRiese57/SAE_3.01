@@ -12,6 +12,7 @@ function existeUtilisateur(array $identifiants, array $lesUtilisateurs): bool {
     foreach ($lesUtilisateurs as $unUtilisateur) {
         if ($identifiants['login'] == $unUtilisateur->getEmail() && $identifiants['motDePasse'] == $unUtilisateur->getMotDePasse()) {
             $_SESSION['login'] = $identifiants['login'];
+            $_SESSION['id'] = $unUtilisateur->getIdUti();
             return true;
         }
     }
@@ -19,25 +20,16 @@ function existeUtilisateur(array $identifiants, array $lesUtilisateurs): bool {
 
 }
 
-function estAdmin(array $identifiants) {
-    $login = 'admin';
-    $mdp = 'motdepasse';
-    if ($identifiants['login'] == $login && $identifiants['motDePasse'] == $mdp) {
-        $_SESSION['login'] = $identifiants['login'];
-        return true;
-    }
-    return false;
-}
-
 if (isset($_POST['connexion'])) {
     if (existeUtilisateur($identifiants, $lesUtilisateurs)) {
-        header("location: accueil.php");
-    } else if (estAdmin($identifiants)) {
         header("location: accueil.php");
     } else {
         $message = "<p>Identification incorrecte. Essayez de nouveau.</p>";
     }
+}
 
+if (isset($_POST['inscription'])) {
+    header("location: inscription.php");
 }
 
 require_once "../view/login.view.php";

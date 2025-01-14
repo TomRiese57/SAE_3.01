@@ -26,7 +26,10 @@
                 <img src="../view/style/images/jeu.png" alt="Aperçu du jeu">
                 <h2>StickSpin</h2>
                 <fieldset>
-                    <legend>Authentification</legend>
+                    <legend>Inscription</legend>
+                    <label>Pseudo : </label>
+                    <input type="text" name="pseudo" placeholder="Votre pseudo" value=<?= $identifiants['pseudo'] ?>>
+                    <br/><br/>
                     <label>Email : </label>
                     <input type="text" name="login" placeholder="Votre email" value=<?= $identifiants['login'] ?>>
                     <br/><br/>
@@ -35,10 +38,9 @@
                         value=<?= $identifiants['motDePasse'] ?>>
                 </fieldset>
                 <br>
-                &emsp;
                 <input type="submit" name="connexion" value="Connexion" />
                 &emsp;
-                <input type="submit" name="inscription" value="Inscription" />
+                <input type="submit" name="inscription" value="S'inscrire" />
                 &emsp;
                 <?= $message ?>
             </div>
