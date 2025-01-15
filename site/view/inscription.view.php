@@ -40,9 +40,10 @@
                         value=<?= $identifiants['motDePasse'] ?>>
                 </fieldset>
                 <br>
-                <input type="submit" name="connexion" value="Connexion" />
                 &emsp;
                 <input type="submit" name="inscription" value="S'inscrire" />
+                &emsp;
+                <input type="submit" name="connexion" value="Connexion" />
                 &emsp;
                 <?= $message ?>
             </div>

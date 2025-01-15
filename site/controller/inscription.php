@@ -45,8 +45,8 @@ if (isset($_POST['inscription'])) {
         $message = "<p>Veuillez remplir tous les champs.</p>";
     } elseif (!filter_var($identifiants['login'], FILTER_VALIDATE_EMAIL)) {
         $message = "<p>L'adresse email n'est pas valide.</p>";
-    } elseif (strlen($identifiants['motDePasse']) < 10) {
-        $message = "<p>Le mot de passe doit contenir au moins 10 caractères.</p>";
+    } elseif (strlen($identifiants['motDePasse']) < 8) {
+        $message = "<p>Le mot de passe doit contenir au moins 8 caractères.</p>";
     } elseif (existeUtilisateurEmail($identifiants, $lesUtilisateurs)) {
         $message = "<p>Un compte existe déjà avec cet email.</p>";
     } elseif (existeUtilisateurPseudo($identifiants, $lesUtilisateurs)) {
@@ -66,6 +66,7 @@ if (isset($_POST['inscription'])) {
         try {
             $utilisateurDAO->insert($nouvelUtilisateur);
             $message = "<p>Inscription réussie ! Vous pouvez maintenant vous connecter.</p>";
+            
         } catch (Exception $e) {
             $message = "<p>Une erreur est survenue lors de l'inscription : " . $e->getMessage() . "</p>";
         }

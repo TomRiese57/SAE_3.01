@@ -12,7 +12,8 @@
         <header>
             <div class="logo" id="logo">
                 <img src="../view/style/images/manette.png" alt="Logo">
-            </div>
+                <h3>Accueil</h3>
+            </div>  
             <h1>StickSpin</h1>
             <div class="icones">
                 <img id="amis" src="../view/style/images/amis.png" alt="Amis">
