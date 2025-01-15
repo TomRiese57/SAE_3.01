@@ -1,3 +1,3 @@
 document.getElementById('play-button').addEventListener('click', () => {
-    window.location.href = '../../web';
+    window.location.href = '../../web/StickSpin.html';
 });
