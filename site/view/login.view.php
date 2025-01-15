@@ -6,6 +6,7 @@
         <title>StickSpin</title>
         <link rel="stylesheet" href="../view/style/css/style.css">
         <link rel="stylesheet" href="../view/style/css/login.css">
+        <link rel="stylesheet" href="../view/style/css/accueil.css">
     </head>
     <body>
         <header>
