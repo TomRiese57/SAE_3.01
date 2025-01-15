@@ -7,6 +7,7 @@
         <link rel="stylesheet" href="../view/style/css/style.css">
         <link rel="stylesheet" href="../view/style/css/accueil.css">
         <link rel="stylesheet" href="../view/style/css/profile.css">
+        <link rel="stylesheet" href="../view/style/css/friend.css">
     </head>
     <body>
         <header>
@@ -57,11 +58,36 @@
                     </div>
                 </div>
             </div>
-            <!-- Aperçu du jeu -->
-            <div class="game-preview">
-                <img src="../view/style/images/jeu.png" alt="Aperçu du jeu">
+            <!-- Ami -->
+            <div class="friends">
                 <h2>StickSpin</h2>
-                <button id="play-button">JOUER MAINTENANT</button>
+                <h3>Liste des amis</h3>
+                <div class="friends-list" id="friends-list">
+                    <!-- Les amis seront chargés ici dynamiquement -->
+                    <?php if (!empty($amisDetailsArray)): ?>
+                    <ul>
+                        <?php foreach ($amisDetailsArray as $amiDetail): ?>
+                        <li>
+                            <div class="friend-item">
+                                <p><strong><?= $amiDetail['pseudo'] ?></strong></p>
+                                <p><?= $amiDetail['email'] ?></p>
+                                <p><?= $amiDetail['status'] ?></p>
+                            </div>
+                        </li>
+                        <?php endforeach; ?>
+                    </ul>
+                    <?php else: ?>
+                    <p>Vous n'avez pas encore d'amis.</p>
+                    <?php endif; ?>
+                </div>
+
+                <h3>Ajouter un ami</h3>
+                <form id="add-friend-form" class="add-friend-form">
+                    <input type="text" id="friend-username" placeholder="Pseudo de l'ami" required>
+                    <button type="submit" name="ajouter">Ajouter</button>
+                </form>
+
+                <div id="add-friend-message" class="message"></div>
             </div>
             <!-- Fenêtre modale Contrôles -->
             <div class="controles">

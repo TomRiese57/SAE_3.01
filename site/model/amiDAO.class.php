@@ -1,6 +1,7 @@
 <?php
     require_once 'connexion.php'; 
     require_once 'ami.class.php';
+    require_once 'utilisateurDAO.class.php';
 
 class AmiDAO {
     private $bd;
@@ -14,8 +15,8 @@ class AmiDAO {
     function insert (Ami $ami) : void {
         $this->bd->execSQL("INSERT INTO ami (id_uti, id_ami, status, date)
                             VALUES (:idUti, :idAmi, :status, :date)"
-                            ,[':idUti'=>$ami->getIdUti(), ':idAmi'=>$ami->getIdAmi(), 
-                            ':status'=>$ami->getStatus(), ':date'=>$ami->getDate()]);
+                            ,[':idUti'=>$ami->getUti1()->getIdUti(), ':idAmi'=>$ami->getUti2()->getIdUti(), 
+                            ':status'=>$ami->getStatus()->value, ':date'=>$ami->getDate()]);
     }    
 
     function deleteByIdUtiByIdAmi (int $idUti, int $idAmi) : void {
@@ -40,17 +41,22 @@ class AmiDAO {
         $this->bd->execSQL("UPDATE ami 
                             SET status = :status, date = :date
                             WHERE id_uti = :id AND id_ami = :idAmi"
-                            ,[':idUti'=>$ami->getIdUti(), ':idAmi'=>$ami->getIdAmi(), 
-                            ':status'=>$ami->getStatus(), ':date'=>$ami->getDate()]);
+                            ,[':idUti'=>$ami->getUti1()->getIdUti(), ':idAmi'=>$ami->getUti2()->getIdUti(), 
+                            ':status'=>$ami->getStatus()->value, ':date'=>$ami->getDate()]);
     }    
 
     private function loadQuery (array $result) : array { 
         $amis = [];
+        $utilisateurDAO = new UtilisateurDAO();
         foreach($result as $row) {
+            $uti1 = $utilisateurDAO->getById($row['id_uti']);
+            $uti2 = $utilisateurDAO->getById($row['id_ami']);
+            $statusEnum = StatusAmis::from($row['status']); // Conversion
+
             $ami = new Ami(); 
-            $ami->setIdUti($row['id_uti']);
-            $ami->setIdAmi($row['id_ami']);
-            $ami->setStatus($row['status']);
+            $ami->setUti1($uti1);
+            $ami->setUti2($uti2);
+            $ami->setStatus($statusEnum);
             $ami->setDate($row['date']);
             $amis[] = $ami;
         }
@@ -70,7 +76,13 @@ class AmiDAO {
         }
         return $unAmi;
         // il y a un seul élément dans le tableau d'amis ➔ indice 0 return $unAmi;
-    }	
+    }
+    
+    function getByIdUti (int $idUti) : Array {
+        $lesAmis = $this->loadQuery($this->bd->execSQLSelect($this->select ." WHERE
+        id_uti = :idUti", [':idUti'=>$idUti]) );
+        return $lesAmis;    
+    }
 
     function existe (int $idUti, int $idAmi) : bool {
         $req = "SELECT * 

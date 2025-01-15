@@ -1,0 +1,47 @@
+.back-button {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    text-decoration: none;
+    color: #fff;
+    background: #666;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.back-button:hover {
+    background: #888;
+}
+
+.friends-list {
+    margin: 20px auto;
+    max-width: 600px;
+    background: #333;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.friends-list h2 {
+    margin-top: 0;
+    text-align: center;
+}
+
+.friends-list ul {
+    list-style: none;
+    padding: 0;
+}
+
+.friend-item {
+    display: flex;
+    justify-content: space-between;
+    background: #444;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.friend-item:hover {
+    background: #555;
+}
