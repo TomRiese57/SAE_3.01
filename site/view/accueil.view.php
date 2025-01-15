@@ -66,6 +66,7 @@
             <!-- Fenêtre modale Contrôles -->
             <div class="controles">
                 <img id="controles" src="../view/style/images/direction.png" alt="Contrôles">
+                <h3>Contrôles</h3>
                 <div id="controles-modal" class="controles-modal">
                     <div class="controles-content">
                         <span class="close">&times;</span>
