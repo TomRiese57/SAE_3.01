@@ -36,6 +36,17 @@ button#play-button:hover {
 }
 
 /* Indicateur de contrôle */
+.controles {
+    padding-top: 100rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.controles h3 {
+    padding-left: 1rem;
+}
+  
 .controles img {
     width: 40px;
     position: relative;
@@ -86,9 +97,9 @@ button#play-button:hover {
     font-size: 28px;
     font-weight: bold;
     cursor: pointer;
-  }
+}
   
-  .close:hover, .close:focus {
+.close:hover, .close:focus {
     color: black;
     text-decoration: none;
-  }
+}

@@ -5,6 +5,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>StickSpin</title>
         <link rel="stylesheet" href="../view/style/css/style.css">
+        <link rel="stylesheet" href="../view/style/css/login.css">
+        <link rel="stylesheet" href="../view/style/css/accueil.css">
     </head>
     <body>
         <header>
@@ -38,9 +40,10 @@
                         value=<?= $identifiants['motDePasse'] ?>>
                 </fieldset>
                 <br>
-                <input type="submit" name="connexion" value="Connexion" />
                 &emsp;
                 <input type="submit" name="inscription" value="S'inscrire" />
+                &emsp;
+                <input type="submit" name="connexion" value="Connexion" />
                 &emsp;
                 <?= $message ?>
             </div>

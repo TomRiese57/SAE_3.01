@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : dim. 12 jan. 2025 à 17:45
+-- Généré le : mer. 15 jan. 2025 à 12:54
 -- Version du serveur : 8.3.0
 -- Version de PHP : 8.2.18
 
@@ -31,8 +31,8 @@ DROP TABLE IF EXISTS `ami`;
 CREATE TABLE IF NOT EXISTS `ami` (
   `id_uti` int NOT NULL,
   `id_ami` int NOT NULL,
-  `status` enum('en attente','accepté','refusé') DEFAULT 'en attente',
-  `date` date DEFAULT NULL,
+  `status` enum('en attente','accepté','refusé') CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL DEFAULT 'en attente',
+  `date` date NOT NULL,
   PRIMARY KEY (`id_uti`,`id_ami`),
   KEY `id_utilisateur` (`id_uti`),
   KEY `id_amis` (`id_ami`)
@@ -51,11 +51,11 @@ CREATE TABLE IF NOT EXISTS `message` (
   `id_rec` int NOT NULL,
   `texte` text CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
   `est_lu` tinyint(1) NOT NULL DEFAULT '0',
-  `date` date DEFAULT NULL,
+  `date` date NOT NULL,
   PRIMARY KEY (`id_msg`),
   KEY `id_expediteur` (`id_exp`),
   KEY `id_receveur` (`id_rec`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -70,10 +70,10 @@ CREATE TABLE IF NOT EXISTS `notification` (
   `type` enum('demande_amis','nouveau_meilleur_temps','message') NOT NULL,
   `contenu` text NOT NULL,
   `est_lu` tinyint(1) NOT NULL DEFAULT '0',
-  `date` date DEFAULT NULL,
+  `date` date NOT NULL,
   PRIMARY KEY (`id_notif`),
   KEY `id_utilisateur` (`id_uti`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -83,14 +83,14 @@ CREATE TABLE IF NOT EXISTS `notification` (
 
 DROP TABLE IF EXISTS `score`;
 CREATE TABLE IF NOT EXISTS `score` (
-  `id_score` int NOT NULL,
+  `id_score` int NOT NULL AUTO_INCREMENT,
   `id_uti` int NOT NULL,
   `temps` int NOT NULL,
   `morts` int NOT NULL,
-  `date` date DEFAULT NULL,
+  `date` date NOT NULL,
   PRIMARY KEY (`id_score`),
   KEY `id_uti` (`id_uti`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -106,9 +106,9 @@ CREATE TABLE IF NOT EXISTS `utilisateur` (
   `mot_de_passe` varchar(255) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
   `score_morts` int NOT NULL,
   `score_temps` int NOT NULL,
-  `date` date DEFAULT NULL,
+  `date` date NOT NULL,
   PRIMARY KEY (`id_uti`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

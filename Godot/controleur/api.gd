@@ -1,6 +1,6 @@
 extends Node2D
-var url_request = "http://localhost/SAE/Jeux/SAE_3.01/site/controller/api/score.php"
-var url_send = "http://localhost/SAE/Jeux/SAE_3.01/site/controller/api/ajouter_score.php"
+var url_request = "https://devweb.iutmetz.univ-lorraine.fr/~bondon3u/2A/SAE_3.01/site/controller/api/score.php"
+var url_send = "https://devweb.iutmetz.univ-lorraine.fr/~bondon3u/2A/SAE_3.01/site/controller/api/ajouter_score.php"
 var request
 
 func _ready():

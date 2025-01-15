@@ -6,6 +6,7 @@
         <title>StickSpin</title>
         <link rel="stylesheet" href="../view/style/css/style.css">
         <link rel="stylesheet" href="../view/style/css/login.css">
+        <link rel="stylesheet" href="../view/style/css/accueil.css">
     </head>
     <body>
         <header>
@@ -37,7 +38,7 @@
                 </fieldset>
                 <br>
                 &emsp;
-                <input type="submit" name="connexion" value="Connexion" />
+                <input type="submit" name="connexion" value="Se connecter" />
                 &emsp;
                 <input type="submit" name="inscription" value="Inscription" />
                 &emsp;
