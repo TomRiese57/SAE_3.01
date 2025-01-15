@@ -330,6 +330,7 @@ mix_target = 2
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(580, 386)
+zoom = Vector2(2, 2)
 
 [node name="Background" type="Sprite2D" parent="."]
 position = Vector2(608, 316)
@@ -359,7 +360,6 @@ offset_top = 343.0
 offset_right = 748.0
 offset_bottom = 412.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 50
 
 [node name="Retour" type="Button" parent="."]
 layout_mode = 2

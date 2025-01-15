@@ -329,7 +329,8 @@ autoplay = true
 mix_target = 2
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(574, 268)
+position = Vector2(576, 240)
+zoom = Vector2(2, 2)
 
 [node name="Background" type="Sprite2D" parent="."]
 position = Vector2(537.5, 261.588)
@@ -371,10 +372,10 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 [node name="Retour" type="Button" parent="."]
 process_mode = 3
 layout_mode = 2
-offset_left = 803.0
-offset_top = 527.0
-offset_right = 1104.0
-offset_bottom = 558.0
+offset_left = 424.0
+offset_top = 408.0
+offset_right = 725.0
+offset_bottom = 439.0
 text = "Retour"
 
 [connection signal="pressed" from="Retour" to="." method="_on_retour_pressed"]

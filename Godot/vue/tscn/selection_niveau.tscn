@@ -350,7 +350,8 @@ autoplay = true
 mix_target = 2
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(569, 357)
+position = Vector2(576, 336)
+zoom = Vector2(2, 2)
 
 [node name="Background" type="Sprite2D" parent="."]
 position = Vector2(640, 388)
@@ -425,10 +426,10 @@ script = ExtResource("2_vmcq2")
 [node name="Retour" type="Button" parent="."]
 process_mode = 3
 layout_mode = 2
-offset_left = 664.0
-offset_top = 592.0
-offset_right = 1109.0
-offset_bottom = 623.0
+offset_left = 352.0
+offset_top = 512.0
+offset_right = 797.0
+offset_bottom = 543.0
 text = "Retour"
 
 [connection signal="pressed" from="Niveau_1" to="." method="_on_niveau_1_pressed"]
