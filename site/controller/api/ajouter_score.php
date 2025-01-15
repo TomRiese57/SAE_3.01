@@ -1,7 +1,6 @@
 <?php
 require_once 'template.php';
 require_once '../../model/scoreDAO.class.php';
-$_SESSION['id'] = 1;
 $data = file_get_contents("php://input");
 $post = json_decode($data, true); // Décoder les données JSON en tableau associatif
 
