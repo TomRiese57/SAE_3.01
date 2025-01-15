@@ -1,3 +1,4 @@
 <?php
-header("location: ./controleur/login.php");
+header("location: ../site/controller/login.php");
 ?>
+

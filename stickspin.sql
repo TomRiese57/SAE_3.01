@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : dim. 22 déc. 2024 à 09:48
+-- Généré le : dim. 12 jan. 2025 à 17:45
 -- Version du serveur : 8.3.0
 -- Version de PHP : 8.2.18
 
@@ -50,12 +50,12 @@ CREATE TABLE IF NOT EXISTS `message` (
   `id_exp` int NOT NULL,
   `id_rec` int NOT NULL,
   `texte` text CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
+  `est_lu` tinyint(1) NOT NULL DEFAULT '0',
   `date` date DEFAULT NULL,
-  `est_lu` tinyint(1) DEFAULT '0',
   PRIMARY KEY (`id_msg`),
   KEY `id_expediteur` (`id_exp`),
   KEY `id_receveur` (`id_rec`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -69,7 +69,7 @@ CREATE TABLE IF NOT EXISTS `notification` (
   `id_uti` int NOT NULL,
   `type` enum('demande_amis','nouveau_meilleur_temps','message') NOT NULL,
   `contenu` text NOT NULL,
-  `est_lu` tinyint(1) DEFAULT '0',
+  `est_lu` tinyint(1) NOT NULL DEFAULT '0',
   `date` date DEFAULT NULL,
   PRIMARY KEY (`id_notif`),
   KEY `id_utilisateur` (`id_uti`)
@@ -102,8 +102,8 @@ DROP TABLE IF EXISTS `utilisateur`;
 CREATE TABLE IF NOT EXISTS `utilisateur` (
   `id_uti` int NOT NULL AUTO_INCREMENT,
   `pseudo` varchar(50) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
-  `mail` varchar(100) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
-  `mdp` varchar(255) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
+  `email` varchar(100) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
+  `mot_de_passe` varchar(255) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
   `score_morts` int NOT NULL,
   `score_temps` int NOT NULL,
   `date` date DEFAULT NULL,

@@ -907,6 +907,7 @@ position = Vector2(232, 302)
 floor_block_on_wall = false
 safe_margin = 1.0
 
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="dead" from="Spikes/spike" to="." method="_on_spike_dead"]
 [connection signal="dead" from="Spikes/spike2" to="." method="_on_spike_dead"]
 [connection signal="dead" from="Spikes/spike3" to="." method="_on_spike_dead"]
