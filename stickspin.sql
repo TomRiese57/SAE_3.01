@@ -55,7 +55,7 @@ CREATE TABLE IF NOT EXISTS `message` (
   PRIMARY KEY (`id_msg`),
   KEY `id_expediteur` (`id_exp`),
   KEY `id_receveur` (`id_rec`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -73,7 +73,7 @@ CREATE TABLE IF NOT EXISTS `notification` (
   `date` date NOT NULL,
   PRIMARY KEY (`id_notif`),
   KEY `id_utilisateur` (`id_uti`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -108,7 +108,7 @@ CREATE TABLE IF NOT EXISTS `utilisateur` (
   `score_temps` int NOT NULL,
   `date` date NOT NULL,
   PRIMARY KEY (`id_uti`)
-) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
