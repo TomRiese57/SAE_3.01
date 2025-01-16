@@ -15,6 +15,7 @@
             </div>  
             <h1>StickSpin</h1>
             <div class="icones">
+                <img id="classement" src="../view/style/images/classement.png" alt="classement">
                 <img id="ami" src="../view/style/images/amis.png" alt="Amis">
                 <img id="notif" src="../view/style/images/notif.png" alt="Notifications">
                 <img id="open-profile" src="../view/style/images/profil.png" alt="Profil">
@@ -65,12 +66,12 @@
                     </div>
                     <div class="stat">
                         <img src="../view/style/images/temps.png">
-                        <p>Meilleurs temps</p>
+                        <p>Meilleur temps</p>
                         <p><?= $profil['temps'] ?></p>
                     </div>
                     <div class="stat">
                         <img src="../view/style/images/mort.png">
-                        <p>Morts</p>
+                        <p>Morts Totales</p>
                         <p><?= $profil['morts'] ?></p>
                     </div>
                 </div>

@@ -6,7 +6,7 @@ class NotificationDAO {
     private $bd;
     private $select;
 
-    function __construct(){
+    function __construct() {
         $this->bd = new Connexion();
         $this->select = 'SELECT id_notif, id_uti, type, contenu, est_lu, date FROM notification';
     }
