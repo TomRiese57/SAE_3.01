@@ -94,7 +94,7 @@ class AmiDAO {
     }
 
     function getDemandesEnAttente (int $idAmi) : array {
-        $req = "SELECT * FROM ami WHERE id_uti = :idUti AND status = 'en attente'";
+        $req = "SELECT * FROM ami WHERE id_ami = :idAmi AND status = 'en attente'";
         return $this->loadQuery($this->bd->execSQLSelect($req, [':idAmi'=>$idAmi]));
     }
 
