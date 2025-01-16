@@ -8,7 +8,7 @@
         <link rel="stylesheet" href="../view/style/css/profile.css">
     </head>
     <body>
-    <header>
+        <header>
             <div class="logo" id="logo">
                 <img src="../view/style/images/manette.png" alt="Logo">
                 <h3>Accueil</h3>
@@ -80,6 +80,7 @@
     </body>
 
     <script src="../controller/script/accueil.js"></script>
+    <script src="../controller/script/classement.js"></script>
     <script src="../controller/script/amis.js"></script>
     <script src="../controller/script/notif.js"></script>
     <script src="../controller/script/profil.js"></script>

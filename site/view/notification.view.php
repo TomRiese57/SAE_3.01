@@ -16,6 +16,7 @@
             </div>  
             <h1>StickSpin</h1>
             <div class="icones">
+                <img id="classement" src="../view/style/images/classement.png" alt="classement">
                 <img id="ami" src="../view/style/images/amis.png" alt="Amis">
                 <img id="notif" src="../view/style/images/notif.png" alt="Notifications">
                 <img id="open-profile" src="../view/style/images/profil.png" alt="Profil">
@@ -83,9 +84,8 @@
     </body>
 
     <script src="../controller/script/accueil.js"></script>
+    <script src="../controller/script/classement.js"></script>
     <script src="../controller/script/ami.js"></script>
     <script src="../controller/script/notif.js"></script>
     <script src="../controller/script/profil.js"></script>
-    <script src="../controller/script/bouton_jouer.js"></script>
-    <script src="../controller/script/controles.js"></script>
 </html>

@@ -9,43 +9,28 @@
         <link rel="stylesheet" href="../view/style/css/accueil.css">
     </head>
     <body>
-    <header>
-            <div class="logo" id="logo">
-                <img src="../view/style/images/manette.png" alt="Logo">
-                <h3>Accueil</h3>
-            </div>  
-            <h1>StickSpin</h1>
-            <div class="icones">
-                <img id="ami" src="../view/style/images/amis.png" alt="Amis">
-                <img id="notif" src="../view/style/images/notif.png" alt="Notifications">
-                <img id="open-profile" src="../view/style/images/profil.png" alt="Profil">
-            </div>
-        </header>
-
         <main>
             <form action='' method='post'>
-
-            <div class="game-preview">
-                <img src="../view/style/images/jeu.png" alt="Aperçu du jeu">
-                <h2>StickSpin</h2>
-                <fieldset>
-                    <legend>Authentification</legend>
-                    <label>Email : </label>
-                    <input type="text" name="login" placeholder="Votre email" value=<?= $identifiants['login'] ?>>
-                    <br/><br/>
-                    <label>Mot de passe : </label>
-                    <input type="password" name="motDePasse" placeholder="Votre mot de passe"
-                        value=<?= $identifiants['motDePasse'] ?>>
-                </fieldset>
-                <br>
-                &emsp;
-                <input type="submit" name="connexion" value="Se connecter" />
-                &emsp;
-                <input type="submit" name="inscription" value="Inscription" />
-                &emsp;
-                <?= $message ?>
-            </div>
-
+                <div class="game-preview">
+                    <img src="../view/style/images/jeu.png" alt="Aperçu du jeu">
+                    <h2>StickSpin</h2>
+                    <fieldset>
+                        <legend>Authentification</legend>
+                        <label>Email : </label>
+                        <input type="text" name="login" placeholder="Votre email" value=<?= $identifiants['login'] ?>>
+                        <br/><br/>
+                        <label>Mot de passe : </label>
+                        <input type="password" name="motDePasse" placeholder="Votre mot de passe"
+                            value=<?= $identifiants['motDePasse'] ?>>
+                    </fieldset>
+                    <br>
+                    &emsp;
+                    <input type="submit" name="connexion" value="Se connecter" />
+                    &emsp;
+                    <input type="submit" name="inscription" value="Inscription" />
+                    &emsp;
+                    <?= $message ?>
+                </div>
             </form>
         </main>
     </body>
