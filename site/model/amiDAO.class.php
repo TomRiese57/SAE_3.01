@@ -92,5 +92,10 @@ class AmiDAO {
         $res = ($this->loadQuery($this->bd->execSQLSelect($req, [':idUti'=>$idUti, ':idAmi'=>$idAmi])));
         return ($res != []); // si tableau d'amis est vide alors l'ami n’existe pas
     }
+
+    function getDemandesEnAttente (int $idAmi) : array {
+        $req = "SELECT * FROM ami WHERE id_uti = :idUti AND status = 'en attente'";
+        return $this->loadQuery($this->bd->execSQLSelect($req, [':idAmi'=>$idAmi]));
+    }
 }    
 ?>
