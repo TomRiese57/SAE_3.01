@@ -11,8 +11,8 @@ $profil['email'] = $email;
 $profil['amis'] = $utilisateurDAO->getNbrAmi($unUtilisateur->getIdUti());;
 $profil['date'] = $unUtilisateur->getDate();
 $profil['classement'] = 0;
-$profil['temps'] = $unUtilisateur->getScoreTemps();
-$profil['morts'] = $unUtilisateur->getScoreMorts();
+$profil['temps'] = $utilisateurDAO->getScoreTemps($unUtilisateur->getIdUti());
+$profil['morts'] = $utilisateurDAO->getScoreMorts($unUtilisateur->getIdUti());
 
 require_once "../view/profil.view.php";
 ?>  

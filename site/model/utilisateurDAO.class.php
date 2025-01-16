@@ -57,6 +57,20 @@ class UtilisateurDAO {
         return ($this->loadQuery($this->bd->execSQLSelect($this->select)));
     }
 
+    function getScoreTemps (int $idUti) : int {
+        return $this->bd->execSQLSelect("SELECT MIN(temps)
+                    FROM utilisateur, score
+                    WHERE utilisateur.id_uti = score.id_uti
+                    AND utilisateur.id_uti = :idUti;", [':idUti'=>$idUti])[0];
+    }
+
+    function getScoreMorts (int $idUti) : int {
+        return $this->bd->execSQLSelect("SELECT MIN(morts)
+                    FROM utilisateur, score
+                    WHERE utilisateur.id_uti = score.id_uti
+                    AND utilisateur.id_uti = :idUti;", [':idUti'=>$idUti])[0];
+    }
+
     function getById (int $idUti) : Utilisateur {
         $unUtilisateur = new Utilisateur();
         $lesUtilisateurs = $this->loadQuery($this->bd->execSQLSelect($this->select ." WHERE
