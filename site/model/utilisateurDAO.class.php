@@ -130,14 +130,16 @@ class UtilisateurDAO {
     function getClassement (int $idUti) : int {
         $classement = $this->bd->execSQLSelect("SELECT COUNT(*) + 1 AS classement
                                                 FROM (
-                                                    SELECT id_uti, MIN(temps) AS meilleur_temps
+                                                    SELECT id_uti, temps AS meilleur_temps
                                                     FROM score
-                                                    GROUP BY id_uti
+                                                    ORDER BY temps ASC
                                                 ) AS sous_classement
                                                 WHERE meilleur_temps < (
-                                                    SELECT MIN(temps)
+                                                    SELECT temps
                                                     FROM score
                                                     WHERE id_uti = :idUti
+                                                    ORDER BY temps ASC
+                                                    LIMIT 1
                                                 )", [':idUti' => $idUti]);
         return $classement[0]['classement'] ?? 0;;
     }
