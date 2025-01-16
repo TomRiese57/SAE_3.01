@@ -7,7 +7,6 @@ var is_rotating = false
 
 func _process(delta: float) -> void:
 	if dead:
-		Global.dead += 1
 		reset_rotation()
 	
 func _input(event):
@@ -60,6 +59,7 @@ func rotate_map(angle_degrees):
 	
 func reset_rotation():
 	set_process_input(false)
+	Global.dead += 1
 	stickman.rotation_degrees = 0
 	rotation_degrees = 0
 	dead = false

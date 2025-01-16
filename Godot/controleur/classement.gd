@@ -21,7 +21,8 @@ func _process(delta: float) -> void:
 					scoreTemps[x] = scoreTemps[k]
 					scoreTemps[k] = change
 		for x in range(4):
-			$ScoreTemps.text += str(scoreTemps[x]['pseudo']) + " : " + str(scoreTemps[x]['temps']) + "\n"
+			if scoreTemps[x] != null:
+				$ScoreTemps.text += str(scoreTemps[x]['pseudo']) + " : " + str(scoreTemps[x]['temps']) + "\n"
 		
 		for x in range(len(scoreMorts)):
 			for k in range(x, len(scoreMorts)):
@@ -30,7 +31,8 @@ func _process(delta: float) -> void:
 					scoreMorts[x] = scoreMorts[k]
 					scoreMorts[k] = change
 		for x in range(4):
-			$ScoreMorts.text += str(scoreMorts[x]['pseudo']) + " : " + str(scoreMorts[x]['morts']) + "\n"
+			if scoreMorts[x] != null:
+				$ScoreMorts.text += str(scoreMorts[x]['pseudo']) + " : " + str(scoreMorts[x]['morts']) + "\n"
 
 func _on_retour_pressed() -> void:
 	get_tree().change_scene_to_file("res://vue/tscn/menu_principal.tscn")
