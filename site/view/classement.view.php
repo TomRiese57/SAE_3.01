@@ -59,9 +59,9 @@
                     </div>
                 </div>
             </div>
-            <!-- Aperçu du jeu -->
+            <!-- Classement -->
             <div class="classement">
-            <h1 style="text-align: center;">Classement</h1>
+                <h1 style="text-align: center;">Classement</h1>
 
                 <!-- Top 10 meilleurs temps -->
                 <h2 style="text-align: center;">Top 10 des Meilleurs Temps</h2>

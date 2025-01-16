@@ -61,28 +61,36 @@
             </div>
             <!-- Ami -->
             <div class="friends">
-                <h2>StickSpin</h2>
-                <h3>Liste des amis</h3>
-                <div class="friends-list" id="friends-list">
+                <h2>Liste des amis</h2>
+                <div class="friends-tab" id="friends-list">
                     <!-- Les amis seront chargés ici dynamiquement -->
-                    <?php if (!empty($amisDetailsArray)): ?>
-                    <ul>
-                        <?php foreach ($amisDetailsArray as $amiDetail): ?>
-                        <li>
-                            <div class="friend-item">
-                                <p><strong><?= $amiDetail['pseudo'] ?></strong></p>
-                                <p><?= $amiDetail['temps'] ?> s</p>
-                                <p><?= $amiDetail['morts'] ?> morts totales</p>
-                            </div>
-                        </li>
-                        <?php endforeach; ?>
-                    </ul>
-                    <?php else: ?>
+                    <?php if (!empty($listeAmisAcceptes)): ?>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Ami</th>
+                                <th>Temps</th>
+                                <th>Morts</th>
+                                <th>Date</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php foreach ($listeAmisAcceptes as $amiAccepte): ?>
+                                <tr>
+                                    <td><?= htmlspecialchars($amiAccepte['pseudo']) ?></td>
+                                    <td><?= htmlspecialchars($amiAccepte['score_temps']) ?> sec</td>
+                                    <td><?= htmlspecialchars($amiAccepte['score_morts']) ?></td>
+                                    <td><?= htmlspecialchars($amiAccepte['date']) ?></td>
+                                </tr>
+                            <?php endforeach; ?>
+                        </tbody>
+                    </table>
+                <?php else: ?>
                     <p>Vous n'avez pas encore d'amis.</p>
-                    <?php endif; ?>
+                <?php endif; ?>
                 </div>
 
-                <h3>Ajouter un ami</h3>
+                <h2>Ajouter un ami</h2>
                 <form id="add-friend-form" class="add-friend-form">
                     <input type="text" id="friend-username" placeholder="Pseudo de l'ami" required>
                     <button type="submit" name="ajouter">Ajouter</button>

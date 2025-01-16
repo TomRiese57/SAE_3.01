@@ -97,5 +97,17 @@ class AmiDAO {
         $req = "SELECT * FROM ami WHERE id_uti = :idUti AND status = 'en attente'";
         return $this->loadQuery($this->bd->execSQLSelect($req, [':idAmi'=>$idAmi]));
     }
+
+    function getAmiAccepte (int $idUti) : array {
+        $req = "SELECT pseudo, score_temps, score_morts, score.date
+                FROM score, ami, utilisateur
+                WHERE ami.id_ami = score.id_uti
+                AND ami.id_ami = utilisateur.id_uti
+                AND ami.id_uti = :idUti
+                AND status = 'accepté'
+                GROUP BY pseudo
+                ORDER BY pseudo";
+        return $this->bd->execSQLSelect($req, [':idUti'=>$idUti]);
+    }
 }    
 ?>
