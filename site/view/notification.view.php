@@ -66,51 +66,59 @@
                 <?php else: ?>
                     <!-- Demande d'amis -->
                     <h2 style="text-align: center;">Demande d'amis</h2>
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Type</th>
-                                <th>Contenu</th>
-                                <th>Date</th>
-                                <th></th>
-                                <th></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php foreach ($demandesAmisNonLues as $demandeAmi): ?>
-                                <tr data-id="<?= $demandeAmi['id_notif'] ?>">
-                                    <td><?= ucfirst(str_replace('_', ' ', $demandeAmi['type'])) ?></td>
-                                    <td><?= htmlspecialchars($demandeAmi['contenu']) ?></td>
-                                    <td><?= $demandeAmi['date'] ?></td>
-                                    <td><img src="../view/style/images/accepter.png" id="accepter"></a></td>
-                                    <td><img src="../view/style/images/refuser.png" id="refuser"></a></td>
+                    <?php if (empty($demandesAmisNonLues)): ?>
+                        <p>Aucune demande d'ami en attente.</p>
+                    <?php else: ?>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Contenu</th>
+                                    <th>Date</th>
+                                    <th></th>
+                                    <th></th>
                                 </tr>
-                            <?php endforeach; ?>
-                        </tbody>
-                    </table>
+                            </thead>
+                            <tbody>
+                                <?php foreach ($demandesAmisNonLues as $demandeAmi): ?>
+                                    <tr data-id="<?= $demandeAmi['id_notif'] ?>">
+                                        <td><?= ucfirst(str_replace('_', ' ', $demandeAmi['type'])) ?></td>
+                                        <td><?= htmlspecialchars($demandeAmi['contenu']) ?></td>
+                                        <td><?= $demandeAmi['date'] ?></td>
+                                        <td><img src="../view/style/images/accepter.png" id="accepter"></a></td>
+                                        <td><img src="../view/style/images/refuser.png" id="refuser"></a></td>
+                                    </tr>
+                                <?php endforeach; ?>
+                            </tbody>
+                        </table>
+                    <?php endif; ?>
 
                     <!-- Nouveau Meilleur Temps -->
                     <h2 style="text-align: center;">Nouveau Meilleur Temps</h2>
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Type</th>
-                                <th>Contenu</th>
-                                <th>Date</th>
-                                <th></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php foreach ($nouveauxMeilleursTempsNonLus as $nouveauMeilleurTemps): ?>
-                                <tr data-id="<?= $nouveauMeilleurTemps['id_notif'] ?>">
-                                    <td><?= ucfirst(str_replace('_', ' ', $nouveauMeilleurTemps['type'])) ?></td>
-                                    <td><?= htmlspecialchars($nouveauMeilleurTemps['contenu']) ?></td>
-                                    <td><?= $nouveauMeilleurTemps['date'] ?></td>
-                                    <td><img src="../view/style/images/corbeille.png" id="marquerCommeLue"></a></td>
+                    <?php if (empty($nouveauxMeilleursTempsNonLus)): ?>
+                        <p>Aucun nouveau meilleur temps.</p>
+                    <?php else: ?>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Contenu</th>
+                                    <th>Date</th>
+                                    <th></th>
                                 </tr>
-                            <?php endforeach; ?>
-                        </tbody>
-                    </table>
+                            </thead>
+                            <tbody>
+                                <?php foreach ($nouveauxMeilleursTempsNonLus as $nouveauMeilleurTemps): ?>
+                                    <tr data-id="<?= $nouveauMeilleurTemps['id_notif'] ?>">
+                                        <td><?= ucfirst(str_replace('_', ' ', $nouveauMeilleurTemps['type'])) ?></td>
+                                        <td><?= htmlspecialchars($nouveauMeilleurTemps['contenu']) ?></td>
+                                        <td><?= $nouveauMeilleurTemps['date'] ?></td>
+                                        <td><img src="../view/style/images/corbeille.png" id="marquerCommeLue"></a></td>
+                                    </tr>
+                                <?php endforeach; ?>
+                            </tbody>
+                        </table>
+                    <?php endif; ?>
                 <?php endif; ?>
             </div>
         </main>
