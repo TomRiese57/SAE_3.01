@@ -91,7 +91,8 @@ class ScoreDAO {
         return $this->bd->execSQLSelect("SELECT pseudo, temps, morts, score.date
                                         FROM score, utilisateur
                                         WHERE utilisateur.id_uti = score.id_uti
-                                        ORDER BY temps ASC");
+                                        ORDER BY temps ASC
+                                        LIMIT 10");
     }
 
     function getNbrMortsTotales (): int {
