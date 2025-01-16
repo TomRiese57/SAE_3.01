@@ -6,7 +6,6 @@
         <title>StickSpin</title>
         <link rel="stylesheet" href="../view/style/css/style.css">
         <link rel="stylesheet" href="../view/style/css/login.css">
-        <link rel="stylesheet" href="../view/style/css/accueil.css">
     </head>
     <body>
         <header>
@@ -22,19 +21,18 @@
                     <img src="../view/style/images/jeu.png" alt="Aperçu du jeu">
                     <h2>StickSpin</h2>
                     <fieldset>
-                        <legend>Authentification</legend>
+                        <legend>Connexion</legend>
                         <label>Email : </label>
-                        <input type="text" name="login" placeholder="Votre email" value=<?= $identifiants['login'] ?>>
+                        <input type="text" name="login" placeholder="Votre email">
                         <br/><br/>
                         <label>Mot de passe : </label>
-                        <input type="password" name="motDePasse" placeholder="Votre mot de passe"
-                            value=<?= $identifiants['motDePasse'] ?>>
+                        <input type="password" name="motDePasse" placeholder="Votre mot de passe">
                     </fieldset>
                     <br>
                     &emsp;
-                    <input type="submit" name="connexion" value="Se connecter" />
+                    <input type="submit" name="connexion" value="Se connecter"/>
                     &emsp;
-                    <input type="submit" name="inscription" value="Inscription" />
+                    <input type="submit" name="inscription" value="Inscription"/>
                     &emsp;
                     <?= $message ?>
                 </div>

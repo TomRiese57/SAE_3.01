@@ -6,7 +6,6 @@
         <title>StickSpin</title>
         <link rel="stylesheet" href="../view/style/css/style.css">
         <link rel="stylesheet" href="../view/style/css/login.css">
-        <link rel="stylesheet" href="../view/style/css/accueil.css">
     </head>
     <body>
         <header>
@@ -24,14 +23,13 @@
                     <fieldset>
                         <legend>Inscription</legend>
                         <label>Pseudo : </label>
-                        <input type="text" name="pseudo" placeholder="Votre pseudo" value=<?= $identifiants['pseudo'] ?>>
+                        <input type="text" name="pseudo" placeholder="Votre pseudo">
                         <br/><br/>
                         <label>Email : </label>
-                        <input type="text" name="login" placeholder="Votre email" value=<?= $identifiants['login'] ?>>
+                        <input type="text" name="login" placeholder="Votre email">
                         <br/><br/>
                         <label>Mot de passe : </label>
-                        <input type="password" name="motDePasse" placeholder="Votre mot de passe"
-                            value=<?= $identifiants['motDePasse'] ?>>
+                        <input type="password" name="motDePasse" placeholder="Votre mot de passe">
                     </fieldset>
                     <br>
                     &emsp;
