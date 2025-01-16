@@ -25,8 +25,6 @@
         </header>
 
         <main>
-            <!-- Fenêtre modale Amis -->
-            <!-- Fenêtre modale Notifications -->
             <!-- Fenêtre modale Profil -->
             <div class="profile-overlay" id="profile-overlay">
                 <div class="profile-container">

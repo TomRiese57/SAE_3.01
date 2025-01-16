@@ -9,9 +9,16 @@
         <link rel="stylesheet" href="../view/style/css/accueil.css">
     </head>
     <body>
+        <header>
+            <div class="logo" id="logo">
+                <img src="../view/style/images/manette.png" alt="Logo">
+            </div>  
+            <h1>StickSpin</h1>
+        </header>
+        
         <main>
             <form action='' method='post'>
-                <div class="game-preview">
+                <div class="login">
                     <img src="../view/style/images/jeu.png" alt="Aperçu du jeu">
                     <h2>StickSpin</h2>
                     <fieldset>
