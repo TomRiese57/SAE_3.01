@@ -382,7 +382,7 @@ offset_right = 797.0
 offset_bottom = 279.0
 theme_override_styles/hover = SubResource("StyleBoxFlat_1gmdl")
 theme_override_styles/normal = SubResource("StyleBoxFlat_yjhyf")
-text = "niveau 1"
+text = "Niveau 1"
 
 [node name="Niveau_2" type="Button" parent="."]
 layout_mode = 2
@@ -394,7 +394,7 @@ theme_override_styles/disabled = SubResource("StyleBoxFlat_esyqj")
 theme_override_styles/hover = SubResource("StyleBoxFlat_tu83q")
 theme_override_styles/normal = SubResource("StyleBoxFlat_a8ujf")
 disabled = true
-text = "niveau 2"
+text = "Niveau 2"
 script = ExtResource("1_prlcu")
 
 [node name="Niveau_3" type="Button" parent="."]
@@ -407,7 +407,7 @@ theme_override_styles/disabled = SubResource("StyleBoxFlat_7wif8")
 theme_override_styles/hover = SubResource("StyleBoxFlat_hr6au")
 theme_override_styles/normal = SubResource("StyleBoxFlat_vl22b")
 disabled = true
-text = "niveau 3"
+text = "Niveau 3"
 script = ExtResource("2_vmcq2")
 
 [node name="Niveau_4" type="Button" parent="."]
@@ -420,7 +420,7 @@ theme_override_styles/disabled = SubResource("StyleBoxFlat_7wif8")
 theme_override_styles/hover = SubResource("StyleBoxFlat_hr6au")
 theme_override_styles/normal = SubResource("StyleBoxFlat_vl22b")
 disabled = true
-text = "niveau 4"
+text = "Niveau 4"
 script = ExtResource("2_vmcq2")
 
 [node name="Retour" type="Button" parent="."]
