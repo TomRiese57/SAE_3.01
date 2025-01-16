@@ -69,7 +69,7 @@ class UtilisateurDAO {
     }
 
     function getScoreMorts (int $idUti) : int {
-        $result = $this->bd->execSQLSelect("SELECT MIN(morts) as bmorts
+        $result = $this->bd->execSQLSelect("SELECT SUM(morts) as bmorts
                     FROM utilisateur, score
                     WHERE utilisateur.id_uti = score.id_uti
                     AND utilisateur.id_uti = :idUti;", [':idUti'=>$idUti])[0]['bmorts'];

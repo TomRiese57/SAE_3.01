@@ -355,18 +355,10 @@ text = "Classement"
 
 [node name="ScoreTemps" type="Label" parent="."]
 layout_mode = 2
-offset_left = 329.0
-offset_top = 187.0
-offset_right = 539.0
-offset_bottom = 210.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-
-[node name="ScoreMorts" type="Label" parent="."]
-layout_mode = 0
-offset_left = 589.0
-offset_top = 190.0
-offset_right = 826.0
-offset_bottom = 213.0
+offset_left = 464.0
+offset_top = 184.0
+offset_right = 674.0
+offset_bottom = 207.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 
 [node name="Retour" type="Button" parent="."]
