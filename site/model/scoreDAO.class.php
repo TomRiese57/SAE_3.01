@@ -86,5 +86,68 @@ class ScoreDAO {
         $res = ($this->loadQuery($this->bd->execSQLSelect($req, [':idScore'=>$idScore])));
         return ($res != []); // si tableau des scores est vide alors le score n’existe pas
     }
+
+    function getTop10 (): array {
+        return $this->bd->execSQLSelect("SELECT pseudo, temps, morts, score.date
+                                        FROM score, utilisateur
+                                        WHERE utilisateur.id_uti = score.id_uti
+                                        ORDER BY temps ASC");
+    }
+
+    function getNbrMortsTotales (): int {
+        $totalMort = 0;
+        $lesMorts = $this->bd->execSQLSelect("SELECT SUM(morts) AS total_morts
+                                                FROM score");
+        if (count($lesMorts) > 0) {
+            $totalMort = (int) $lesMorts[0]['total_morts'];
+        }
+        return $totalMort;
+    }
+
+    function getNbrTempsTotals (): int {
+        $totalTemps = 0;
+        $lesTemps = $this->bd->execSQLSelect("SELECT COUNT(*) AS total_temps
+                                                FROM score");
+        if (count($lesTemps) > 0) {
+            $totalTemps = (int) $lesTemps[0]['total_temps'];
+        }
+        return $totalTemps;
+    }
+
+    function getTopTempsJour (): array {
+        $unTemps = 0;
+        $lesTemps = $this->bd->execSQLSelect("SELECT pseudo, temps, morts, score.date
+                                        FROM score, utilisateur
+                                        WHERE utilisateur.id_uti = score.id_uti
+                                        AND score.date = CURRENT_DATE()
+                                        ORDER BY temps ASC
+                                        LIMIT 1");
+        if (count($lesTemps) > 0) {
+            $unTemps = $lesTemps[0];
+        }
+        return $unTemps;
+    }
+
+    function getNbrMortsJour (): int {
+        $totalMort = 0;
+        $lesMorts = $this->bd->execSQLSelect("SELECT SUM(morts) AS total_morts
+                                            FROM score
+                                            WHERE date = CURRENT_DATE()");
+        if (count($lesMorts) > 0) {
+            $totalMort = (int) $lesMorts[0]['total_morts'];
+        }
+        return $totalMort;
+    }
+
+    function getNbrTempsJour (): int {
+        $totalTemps = 0;
+        $lesTemps = $this->bd->execSQLSelect("SELECT COUNT(*) AS total_temps
+                                            FROM score
+                                            WHERE date = CURRENT_DATE()");
+        if (count($lesTemps) > 0) {
+            $totalTemps = (int) $lesTemps[0]['total_temps'];
+        }
+        return $totalTemps;
+    }
 }
 ?>
