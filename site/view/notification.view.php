@@ -7,6 +7,7 @@
         <link rel="stylesheet" href="../view/style/css/style.css">
         <link rel="stylesheet" href="../view/style/css/accueil.css">
         <link rel="stylesheet" href="../view/style/css/profile.css">
+        <link rel="stylesheet" href="../view/style/css/notif.css">
     </head>
     <body>
         <header>
@@ -63,19 +64,53 @@
                 <?php if (empty($notificationsNonLues)): ?>
                     <p>Aucune notification non lue.</p>
                 <?php else: ?>
-                    <ul>
-                        <?php foreach ($notificationsNonLues as $notif): ?>
-                            <li>
-                                <p><strong>Type :</strong> <?= ucfirst(str_replace('_', ' ', $notif['type'])) ?></p>
-                                <p><strong>Contenu :</strong> <?= htmlspecialchars($notif['contenu']) ?></p>
-                                <p><strong>Date :</strong> <?= $notif['date'] ?></p>
-                                <form method="post" action="">
-                                    <input type="hidden" name="idNotif" value="<?= $notif['id_notif'] ?>">
-                                    <button type="submit">Marquer comme lue</button>
-                                </form>
-                            </li>
-                        <?php endforeach; ?>
-                    </ul>
+                    <!-- Demande d'amis -->
+                    <h2 style="text-align: center;">Demande d'amis</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Type</th>
+                                <th>Contenu</th>
+                                <th>Date</th>
+                                <th></th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php foreach ($demandesAmisNonLues as $demandeAmi): ?>
+                                <tr data-id="<?= $demandeAmi['id_notif'] ?>">
+                                    <td><?= ucfirst(str_replace('_', ' ', $demandeAmi['type'])) ?></td>
+                                    <td><?= htmlspecialchars($demandeAmi['contenu']) ?></td>
+                                    <td><?= $demandeAmi['date'] ?></td>
+                                    <td><img src="../view/style/images/accepter.png" id="accepter"></a></td>
+                                    <td><img src="../view/style/images/refuser.png" id="refuser"></a></td>
+                                </tr>
+                            <?php endforeach; ?>
+                        </tbody>
+                    </table>
+
+                    <!-- Nouveau Meilleur Temps -->
+                    <h2 style="text-align: center;">Nouveau Meilleur Temps</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Type</th>
+                                <th>Contenu</th>
+                                <th>Date</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php foreach ($nouveauxMeilleursTempsNonLus as $nouveauMeilleurTemps): ?>
+                                <tr data-id="<?= $nouveauMeilleurTemps['id_notif'] ?>">
+                                    <td><?= ucfirst(str_replace('_', ' ', $nouveauMeilleurTemps['type'])) ?></td>
+                                    <td><?= htmlspecialchars($nouveauMeilleurTemps['contenu']) ?></td>
+                                    <td><?= $nouveauMeilleurTemps['date'] ?></td>
+                                    <td><img src="../view/style/images/corbeille.png" id="marquerCommeLue"></a></td>
+                                </tr>
+                            <?php endforeach; ?>
+                        </tbody>
+                    </table>
                 <?php endif; ?>
             </div>
         </main>

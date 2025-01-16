@@ -86,7 +86,7 @@ class NotificationDAO {
     }
 
     function getDemandeAmisNonLues (int $idUti) : array {
-        return $this->bd->execSQLSelect("SELECT contenu, date
+        return $this->bd->execSQLSelect("SELECT id_notif, type, contenu, date
                                         FROM notification
                                         WHERE id_uti = :idUti
                                         AND est_lu = 0
@@ -95,7 +95,7 @@ class NotificationDAO {
     }
 
     function getNouveauMeilleurTempsNonLus (int $idUti) : array {
-        return $this->bd->execSQLSelect("SELECT contenu, date
+        return $this->bd->execSQLSelect("SELECT id_notif, type, contenu, date
                                         FROM notification
                                         WHERE id_uti = :idUti
                                         AND est_lu = 0
@@ -104,7 +104,7 @@ class NotificationDAO {
     }
 
     function getMessageNonLus (int $idUti) : array {
-        return $this->bd->execSQLSelect("SELECT contenu, date
+        return $this->bd->execSQLSelect("SELECT id_notif, type, contenu, date
                                         FROM notification
                                         WHERE id_uti = :idUti
                                         AND est_lu = 0
