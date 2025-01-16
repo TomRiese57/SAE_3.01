@@ -60,18 +60,18 @@
             <div class="notifications">
                 <h1>Vos Notifications</h1>
 
-                <?php if (empty($demandesEnAttente)): ?>
-                    <p>Aucune demande d'ami en attente.</p>
+                <?php if (empty($notificationsNonLues)): ?>
+                    <p>Aucune notification non lue.</p>
                 <?php else: ?>
                     <ul>
-                        <?php foreach ($demandesEnAttente as $demande): ?>
+                        <?php foreach ($notificationsNonLues as $notif): ?>
                             <li>
-                                <strong><?= $demande->getUtilisateur1()->getPseudo() ?></strong> 
-                                vous a envoyé une demande d'ami.
-                                <form method="post" action="notifications.php?action=respond" style="display:inline;">
-                                    <input type="hidden" name="idUti1" value="<?= $demande->getUtilisateur1()->getIdUti() ?>">
-                                    <button type="submit" name="response" value="accept">Accepter</button>
-                                    <button type="submit" name="response" value="decline">Refuser</button>
+                                <p><strong>Type :</strong> <?= ucfirst(str_replace('_', ' ', $notif['type'])) ?></p>
+                                <p><strong>Contenu :</strong> <?= htmlspecialchars($notif['contenu']) ?></p>
+                                <p><strong>Date :</strong> <?= $notif['date'] ?></p>
+                                <form method="post" action="">
+                                    <input type="hidden" name="idNotif" value="<?= $notif['id_notif'] ?>">
+                                    <button type="submit">Marquer comme lue</button>
                                 </form>
                             </li>
                         <?php endforeach; ?>

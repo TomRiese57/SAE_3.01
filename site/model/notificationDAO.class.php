@@ -76,5 +76,47 @@ class NotificationDAO {
         $res = ($this->loadQuery($this->bd->execSQLSelect($req, [':idNotif'=>$idNotif])));
         return ($res != []); // si tableau des notifications est vide alors la notifcation n’existe pas
     }
+
+    function getNotifNonLues (int $idUti) : array {
+        return $this->bd->execSQLSelect("SELECT id_notif, type, contenu, date
+                                        FROM notification
+                                        WHERE id_uti = :idUti
+                                        AND est_lu = 0",
+                                        [':idUti' => $idUti]);
+    }
+
+    function getDemandeAmisNonLues (int $idUti) : array {
+        return $this->bd->execSQLSelect("SELECT contenu, date
+                                        FROM notification
+                                        WHERE id_uti = :idUti
+                                        AND est_lu = 0
+                                        AND type = 'demande_amis'",
+                                        [':idUti' => $idUti]);
+    }
+
+    function getNouveauMeilleurTempsNonLus (int $idUti) : array {
+        return $this->bd->execSQLSelect("SELECT contenu, date
+                                        FROM notification
+                                        WHERE id_uti = :idUti
+                                        AND est_lu = 0
+                                        AND type = 'nouveau_meilleur_temps'",
+                                        [':idUti' => $idUti]);
+    }
+
+    function getMessageNonLus (int $idUti) : array {
+        return $this->bd->execSQLSelect("SELECT contenu, date
+                                        FROM notification
+                                        WHERE id_uti = :idUti
+                                        AND est_lu = 0
+                                        AND type = 'message'",
+                                        [':idUti' => $idUti]);
+    }
+
+    function marquerCommeLue (int $idNotif) : void {
+        $this->bd->execSQL("UPDATE notification 
+                            SET est_lu = 1 
+                            WHERE id_notif = :idNotif", 
+                            [':idNotif' => $idNotif]);
+    }
 }    
 ?>
