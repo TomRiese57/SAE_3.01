@@ -25,11 +25,9 @@ foreach ($listeAmis as $ami) {
     $status = $ami->getStatus()->value;
 
     // Ajoutez ces détails dans le tableau
-    if ($status == 'accepté') {
+    if ($status == 'en attente') {
         $amisDetailsArray[] = [
             'pseudo' => $pseudo,
-            'temps' => $temps,
-            'morts' => $morts,
         ];
     }
 }

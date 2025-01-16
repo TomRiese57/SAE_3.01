@@ -70,7 +70,7 @@
                                 <strong><?= $demande->getUtilisateur1()->getPseudo() ?></strong> 
                                 vous a envoyé une demande d'ami.
                                 <form method="post" action="notifications.php?action=respond" style="display:inline;">
-                                    <input type="hidden" name="idUti1" value="<?= $demande->getUtilisateur1()->getId() ?>">
+                                    <input type="hidden" name="idUti1" value="<?= $demande->getUtilisateur1()->getIdUti() ?>">
                                     <button type="submit" name="response" value="accept">Accepter</button>
                                     <button type="submit" name="response" value="decline">Refuser</button>
                                 </form>

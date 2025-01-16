@@ -71,7 +71,7 @@
                             <div class="friend-item">
                                 <p><strong><?= $amiDetail['pseudo'] ?></strong></p>
                                 <p><?= $amiDetail['temps'] ?> s</p>
-                                <p><?= $amiDetail['morts'] ?> morts</p>
+                                <p><?= $amiDetail['morts'] ?> morts totales</p>
                             </div>
                         </li>
                         <?php endforeach; ?>
