@@ -25,8 +25,6 @@
         </header>
 
         <main>
-            <!-- Fenêtre modale Amis -->
-            <!-- Fenêtre modale Notifications -->
             <!-- Fenêtre modale Profil -->
             <div class="profile-overlay" id="profile-overlay">
                 <div class="profile-container">
@@ -91,12 +89,11 @@
                 </div>
 
                 <h2>Ajouter un ami</h2>
-                <form id="add-friend-form" class="add-friend-form">
-                    <input type="text" id="friend-username" placeholder="Pseudo de l'ami" required>
-                    <button type="submit" name="ajouter">Ajouter</button>
+                <form method="post" action="">
+                    <input type="text" name="idAmiAjout" placeholder="Pseudo de l'ami" required>
+                    <input type="submit" name="ajouter" value="Ajouter">
+                    <?= $message ?>
                 </form>
-
-                <div id="add-friend-message" class="message"></div>
             </div>
         </main>
     </body>
