@@ -9,15 +9,16 @@
         <link rel="stylesheet" href="../view/style/css/accueil.css">
     </head>
     <body>
-        <header>
+    <header>
             <div class="logo" id="logo">
                 <img src="../view/style/images/manette.png" alt="Logo">
-            </div>
+                <h3>Accueil</h3>
+            </div>  
             <h1>StickSpin</h1>
             <div class="icones">
-                <img id="amis" src="../view/style/images/amis.png" alt="Amis">
+                <img id="ami" src="../view/style/images/amis.png" alt="Amis">
                 <img id="notif" src="../view/style/images/notif.png" alt="Notifications">
-                <img id="profil" src="../view/style/images/profil.png" alt="Profil">
+                <img id="open-profile" src="../view/style/images/profil.png" alt="Profil">
             </div>
         </header>
 
