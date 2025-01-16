@@ -70,8 +70,8 @@
                         <li>
                             <div class="friend-item">
                                 <p><strong><?= $amiDetail['pseudo'] ?></strong></p>
-                                <p><?= $amiDetail['email'] ?></p>
-                                <p><?= $amiDetail['status'] ?></p>
+                                <p><?= $amiDetail['temps'] ?> s</p>
+                                <p><?= $amiDetail['morts'] ?> morts</p>
                             </div>
                         </li>
                         <?php endforeach; ?>
@@ -88,25 +88,6 @@
                 </form>
 
                 <div id="add-friend-message" class="message"></div>
-            </div>
-            <!-- Fenêtre modale Contrôles -->
-            <div class="controles">
-                <img id="controles" src="../view/style/images/direction.png" alt="Contrôles">
-                <h3>Contrôles</h3>
-                <div id="controles-modal" class="controles-modal">
-                    <div class="controles-content">
-                        <span class="close">&times;</span>
-                        <h2>Contrôles</h2>
-                        <ul>
-                            <li>Q ou flèche de gauche pour aller à gauche</li>
-                            <li>D ou flèche de droite pour aller à droite</li> 
-                            <li>Z ou flèche du haut ou barre espace pour sauter</li> 
-                            <li>S ou flèche du bas pour ouvrir une porte</li> 
-                            <li>A pour faire la map de 90° vers la gauche</li> 
-                            <li>E pour faire la map de 90° vers la droite</li>
-                        </ul>
-                    </div>
-                </div>
             </div>
         </main>
     </body>

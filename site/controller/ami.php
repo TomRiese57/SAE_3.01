@@ -1,7 +1,6 @@
 <?php
 session_start();
 
-
 $email = $_SESSION['login'];
 
 require_once "../model/utilisateurDAO.class.php";
@@ -15,23 +14,27 @@ $unUtilisateur = $utilisateurDAO->getByEmail($email);
 $profil['pseudo'] = $unUtilisateur->getPseudo();
 $profil['email'] = $email;
 
+// Affichage des amis
 $listeAmis = $amisDAO->getByIdUti($unUtilisateur->getIdUti());
-
 $amisDetailsArray = [];  // Un tableau pour stocker les détails de tous les amis
 foreach ($listeAmis as $ami) {
     // Obtenez les détails de chaque ami
     $pseudo = $ami->getUti2()->getPseudo();
-    $email = $ami->getUti2()->getEmail();
+    $temps = $ami->getUti2()->getScoreTemps();
+    $morts = $ami->getUti2()->getScoreMorts();
     $status = $ami->getStatus()->value;
 
     // Ajoutez ces détails dans le tableau
-    $amisDetailsArray[] = [
-        'pseudo' => $pseudo,
-        'email' => $email,
-        'status' => $status,
-    ];
+    if ($status == 'accepté') {
+        $amisDetailsArray[] = [
+            'pseudo' => $pseudo,
+            'temps' => $temps,
+            'morts' => $morts,
+        ];
+    }
 }
 
+// Ajout d'un ami
 if (isset($_POST['ajouter'])) {
     $amisDAO->insert($ami);
 }
