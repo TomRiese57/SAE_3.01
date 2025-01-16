@@ -7,7 +7,6 @@ require_once "../model/scoreDAO.class.php";
 $utilisateurDAO = new UtilisateurDAO();
 $scoreDA0 = new ScoreDAO();
 $unUtilisateur = $utilisateurDAO->getByEmail($email);
-var_dump($unUtilisateur->getIdUti());
 
 $profil['pseudo'] = $unUtilisateur->getPseudo();
 $profil['email'] = $email;

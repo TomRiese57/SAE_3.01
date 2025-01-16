@@ -67,7 +67,7 @@
                     <div class="stat">
                         <img src="../view/style/images/temps.png">
                         <p>Meilleur temps</p>
-                        <p><?= $profil['temps'] ?></p>
+                        <p><?= $profil['temps'] ?> sec</p>
                     </div>
                     <div class="stat">
                         <img src="../view/style/images/mort.png">
