@@ -62,6 +62,12 @@ class ScoreDAO {
                                         WHERE utilisateur.id_uti = score.id_uti");
     }
 
+    function getClassement () : array {
+        return ($this->bd->execSQLSelect("SELECT DISTINCT(id_uti) as clast
+            FROM score
+            ORDER BY temps;"));
+    }
+
     function getByIdScore(int $idScore): Score {
         $unScore = new Score();
         $lesScores = $this->loadQuery($this->bd->execSQLSelect($this->select . " WHERE
