@@ -7,7 +7,7 @@ class AmiDAO {
     private $bd;
     private $select;
 
-    function __construct(){
+    function __construct() {
         $this->bd = new Connexion();
         $this->select = 'SELECT id_uti, id_ami, status, date FROM ami';
     }

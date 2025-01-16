@@ -6,7 +6,7 @@ class MessageDAO {
     private $bd;
     private $select;
 
-    function __construct(){
+    function __construct() {
         $this->bd = new Connexion();
         $this->select = 'SELECT id_msg, id_exp, id_rec, texte, est_lu, date FROM message';
     }

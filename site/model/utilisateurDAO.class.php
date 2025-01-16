@@ -6,7 +6,7 @@ class UtilisateurDAO {
     private $bd;
     private $select;
 
-    function __construct(){
+    function __construct() {
         $this->bd = new Connexion();
         $this->select = 'SELECT id_uti, pseudo, email, mot_de_passe, score_temps, score_morts, date FROM `utilisateur`';
     }
