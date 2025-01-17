@@ -81,7 +81,7 @@
 
     <script src="../controller/script/accueil.js"></script>
     <script src="../controller/script/classement.js"></script>
-    <script src="../controller/script/amis.js"></script>
+    <script src="../controller/script/ami.js"></script>
     <script src="../controller/script/notif.js"></script>
     <script src="../controller/script/profil.js"></script>
 </html>
