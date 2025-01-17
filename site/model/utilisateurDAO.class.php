@@ -6,7 +6,7 @@ class UtilisateurDAO {
     private $bd;
     private $select;
 
-    function __construct(){
+    function __construct() {
         $this->bd = new Connexion();
         $this->select = 'SELECT id_uti, pseudo, email, mot_de_passe, score_temps, score_morts, date FROM `utilisateur`';
     }
@@ -57,6 +57,28 @@ class UtilisateurDAO {
         return ($this->loadQuery($this->bd->execSQLSelect($this->select)));
     }
 
+    function getScoreTemps (int $idUti) : int {
+        $result = $this->bd->execSQLSelect("SELECT MIN(temps) as btemps
+                    FROM utilisateur, score
+                    WHERE utilisateur.id_uti = score.id_uti
+                    AND utilisateur.id_uti = :idUti;", [':idUti'=>$idUti])[0]['btemps'];
+         if ($result == null){
+            return 0;
+        } 
+        return $result;
+    }
+
+    function getScoreMorts (int $idUti) : int {
+        $result = $this->bd->execSQLSelect("SELECT SUM(morts) as bmorts
+                    FROM utilisateur, score
+                    WHERE utilisateur.id_uti = score.id_uti
+                    AND utilisateur.id_uti = :idUti;", [':idUti'=>$idUti])[0]['bmorts'];
+        if ($result == null){
+            return 0;
+        } 
+        return $result;
+    }
+
     function getById (int $idUti) : Utilisateur {
         $unUtilisateur = new Utilisateur();
         $lesUtilisateurs = $this->loadQuery($this->bd->execSQLSelect($this->select ." WHERE
@@ -66,7 +88,18 @@ class UtilisateurDAO {
         }
         return $unUtilisateur;
         // il y a un seul élément dans le tableau d'utilisateurs ➔ indice 0 return $unUtilisateur;
-    }	
+    }
+    
+    function getByPseudo (string $pseudo) : Utilisateur {
+        $unUtilisateur = new Utilisateur();
+        $lesUtilisateurs = $this->loadQuery($this->bd->execSQLSelect($this->select ." WHERE
+        pseudo = :pseudo", [':pseudo'=>$pseudo]) );
+        if (count($lesUtilisateurs) > 0) { 
+            $unUtilisateur = $lesUtilisateurs[0]; 
+        }
+        return $unUtilisateur;
+        // il y a un seul élément dans le tableau d'utilisateurs ➔ indice 0 return $unUtilisateur;
+    }
 
     function getByEmail (string $email) : Utilisateur {
         $unUtilisateur = new Utilisateur();
@@ -92,6 +125,23 @@ class UtilisateurDAO {
         id_uti = :idUti AND status ='accepté'", [':idUti'=>$idUti]);
         $nbrAmi = count($lesAmis);
         return $nbrAmi;
+    }
+
+    function getClassement (int $idUti) : int {
+        $classement = $this->bd->execSQLSelect("SELECT COUNT(*) + 1 AS classement
+                                                FROM (
+                                                    SELECT id_uti, temps AS meilleur_temps
+                                                    FROM score
+                                                    ORDER BY temps ASC
+                                                ) AS sous_classement
+                                                WHERE meilleur_temps < (
+                                                    SELECT temps
+                                                    FROM score
+                                                    WHERE id_uti = :idUti
+                                                    ORDER BY temps ASC
+                                                    LIMIT 1
+                                                )", [':idUti' => $idUti]);
+        return $classement[0]['classement'] ?? 0;;
     }
 }    
 ?>

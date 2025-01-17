@@ -11,10 +11,12 @@
         <header>
             <div class="logo" id="logo">
                 <img src="../view/style/images/manette.png" alt="Logo">
-            </div>
+                <h3>Accueil</h3>
+            </div>  
             <h1>StickSpin</h1>
             <div class="icones">
-                <img id="amis" src="../view/style/images/amis.png" alt="Amis">
+                <img id="classement" src="../view/style/images/classement.png" alt="classement">
+                <img id="ami" src="../view/style/images/amis.png" alt="Amis">
                 <img id="notif" src="../view/style/images/notif.png" alt="Notifications">
                 <img id="open-profile" src="../view/style/images/profil.png" alt="Profil">
             </div>
@@ -64,12 +66,12 @@
                     </div>
                     <div class="stat">
                         <img src="../view/style/images/temps.png">
-                        <p>Meilleurs temps</p>
-                        <p><?= $profil['temps'] ?></p>
+                        <p>Meilleur temps</p>
+                        <p><?= $profil['temps'] ?> sec</p>
                     </div>
                     <div class="stat">
                         <img src="../view/style/images/mort.png">
-                        <p>Morts</p>
+                        <p>Morts Totales</p>
                         <p><?= $profil['morts'] ?></p>
                     </div>
                 </div>
@@ -78,7 +80,8 @@
     </body>
 
     <script src="../controller/script/accueil.js"></script>
-    <script src="../controller/script/amis.js"></script>
+    <script src="../controller/script/classement.js"></script>
+    <script src="../controller/script/ami.js"></script>
     <script src="../controller/script/notif.js"></script>
     <script src="../controller/script/profil.js"></script>
 </html>

@@ -1,0 +1,86 @@
+.back-button {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    text-decoration: none;
+    color: #fff;
+    background: #666;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.back-button:hover {
+    background: #888;
+}
+
+.friends-list {
+    margin: 20px auto;
+    max-width: 600px;
+    background: #333;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.friends-list h2 {
+    margin-top: 0;
+    text-align: center;
+}
+
+.friends-list ul {
+    list-style: none;
+    padding: 0;
+}
+
+.friend-item {
+    display: flex;
+    justify-content: space-between;
+    background: #444;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.friend-item:hover {
+    background: #555;
+}
+
+input[type="submit"] {
+    background-color: #2979ff;
+    color: #fff;
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+input[type="submit"]:hover {
+    background-color: #1565c0;
+}
+
+input[type="text"] {
+    height: 50px;
+    width: 250px;
+    padding-right: 1.5rem;
+}
+
+table {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background-color: #666;
+}
+table, th, td {
+    border: 1px solid #ccc;
+}
+th, td {
+    padding: 10px;
+    text-align: center;
+}
+th {
+    background-color: #333;
+}

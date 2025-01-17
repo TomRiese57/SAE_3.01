@@ -1,25 +1,25 @@
 <?php
 class Ami {
-    private $idUti;
-    private $idAmi;
+    private $uti1;
+    private $uti2;
     private StatusAmis $status;
     private $date;
 
     // constructeur    
-    function __construct(int $idUti = 0, int $idAmi = 0) {
-        $this->idUti = $idUti;
-        $this->idAmi = $idAmi;
-        $this->status = 0;
+    function __construct(Utilisateur $uti1 = null, Utilisateur $uti2 = null) {
+        $this->uti1 = $uti1;
+        $this->uti2 = $uti2;
+        $this->status = StatusAmis::EN_ATTENTE;
         $this->date = date("Y-m-d");
     }
 
     // getters
-    public function getIdUti(): int {
-        return $this->idUti;
+    public function getUti1(): Utilisateur {
+        return $this->uti1;
     }
 
-    public function getIdAmi(): int {
-        return $this->idAmi;
+    public function getUti2(): Utilisateur {
+        return $this->uti2;
     }
 
     public function getStatus(): StatusAmis {
@@ -31,12 +31,12 @@ class Ami {
     }
 
     // setters   
-    public function setIdUti(int $idUti) {
-        $this->idUti = $idUti;
+    public function setUti1(Utilisateur $uti1) {
+        $this->uti1 = $uti1;
     }
 
-    public function setIdAmi(int $idAmi) {
-        $this->idAmi = $idAmi;
+    public function setUti2(Utilisateur $uti2) {
+        $this->uti2 = $uti2;
     }
 
     public function setStatus(StatusAmis $status) {

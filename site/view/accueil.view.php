@@ -16,15 +16,14 @@
             </div>  
             <h1>StickSpin</h1>
             <div class="icones">
-                <img id="amis" src="../view/style/images/amis.png" alt="Amis">
+                <img id="classement" src="../view/style/images/classement.png" alt="classement">
+                <img id="ami" src="../view/style/images/amis.png" alt="Amis">
                 <img id="notif" src="../view/style/images/notif.png" alt="Notifications">
                 <img id="open-profile" src="../view/style/images/profil.png" alt="Profil">
             </div>
         </header>
 
         <main>
-            <!-- Fenêtre modale Amis -->
-            <!-- Fenêtre modale Notifications -->
             <!-- Fenêtre modale Profil -->
             <div class="profile-overlay" id="profile-overlay">
                 <div class="profile-container">
@@ -66,6 +65,7 @@
             <!-- Fenêtre modale Contrôles -->
             <div class="controles">
                 <img id="controles" src="../view/style/images/direction.png" alt="Contrôles">
+                <h3>Contrôles</h3>
                 <div id="controles-modal" class="controles-modal">
                     <div class="controles-content">
                         <span class="close">&times;</span>
@@ -85,7 +85,8 @@
     </body>
 
     <script src="../controller/script/accueil.js"></script>
-    <script src="../controller/script/amis.js"></script>
+    <script src="../controller/script/classement.js"></script>
+    <script src="../controller/script/ami.js"></script>
     <script src="../controller/script/notif.js"></script>
     <script src="../controller/script/profil.js"></script>
     <script src="../controller/script/bouton_jouer.js"></script>

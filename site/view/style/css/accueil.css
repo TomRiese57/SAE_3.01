@@ -37,13 +37,15 @@ button#play-button:hover {
 
 /* Indicateur de contrôle */
 .controles {
-    padding-top: 100rem;
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: center;
+    margin-top: 10px;
 }
 
 .controles h3 {
+    top: 150px;
+    position: relative;
     padding-left: 1rem;
 }
   

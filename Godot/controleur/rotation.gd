@@ -7,18 +7,22 @@ var is_rotating = false
 
 func _process(delta: float) -> void:
 	if dead:
-		Global.dead += 1
 		reset_rotation()
 	
 func _input(event):
 	if is_rotating or dead:
 		return
 	# Vérifie si une action pour tourner la carte est déclenchée
-	elif Input.is_action_just_pressed("RotateLeft"):
-		start_rotation(-ROTATION_ANGLE)
-	elif Input.is_action_just_pressed("RotateRight"):
-		start_rotation(ROTATION_ANGLE)
-		
+	if Global.lvl_actuel == 4:
+		if Input.is_action_just_pressed("RotateLeft"):
+			start_rotation(-ROTATION_ANGLE)
+		elif Input.is_action_just_pressed("RotateRight"):
+			start_rotation(ROTATION_ANGLE)
+	else:
+		if Input.is_action_just_pressed("RotateLeft") and stickman.is_on_floor():
+			start_rotation(-ROTATION_ANGLE)
+		elif Input.is_action_just_pressed("RotateRight") and stickman.is_on_floor():
+			start_rotation(ROTATION_ANGLE)
 func start_rotation(angle_degrees):
 	is_rotating = true
 	$Rotation.play()
@@ -55,6 +59,7 @@ func rotate_map(angle_degrees):
 	
 func reset_rotation():
 	set_process_input(false)
+	Global.dead += 1
 	stickman.rotation_degrees = 0
 	rotation_degrees = 0
 	dead = false
