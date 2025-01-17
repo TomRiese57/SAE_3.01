@@ -115,7 +115,7 @@ class ScoreDAO {
         return $totalTemps;
     }
 
-    function getTopTempsJour (): int {
+    function getTopTempsJour (): array {
         $unTemps = 0;
         $lesTemps = $this->bd->execSQLSelect("SELECT pseudo, temps, morts, score.date
                                         FROM score, utilisateur
@@ -124,7 +124,7 @@ class ScoreDAO {
                                         ORDER BY temps ASC
                                         LIMIT 1");
         if (count($lesTemps) > 0) {
-            $unTemps = (int) $lesTemps[0];
+            $unTemps = $lesTemps[0];
         }
         return $unTemps;
     }
