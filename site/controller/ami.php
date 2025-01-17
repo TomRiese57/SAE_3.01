@@ -25,7 +25,13 @@ if (isset($_POST['ajouter'])) {
     $uti2 = $utilisateurDAO->getByPseudo($amiAdd['pseudo']);
     if ($utilisateurDAO->existe($uti2->getIdUti())) {
         if ($amiDAO->existe($unUtilisateur->getIdUti(), $uti2->getIdUti())) {
-            $message = "<p>Une demande d'ami est déjà en attente / a été refusé</p>";
+            if ($amiDAO->getByIdUtiByIdAmi($unUtilisateur->getIdUti(), $uti2->getIdUti())->getStatus()->value == "accepté") {
+                $message = "<p>Vous êtes déjà ami avec cette personne</p>";
+            } else if ($amiDAO->getByIdUtiByIdAmi($unUtilisateur->getIdUti(), $uti2->getIdUti())->getStatus()->value == "en attente") {
+                $message = "<p>Une demande d'ami est déjà en attente</p>";
+            } else if ($amiDAO->getByIdUtiByIdAmi($unUtilisateur->getIdUti(), $uti2->getIdUti())->getStatus()->value == "refusé") {
+                $message = "<p>Une demande d'ami a été refusé</p>";
+            }
         } else {
             $ami = new Ami($unUtilisateur, $uti2);
             $amiDAO->insert($ami);
